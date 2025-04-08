@@ -5,7 +5,7 @@ public class MovementBehaviour : MonoBehaviour
 {
     public int speed, jumpForce;
     public float sliderSpeed;
-    bool isGrounded;
+    bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
     public Transform p1, p2;
     public LayerMask floorLayer;
@@ -23,12 +23,12 @@ public class MovementBehaviour : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
 
-        if (horizontal > 0)
+        if (horizontal > 0 && !isLockedIn)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
 
-        if (horizontal < 0)
+        if (horizontal < 0 && !isLockedIn)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
@@ -36,6 +36,7 @@ public class MovementBehaviour : MonoBehaviour
         if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
             sliderJump.gameObject.SetActive(true);
+            isLockedIn = true;
             sliderJump.value += (sliderSpeed * Time.deltaTime);
         }
         if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
@@ -43,6 +44,7 @@ public class MovementBehaviour : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * sliderJump.value);
             sliderJump.gameObject.SetActive(false);
             sliderJump.value = 0f;
+            isLockedIn = false;
         }
     }
 }
