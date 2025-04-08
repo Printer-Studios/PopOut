@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grid-pattern-background-minimal-black-white-simple-design-vector_53876-154196_0: -9114010855877797526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
