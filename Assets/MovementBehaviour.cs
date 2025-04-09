@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class MovementBehaviour : MonoBehaviour
 {
-    public int speed, jumpForce;
+    public static float speed;
+    public int jumpForce;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
@@ -14,11 +15,19 @@ public class MovementBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        jumpForce = 400;
+        sliderSpeed = 4f;
         sliderJump.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
+    {
+        speed = WaterInteraction.speed;
+        Movement();
+    }
+
+    private void Movement()
     {
         float horizontal = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
@@ -33,7 +42,7 @@ public class MovementBehaviour : MonoBehaviour
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             sliderJump.gameObject.SetActive(true);
             isLockedIn = true;
