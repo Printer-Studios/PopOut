@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 8076225317323909530}
   - component: {fileID: 4980502827731766047}
   - component: {fileID: 4839610495579318516}
+  - component: {fileID: -3545975535489843221}
+  - component: {fileID: -7710184880363780831}
   m_Layer: 0
   m_Name: Popeye
   m_TagString: Untagged
@@ -34,7 +36,8 @@ Transform:
   m_LocalPosition: {x: 0.58, y: -2.38, z: 0}
   m_LocalScale: {x: 4.380306, y: 4.380306, z: 4.380306}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 251188163782345442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5856709822719653135
@@ -168,7 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b52474275d6dc7448f3b77b98af501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 0
 --- !u!114 &4980502827731766047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +199,10 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 16
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 103
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -220,3 +222,65 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.0030076676, y: -0.018905275}
   m_Radius: 0.07090324
+--- !u!114 &-3545975535489843221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285070694096316140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bc05bdbcb52d24caea2cfb4f686cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCapacity: 25
+  currentAmmo: 0
+  absorbArea: {fileID: 4839610495579318516}
+--- !u!114 &-7710184880363780831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3285070694096316140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dced420146c66f744ae0ac255713ffe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  absorb: {fileID: -3545975535489843221}
+  waterParticle: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
+  shootForce: 15000
+  waterPosition: {fileID: 251188163782345442}
+--- !u!1 &4924199829960967353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 251188163782345442}
+  m_Layer: 0
+  m_Name: Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &251188163782345442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4924199829960967353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.135, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2493502299278159936}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
