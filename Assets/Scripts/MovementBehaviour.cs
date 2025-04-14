@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MovementBehaviour : MonoBehaviour
 {
     public static float speed;
+    private float timePressed;
     public int jumpForce;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
@@ -11,12 +12,12 @@ public class MovementBehaviour : MonoBehaviour
     public Transform p1, p2;
     public LayerMask floorLayer;
     public Slider sliderJump;
+    public float jumpDelay;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        jumpForce = 400;
-        sliderSpeed = 4f;
         sliderJump.gameObject.SetActive(false);
     }
 
@@ -42,7 +43,12 @@ public class MovementBehaviour : MonoBehaviour
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            timePressed = Time.time;
+        }
+
+        if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
         {
             sliderJump.gameObject.SetActive(true);
             isLockedIn = true;
@@ -56,4 +62,5 @@ public class MovementBehaviour : MonoBehaviour
             isLockedIn = false;
         }
     }
+
 }
