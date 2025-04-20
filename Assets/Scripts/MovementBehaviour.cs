@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -13,19 +14,23 @@ public class MovementBehaviour : MonoBehaviour
     public LayerMask floorLayer;
     public Slider sliderJump;
     public float jumpDelay;
+    [SerializeField] public InputActionReference movement;
+    private Rigidbody2D rb2D;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliderJump.gameObject.SetActive(false);
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = WaterInteraction.speed;
-        Movement();
+        rb2D.linearVelocity = movement.action.ReadValue<Vector2>() * speed;
+        //Movement();
     }
 
     private void Movement()
@@ -46,20 +51,27 @@ public class MovementBehaviour : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             timePressed = Time.time;
-        }
+            while (Input.GetKey(KeyCode.Space))
+            {
+                sliderJump.gameObject.SetActive(true);
+                isLockedIn = true;
+                sliderJump.value += (sliderSpeed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
-        {
-            sliderJump.gameObject.SetActive(true);
-            isLockedIn = true;
-            sliderJump.value += (sliderSpeed * Time.deltaTime);
-        }
-        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
-        {
+            }
+            /*if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
+            {
+                
+            }*/
             rb.AddForce(Vector2.up * jumpForce * sliderJump.value);
             sliderJump.gameObject.SetActive(false);
             sliderJump.value = 0f;
             isLockedIn = false;
+        }
+
+        
+        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
+        {
+            
         }
     }
 

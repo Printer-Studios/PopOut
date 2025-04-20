@@ -317,6 +317,8 @@ GameObject:
   - component: {fileID: 5358897368387748271}
   - component: {fileID: 3174990254724817543}
   - component: {fileID: 6201982321570976601}
+  - component: {fileID: -792892923077234935}
+  - component: {fileID: -6192137030587366720}
   m_Layer: 0
   m_Name: Popeye 1
   m_TagString: Untagged
@@ -413,7 +415,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0
-  m_GravityScale: 1.5
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -462,6 +464,7 @@ MonoBehaviour:
     m_Bits: 64
   sliderJump: {fileID: 7442829543231529555}
   jumpDelay: 0.2
+  movement: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
 --- !u!60 &6201982321570976601
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -516,6 +519,37 @@ PolygonCollider2D:
       - {x: 0.08173382, y: -0.11399183}
       - {x: 0.08401209, y: -0.08739945}
   m_UseDelaunayMesh: 0
+--- !u!114 &-792892923077234935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bc05bdbcb52d24caea2cfb4f686cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCapacity: 25
+  currentAmmo: 0
+  absorbArea: {fileID: 5118075134529275154}
+--- !u!114 &-6192137030587366720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dced420146c66f744ae0ac255713ffe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  absorb: {fileID: -792892923077234935}
+  waterParticle: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
+  shootForce: 6500
+  waterPosition: {fileID: 8971885777594259281}
 --- !u!1 &2979635353679693491
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b52474275d6dc7448f3b77b98af501a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 4
 --- !u!1 &7473037721334273024
 GameObject:
   m_ObjectHideFlags: 0
