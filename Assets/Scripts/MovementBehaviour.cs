@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -14,23 +15,22 @@ public class MovementBehaviour : MonoBehaviour
     public LayerMask floorLayer;
     public Slider sliderJump;
     public float jumpDelay;
-    [SerializeField] public InputActionReference movement;
-    private Rigidbody2D rb2D;
-    
+    [SerializeField] public InputActionReference movementLeft;
+    [SerializeField] public InputActionReference movementRight;
+    [SerializeField] public InputActionReference jump; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliderJump.gameObject.SetActive(false);
-        rb2D = GetComponent<Rigidbody2D>();
+        isLockedIn = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = WaterInteraction.speed;
-        rb2D.linearVelocity = movement.action.ReadValue<Vector2>() * speed;
-        //Movement();
+        Movement();
     }
 
     private void Movement()
@@ -38,40 +38,33 @@ public class MovementBehaviour : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
 
-        if (horizontal > 0 && !isLockedIn)
+        if (movementRight.action.IsInProgress() && !isLockedIn)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
 
-        if (horizontal < 0 && !isLockedIn)
+        if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jump.action.triggered)
         {
             timePressed = Time.time;
-            while (Input.GetKey(KeyCode.Space))
-            {
-                sliderJump.gameObject.SetActive(true);
-                isLockedIn = true;
-                sliderJump.value += (sliderSpeed * Time.deltaTime);
+        }
 
-            }
-            /*if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
-            {
-                
-            }*/
+        if(jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
+        {
+            sliderJump.gameObject.SetActive(true);
+            isLockedIn = true;
+            sliderJump.value += (sliderSpeed * Time.deltaTime);
+        }
+        if (jump.action.WasReleasedThisFrame() && isGrounded)
+        {
             rb.AddForce(Vector2.up * jumpForce * sliderJump.value);
             sliderJump.gameObject.SetActive(false);
             sliderJump.value = 0f;
             isLockedIn = false;
-        }
-
-        
-        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
-        {
-            
         }
     }
 

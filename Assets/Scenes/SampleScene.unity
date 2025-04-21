@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2418523593327850754, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_GravityScale
-      value: 9.42
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2515316530674978318, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_Name
@@ -332,9 +332,25 @@ PrefabInstance:
       value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: -7997543224792861045, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: movement
       value: 
       objectReference: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: jumpForce
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: movementLeft
+      value: 
+      objectReference: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: movementRight
+      value: 
+      objectReference: {fileID: -5519764149467524552, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
     - target: {fileID: 5045310443380525563, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
