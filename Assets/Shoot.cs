@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class Shoot : MonoBehaviour
@@ -7,11 +8,12 @@ public class Shoot : MonoBehaviour
     public GameObject waterParticle;
     public float shootForce;
     public Transform waterPosition;
+    [SerializeField] public InputActionReference shoot;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (shoot.action.WasPerformedThisFrame())
         {
             if (absorb.currentAmmo > 0)
             {

@@ -96,24 +96,44 @@
             "id": "ef851388-8f7d-4377-b3e7-7ca5922268f7",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Absorb",
                     "type": "Button",
                     "id": "f7358a5d-c727-4e38-ac67-458f3fdd6d22",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "b94b4ef6-848a-4ab6-8e45-d78b04e20da8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "0c1b764b-662d-4ebe-be0c-33a4b88433ca",
-                    "path": "",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Absorb",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f439418-f1b9-4fe0-86fd-2df95051990b",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
