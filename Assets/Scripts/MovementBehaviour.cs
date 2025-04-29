@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -13,12 +15,15 @@ public class MovementBehaviour : MonoBehaviour
     public LayerMask floorLayer;
     public Slider sliderJump;
     public float jumpDelay;
-    
+    [SerializeField] public InputActionReference movementLeft;
+    [SerializeField] public InputActionReference movementRight;
+    [SerializeField] public InputActionReference jump; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliderJump.gameObject.SetActive(false);
+        isLockedIn = false;
     }
 
     // Update is called once per frame
@@ -30,37 +35,58 @@ public class MovementBehaviour : MonoBehaviour
 
     private void Movement()
     {
-        float horizontal = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
 
-        if (horizontal > 0 && !isLockedIn)
+        if (movementRight.action.IsInProgress() && !isLockedIn)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
-
-        if (horizontal < 0 && !isLockedIn)
+        if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
             transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jump.action.WasPerformedThisFrame())
         {
             timePressed = Time.time;
         }
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
+        if(jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
         {
-            sliderJump.gameObject.SetActive(true);
-            isLockedIn = true;
-            sliderJump.value += (sliderSpeed * Time.deltaTime);
+            ChargeBar();
         }
-        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
+        if (jump.action.WasReleasedThisFrame() && isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce * sliderJump.value);
+            Jump();
+        }
+
+        if (Time.time - timePressed > 3.5 && isGrounded && jump.action.IsInProgress())
+        {
             sliderJump.gameObject.SetActive(false);
-            sliderJump.value = 0f;
             isLockedIn = false;
+            sliderJump.value = 0f;
+            Jump(true);
         }
     }
+
+    private void ChargeBar()
+    {
+        sliderJump.gameObject.SetActive(true);
+        isLockedIn = true;
+        sliderJump.value += (sliderSpeed * Time.deltaTime);
+    }
+    private void Jump(bool maxJump = false)
+    {
+        float jumpValue;
+        if (maxJump) jumpValue = sliderJump.maxValue;
+        else jumpValue = sliderJump.value;
+
+        rb.AddForce(jumpForce * jumpValue * Vector2.up);
+        sliderJump.gameObject.SetActive(false);
+        sliderJump.value = 0f;
+        isLockedIn = false;
+        timePressed = Time.time;
+    }
+
 
 }
