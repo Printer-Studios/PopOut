@@ -319,6 +319,7 @@ GameObject:
   - component: {fileID: 6201982321570976601}
   - component: {fileID: -792892923077234935}
   - component: {fileID: -6192137030587366720}
+  - component: {fileID: 4805737966942257867}
   m_Layer: 0
   m_Name: Popeye 1
   m_TagString: Untagged
@@ -554,6 +555,18 @@ MonoBehaviour:
   shootForce: 6500
   waterPosition: {fileID: 8971885777594259281}
   shoot: {fileID: -1744577311352361193, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+--- !u!114 &4805737966942257867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca21b07239296eb4da229c3b49fd5747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2979635353679693491
 GameObject:
   m_ObjectHideFlags: 0
