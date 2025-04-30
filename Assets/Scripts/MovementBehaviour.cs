@@ -39,13 +39,13 @@ public class MovementBehaviour : MonoBehaviour
 
         if (horizontal > 0 && !isLockedIn)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Mathf.Abs(horizontal) * Time.deltaTime);
 
         }
 
         if (horizontal < 0 && !isLockedIn)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Mathf.Abs(horizontal) * Time.deltaTime);
 
         }
 
