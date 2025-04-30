@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
+using UnityEditor.Experimental.GraphView;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -8,18 +11,21 @@ public class MovementBehaviour : MonoBehaviour
     public int jumpForce;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
-    public bool isDirectionRight;
     public Rigidbody2D rb;
     public Transform p1, p2;
     public LayerMask floorLayer;
     public Slider sliderJump;
-    public float jumpDelay, horizontal;
-    
+    public float jumpDelay;
+    [SerializeField] public InputActionReference movementLeft;
+    [SerializeField] public InputActionReference movementRight;
+    [SerializeField] public InputActionReference jump;
+    [SerializeField] public Vector2 direction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sliderJump.gameObject.SetActive(false);
+        isLockedIn = false;
     }
 
     // Update is called once per frame
@@ -27,55 +33,66 @@ public class MovementBehaviour : MonoBehaviour
     {
         speed = WaterInteraction.speed;
         Movement();
-        FlipDirection();
     }
 
     private void Movement()
     {
-        horizontal = Input.GetAxis("Horizontal");
-
-
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
 
-        if (horizontal > 0 && !isLockedIn)
+        if (movementRight.action.IsInProgress() && !isLockedIn)
         {
-            transform.Translate(Vector2.right * speed * Mathf.Abs(horizontal) * Time.deltaTime);
-
+            direction = Vector2.right;
+            transform.Translate(direction * speed * Time.deltaTime);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        if (movementLeft.action.IsInProgress() && !isLockedIn)
+        {
+            direction = Vector2.left;
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
-        if (horizontal < 0 && !isLockedIn)
-        {
-            transform.Translate(Vector2.right * speed * Mathf.Abs(horizontal) * Time.deltaTime);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (jump.action.WasPerformedThisFrame())
         {
             timePressed = Time.time;
         }
 
-        if (Input.GetKey(KeyCode.Space) && isGrounded && (Time.time - timePressed > jumpDelay))
+        if(jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
         {
-            sliderJump.gameObject.SetActive(true);
-            isLockedIn = true;
-            sliderJump.value += (sliderSpeed * Time.deltaTime);
+            ChargeBar();
         }
-        if (Input.GetKeyUp(KeyCode.Space) && isGrounded)
+        if (jump.action.WasReleasedThisFrame() && isGrounded)
         {
-            rb.AddForce(Vector2.up * jumpForce * sliderJump.value);
+            Jump();
+        }
+
+        if (Time.time - timePressed > 3.5 && isGrounded && jump.action.IsInProgress())
+        {
             sliderJump.gameObject.SetActive(false);
-            sliderJump.value = 0f;
             isLockedIn = false;
+            sliderJump.value = 0f;
+            Jump(true);
         }
     }
 
-    public void FlipDirection()
+    private void ChargeBar()
     {
-        if (horizontal < 0 && isDirectionRight || horizontal > 0 && !isDirectionRight)
-        {
-            isDirectionRight = !isDirectionRight;
-            transform.Rotate(new Vector3(0, 180, 0));
-            sliderJump.transform.Rotate(new Vector3(0, 180, 0));
-        }
+        sliderJump.gameObject.SetActive(true);
+        isLockedIn = true;
+        sliderJump.value += (sliderSpeed * Time.deltaTime);
     }
+    private void Jump(bool maxJump = false)
+    {
+        float jumpValue;
+        if (maxJump) jumpValue = sliderJump.maxValue;
+        else jumpValue = sliderJump.value;
+
+        rb.AddForce(jumpForce * jumpValue * Vector2.up);
+        sliderJump.gameObject.SetActive(false);
+        sliderJump.value = 0f;
+        isLockedIn = false;
+        timePressed = Time.time;
+    }
+
+
 }
