@@ -10,7 +10,7 @@ public class CrabMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        collider.GetComponent<Collider2D>();
+        collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
