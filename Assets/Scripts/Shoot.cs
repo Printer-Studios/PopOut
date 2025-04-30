@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
     public AbsorbBehaviour absorb;
+    public MovementBehaviour movement;
     public GameObject waterParticle;
     public float shootForce;
     public Transform waterPosition;
@@ -11,12 +13,21 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        var shoot = Input.GetButtonDown("Shoot");
+
+        if (shoot)
         {
             if (absorb.currentAmmo > 0)
             {
                 GameObject newWater = Instantiate(waterParticle, new Vector2(waterPosition.position.x, waterPosition.position.y), Quaternion.identity);
-                newWater.GetComponent<Rigidbody2D>().AddForce(Vector2.right * shootForce);
+                if (movement.isDirectionRight)
+                {
+                    newWater.GetComponent<Rigidbody2D>().AddForce(Vector2.right * shootForce);
+                }
+                else
+                {
+                    newWater.GetComponent<Rigidbody2D>().AddForce(Vector2.left * shootForce);
+                }
                 absorb.currentAmmo--;
             }
         }

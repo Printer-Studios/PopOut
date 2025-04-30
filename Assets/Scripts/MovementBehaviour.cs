@@ -8,11 +8,12 @@ public class MovementBehaviour : MonoBehaviour
     public int jumpForce;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
+    public bool isDirectionRight;
     public Rigidbody2D rb;
     public Transform p1, p2;
     public LayerMask floorLayer;
     public Slider sliderJump;
-    public float jumpDelay;
+    public float jumpDelay, horizontal;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,21 +27,26 @@ public class MovementBehaviour : MonoBehaviour
     {
         speed = WaterInteraction.speed;
         Movement();
+        FlipDirection();
     }
 
     private void Movement()
     {
-        float horizontal = Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal");
+
+
         isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
 
         if (horizontal > 0 && !isLockedIn)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
+
         }
 
         if (horizontal < 0 && !isLockedIn)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -63,4 +69,13 @@ public class MovementBehaviour : MonoBehaviour
         }
     }
 
+    public void FlipDirection()
+    {
+        if (horizontal < 0 && isDirectionRight || horizontal > 0 && !isDirectionRight)
+        {
+            isDirectionRight = !isDirectionRight;
+            transform.Rotate(new Vector3(0, 180, 0));
+            sliderJump.transform.Rotate(new Vector3(0, 180, 0));
+        }
+    }
 }

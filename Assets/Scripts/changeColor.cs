@@ -7,7 +7,7 @@ public class changeColor : MonoBehaviour
     public Color color1;
     public Color color2;
     [Range(0f, 1f)]
-    public float tc;
+    public float tc; //numero entre 0 i 1 que canvia el daixonsis de color saps
     SpriteRenderer spriteRenderer;
     void Start()
     {
@@ -20,7 +20,6 @@ public class changeColor : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             tc += 0.2f * Time.deltaTime;
-            Debug.Log("tal");
         }
         else
         {

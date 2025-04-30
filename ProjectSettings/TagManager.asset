@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Wall
+  - Bounceable
+  - Enemy
   layers:
   - Default
   - TransparentFX
