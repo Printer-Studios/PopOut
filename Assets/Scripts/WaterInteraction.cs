@@ -4,7 +4,7 @@ using UnityEngine;
 public class WaterInteraction : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float maxSpeed = 3f;
+    public float maxSpeed = 4f;
     public static float speed;
 
     void Start()

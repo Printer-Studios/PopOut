@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
+using UnityEditor.Experimental.GraphView;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class MovementBehaviour : MonoBehaviour
     public float jumpDelay;
     [SerializeField] public InputActionReference movementLeft;
     [SerializeField] public InputActionReference movementRight;
-    [SerializeField] public InputActionReference jump; 
+    [SerializeField] public InputActionReference jump;
+    [SerializeField] public Vector2 direction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,11 +41,15 @@ public class MovementBehaviour : MonoBehaviour
 
         if (movementRight.action.IsInProgress() && !isLockedIn)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            direction = Vector2.right;
+            transform.Translate(direction * speed * Time.deltaTime);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
+            direction = Vector2.left;
             transform.Translate(Vector2.left * speed * Time.deltaTime);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
         if (jump.action.WasPerformedThisFrame())

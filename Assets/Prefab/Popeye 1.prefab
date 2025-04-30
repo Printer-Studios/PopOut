@@ -468,6 +468,7 @@ MonoBehaviour:
   movementLeft: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   movementRight: {fileID: -5519764149467524552, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   jump: {fileID: -7997543224792861045, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+  direction: {x: 0, y: 0}
 --- !u!60 &6201982321570976601
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -514,13 +515,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.06542343, y: -0.031411484}
+    - - {x: 0.02499196, y: -0.00024554785}
       - {x: -0.0077418424, y: 0.0028629284}
       - {x: -0.12457659, y: -0.04227822}
       - {x: -0.114294335, y: -0.16171388}
       - {x: 0.13485885, y: -0.1617135}
-      - {x: 0.08173382, y: -0.11399183}
-      - {x: 0.08401209, y: -0.08739945}
+      - {x: 0.09352636, y: -0.055029266}
+      - {x: 0.077273495, y: -0.035175502}
   m_UseDelaunayMesh: 0
 --- !u!114 &-792892923077234935
 MonoBehaviour:
@@ -551,6 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   absorb: {fileID: -792892923077234935}
+  movement: {fileID: 3174990254724817543}
   waterParticle: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
   shootForce: 6500
   waterPosition: {fileID: 8971885777594259281}
