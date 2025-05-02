@@ -43,13 +43,15 @@ public class MovementBehaviour : MonoBehaviour
         {
             direction = Vector2.right;
             transform.Translate(direction * speed * Time.deltaTime);
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
             direction = Vector2.left;
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
         if (jump.action.WasPerformedThisFrame())
