@@ -42,17 +42,15 @@ public class MovementBehaviour : MonoBehaviour
         if (movementRight.action.IsInProgress() && !isLockedIn)
         {
             direction = Vector2.right;
-            gameObject.transform.eulerAngles = new Vector3(0, 0, 0);
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            sliderJump.direction = Slider.Direction.LeftToRight;
+            transform.Translate(direction * speed * Time.deltaTime);
+            gameObject.transform.rotation = Quaternion.Euler(0,0,0);
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
             direction = Vector2.left;
-            gameObject.transform.eulerAngles = new Vector3(0, 180, 0);
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-            sliderJump.direction = Slider.Direction.RightToLeft;
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 
