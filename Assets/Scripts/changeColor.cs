@@ -7,8 +7,10 @@ public class changeColor : MonoBehaviour
     public Color color1;
     public Color color2;
     [Range(0f, 1f)]
-    public float tc; //numero entre 0 i 1 que canvia el daixonsis de color saps
+    public float tc; // Number between 0 and 1 that determines how much does the "Pop" original color approach the second color.
     SpriteRenderer spriteRenderer;
+    public HealthBehaviour HealthBehaviour;
+    public AbsorbBehaviour1 Absorb;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,14 +19,7 @@ public class changeColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            tc += 0.2f * Time.deltaTime;
-        }
-        else
-        {
-            tc -= 0.2f * Time.deltaTime;
-        }
-        spriteRenderer.color = Color.Lerp(color1, color2, tc);
+        tc = Absorb.currentAmmo / Absorb.maxCapacity;
+        spriteRenderer.color = Color.Lerp(new Color(color1.r, color1.g, color1.b, HealthBehaviour.alpha), new Color(color2.r, color2.g, color2.b, HealthBehaviour.alpha), tc);
     }
 }

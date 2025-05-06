@@ -44,6 +44,7 @@ public class MovementBehaviour : MonoBehaviour
             direction = Vector2.right;
             transform.Translate(direction * speed * Time.deltaTime);
             gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+            sliderJump.direction = Slider.Direction.LeftToRight;
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (movementLeft.action.IsInProgress() && !isLockedIn)
@@ -51,6 +52,7 @@ public class MovementBehaviour : MonoBehaviour
             direction = Vector2.left;
             transform.Translate(Vector2.right * speed * Time.deltaTime);
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            sliderJump.direction = Slider.Direction.RightToLeft;
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
 

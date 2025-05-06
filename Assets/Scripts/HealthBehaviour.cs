@@ -11,7 +11,7 @@ public class HealthBehaviour : MonoBehaviour
     public int maxHealth, currentHealth, secondsIFrames;
     public bool isInvincible;
     public TMP_Text healthText;
-
+    public float alpha;
 
 
     public void Start()
@@ -22,6 +22,17 @@ public class HealthBehaviour : MonoBehaviour
     public void Update()
     {
         healthText.text = ("Hearts: " + currentHealth.ToString());
+
+        if (isInvincible)
+        {
+            Flicker();
+            alpha = Mathf.Abs(Mathf.Sin(Time.time * 10f));
+        }
+        else
+        {
+            ResetColor();
+            alpha = 255;
+        }   
     }
 
     public void OnTriggerStay2D(Collider2D col)
@@ -43,6 +54,7 @@ public class HealthBehaviour : MonoBehaviour
             }
             else
             {
+                Debug.Log("as sido jiteao");
                 currentHealth--;
                 StartCoroutine(IFrames());
             }
@@ -51,15 +63,21 @@ public class HealthBehaviour : MonoBehaviour
 
     public IEnumerator IFrames()
     {
+        Debug.Log("comienza la corrutina");
         isInvincible = true;
         //Thread.Sleep(secondsIFrames * 1000);
-        Flicker();
         yield return new WaitForSeconds(secondsIFrames);
         isInvincible = false;
+        Debug.Log("acabe la corrutina");
     }
 
     public void Flicker()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, Mathf.PingPong(0.4f, 1));
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, alpha);
+    }
+
+    public void ResetColor()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, 255);
     }
 }
