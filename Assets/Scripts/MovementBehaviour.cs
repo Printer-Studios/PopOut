@@ -33,6 +33,7 @@ public class MovementBehaviour : MonoBehaviour
     {
         speed = WaterInteraction.speed;
         Movement();
+        //isGrounded = true; //Debug ONLY
     }
 
     private void Movement()
@@ -43,7 +44,7 @@ public class MovementBehaviour : MonoBehaviour
         {
             direction = Vector2.right;
             transform.Translate(direction * speed * Time.deltaTime);
-            gameObject.transform.rotation = Quaternion.Euler(0,0,0);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             sliderJump.direction = Slider.Direction.LeftToRight;
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
@@ -61,7 +62,7 @@ public class MovementBehaviour : MonoBehaviour
             timePressed = Time.time;
         }
 
-        if(jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
+        if (jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
         {
             ChargeBar();
         }
@@ -85,11 +86,14 @@ public class MovementBehaviour : MonoBehaviour
         isLockedIn = true;
         sliderJump.value += (sliderSpeed * Time.deltaTime);
     }
-    private void Jump(bool maxJump = false)
+    public void Jump(bool maxJump = false)
     {
         float jumpValue;
         if (maxJump) jumpValue = sliderJump.maxValue;
         else jumpValue = sliderJump.value;
+        
+        //rb.AddRelativeForceY(jumpForce * jumpValue, ForceMode2D.Impulse);
+
 
         rb.AddForce(jumpForce * jumpValue * Vector2.up);
         sliderJump.gameObject.SetActive(false);
@@ -97,6 +101,26 @@ public class MovementBehaviour : MonoBehaviour
         isLockedIn = false;
         timePressed = Time.time;
     }
-
-
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.GetComponent<CrabHitHandler>() != null)
+        {
+            Debug.Log("no null");
+            if (col.gameObject.GetComponent<CrabHitHandler>().canBeHit && GetComponent<PolygonCollider2D>().IsTouching(col.gameObject.GetComponent<CrabHitHandler>().weakspot))
+            {
+                Debug.LogWarning("Jumped crap");
+                if (!jump.action.IsPressed())
+                {
+                    sliderJump.value = sliderJump.minValue;
+                }
+                else
+                {
+                    sliderJump.value = sliderJump.maxValue;
+                }
+                rb.linearVelocityY = 0f;
+                Jump();
+                col.gameObject.GetComponent<CrabHitHandler>().Die();
+            }
+        }
+    }
 }

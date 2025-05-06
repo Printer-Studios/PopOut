@@ -14,9 +14,9 @@ public class CrabHitHandler : MonoBehaviour
             CrabHit();
         }
 
-        if (col.gameObject.tag == "Player" && canBeHit == true && weakspot.IsTouching(col))
+        if (col.gameObject.tag == "Player" && canBeHit && weakspot.IsTouching(col))
         {
-            Die();
+            //Die();
         }
     }
 
@@ -34,7 +34,7 @@ public class CrabHitHandler : MonoBehaviour
         canBeHit = false;
     }
 
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }
