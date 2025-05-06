@@ -433,7 +433,6 @@ GameObject:
   - component: {fileID: 1360073541052965211}
   - component: {fileID: 2123769385768256749}
   - component: {fileID: 6077847377184466263}
-  - component: {fileID: 4212290678804194004}
   - component: {fileID: 1357144844745094939}
   m_Layer: 0
   m_Name: Popeye 1
@@ -723,24 +722,6 @@ MonoBehaviour:
   m_DefaultActionMap: Pop Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &4212290678804194004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515316530674978318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96f39d4c5188b884b8d7a3d8b6165cf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 0
-  secondsIFrames: 3
-  isInvincible: 0
-  healthText: {fileID: 0}
-  alpha: 0
 --- !u!60 &1357144844745094939
 PolygonCollider2D:
   m_ObjectHideFlags: 0
