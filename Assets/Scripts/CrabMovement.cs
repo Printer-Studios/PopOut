@@ -32,7 +32,7 @@ public class CrabMovement : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Wall")
+        if (col.gameObject.tag != "Floor" && col.gameObject.tag != "Water")
         {
             startRight = !startRight;
         }
