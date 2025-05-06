@@ -1,28 +1,10 @@
 fileFormatVersion: 2
-guid: 151111de01c0e0a4782a8200069f1c34
+guid: c9a00b13c4f7577488095791b29c4d1e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7446523065305442723
-    second: pulpo_0
-  - first:
-      213: -8686080915940718358
-    second: pulpo_1
-  - first:
-      213: 1866421125457657075
-    second: pulpo_2
-  - first:
-      213: -3724259145166192173
-    second: pulpo_3
-  - first:
-      213: -1602085706673739574
-    second: pulpo_4
-  - first:
-      213: -9143678587745289398
-    second: pulpo_5
-  - first:
-      213: 5303480570820416633
-    second: pulpo_6
+      213: -408327487947842520
+    second: fondo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,123 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pulpo_0
+      name: fondo_0
       rect:
         serializedVersion: 2
-        x: 154
-        y: 128
-        width: 39
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5657b8b9b2a8a890800000000000000
-      internalID: -7446523065305442723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pulpo_1
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 33
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ae8cd038d67d47780800000000000000
-      internalID: -8686080915940718358
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pulpo_2
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 127
-        width: 25
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fc3038ff1cd6e910800000000000000
-      internalID: 1866421125457657075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pulpo_3
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 63
-        width: 34
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d18ed81a06c05cc0800000000000000
-      internalID: -3724259145166192173
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pulpo_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 96
-        width: 33
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac82bf9b98f34c9e0800000000000000
-      internalID: -1602085706673739574
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pulpo_5
-      rect:
-        serializedVersion: 2
-        x: 192
+        x: 0
         y: 64
-        width: 29
-        height: 28
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,30 +128,140 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4bb81d05c02b1180800000000000000
-      internalID: -9143678587745289398
+      spriteID: 82c57d82054555af0800000000000000
+      internalID: -408327487947842520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pulpo_6
+      name: fondo_1
       rect:
         serializedVersion: 2
-        x: 224
+        x: 32
         y: 64
-        width: 29
-        height: 28
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 974dfe8ea7fb99940800000000000000
-      internalID: 5303480570820416633
+      spriteID: b9d4510bd428e27498dfe4ddc988e17b
+      internalID: -470795237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fondo_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8939abccba30b40b751025b77a96b8
+      internalID: 1312467950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fondo_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c022b71b6f9d1fa46922a9e7a15f42ed
+      internalID: -1040789378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fondo_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e310adbeb344ee4092326c9bdc3f702
+      internalID: 2089738651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fondo_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 436aa788ad8255b4f917986ea2afb218
+      internalID: -368334833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fondo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4400d6651eb574647985bc1ad7666016
+      internalID: 2013594291
       vertices: []
       indices: 
       edges: []
@@ -288,7 +270,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: aa61fd49324ef474585881c53f924aca
     internalID: 0
     vertices: []
     indices: 
@@ -298,13 +280,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pulpo_0: -7446523065305442723
-      pulpo_1: -8686080915940718358
-      pulpo_2: 1866421125457657075
-      pulpo_3: -3724259145166192173
-      pulpo_4: -1602085706673739574
-      pulpo_5: -9143678587745289398
-      pulpo_6: 5303480570820416633
+      fondo_0: -408327487947842520
+      fondo_1: -470795237
+      fondo_2: 1312467950
+      fondo_3: -1040789378
+      fondo_4: 2089738651
+      fondo_5: -368334833
+      fondo_6: 2013594291
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
