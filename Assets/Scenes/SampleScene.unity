@@ -7122,6 +7122,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4087670123179676197, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+      propertyPath: underWaterFloatability
+      value: 0.1825
+      objectReference: {fileID: 0}
     - target: {fileID: 6769480351169850765, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
       propertyPath: m_Size.x
       value: 1.2449079
@@ -7141,6 +7145,10 @@ PrefabInstance:
     - target: {fileID: 7075771794200410316, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257055438899674028, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 9088564651319423223, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
       propertyPath: m_Size.x
