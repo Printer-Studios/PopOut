@@ -492,6 +492,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 140078059272268494, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1103893426961280792, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_SizeDelta.x
       value: 267
@@ -634,27 +638,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color1.b
-      value: 0.3190192
+      value: 0.23921569
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color1.g
-      value: 0.3190192
+      value: 0.23921569
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color1.r
-      value: 0.6320754
+      value: 0.83137256
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color2.b
-      value: 0.5188679
+      value: 0.8490566
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color2.g
-      value: 0.2765664
+      value: 0.345314
       objectReference: {fileID: 0}
     - target: {fileID: 5358897368387748271, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: color2.r
-      value: 0.2837457
+      value: 0.244304
       objectReference: {fileID: 0}
     - target: {fileID: 6077847377184466263, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_Camera
