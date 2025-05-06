@@ -10,6 +10,7 @@ public class CrabHitHandler : MonoBehaviour
     {
         if (col.gameObject.layer == 4 && col.attachedRigidbody.linearVelocity.magnitude > 5)
         {
+            Destroy(col.gameObject);
             CrabHit();
         }
 
