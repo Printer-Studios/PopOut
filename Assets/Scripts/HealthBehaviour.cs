@@ -12,6 +12,7 @@ public class HealthBehaviour : MonoBehaviour
     public bool isInvincible;
     public TMP_Text healthText;
     public float alpha;
+    const float maxAlpha = 1;
 
 
     public void Start()
@@ -31,7 +32,7 @@ public class HealthBehaviour : MonoBehaviour
         else
         {
             ResetColor();
-            alpha = 255;
+            alpha = maxAlpha;
         }   
     }
 
@@ -78,6 +79,6 @@ public class HealthBehaviour : MonoBehaviour
 
     public void ResetColor()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, 255);
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, maxAlpha);
     }
 }

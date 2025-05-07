@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9123112562696249807}
   - component: {fileID: 7257055438899674028}
   - component: {fileID: 9088564651319423223}
-  - component: {fileID: 4087670123179676197}
   - component: {fileID: 6769480351169850765}
+  - component: {fileID: 880862368147868635}
   m_Layer: 6
   m_Name: Box
   m_TagString: Wall
@@ -164,21 +164,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.9506779, y: 0.9463892}
   m_EdgeRadius: 0
---- !u!114 &4087670123179676197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52205933659995571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f8eaf24a3675f442b3d3502b6cd4e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7257055438899674028}
-  underWaterFloatability: 9
-  parentObject: {fileID: 52205933659995571}
 --- !u!61 &6769480351169850765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,3 +210,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2449079, y: 0.98708534}
   m_EdgeRadius: 0
+--- !u!114 &880862368147868635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52205933659995571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8eaf24a3675f442b3d3502b6cd4e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7257055438899674028}
+  underWaterFloatability: 0.1825
+  parentObject: {fileID: 52205933659995571}
