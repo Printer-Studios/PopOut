@@ -8,7 +8,7 @@ public class MovementBehaviour : MonoBehaviour
 {
     public static float speed;
     private float timePressed;
-    public int jumpForce;
+    public float jumpForce;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
@@ -20,6 +20,7 @@ public class MovementBehaviour : MonoBehaviour
     [SerializeField] public InputActionReference movementRight;
     [SerializeField] public InputActionReference jump;
     [SerializeField] public Vector2 direction;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -94,8 +95,12 @@ public class MovementBehaviour : MonoBehaviour
         
         //rb.AddRelativeForceY(jumpForce * jumpValue, ForceMode2D.Impulse);
 
+       Debug.Log("Jump value: " +  jumpValue);
+       Debug.Log("Jump force: " + jumpForce);
+       Debug.Log("Total force: " + jumpForce * jumpValue);
 
-        rb.AddForce(jumpForce * jumpValue * Vector2.up);
+
+        rb.AddForce(jumpForce * jumpValue * Vector2.up, ForceMode2D.Impulse);
         sliderJump.gameObject.SetActive(false);
         sliderJump.value = 0f;
         isLockedIn = false;
