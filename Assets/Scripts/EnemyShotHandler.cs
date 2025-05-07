@@ -16,12 +16,14 @@ public class EnemyShotHandler : MonoBehaviour
             if (shotType == Shot.Upside)
             {
                 UpsideDown();
+                Destroy(col.gameObject); //Destroy water
             }
             else if (shotType == Shot.Die)
             {
                 Die();
+                Destroy(col.gameObject); //Destroy water
             }
-            Destroy(col.gameObject); //Destroy water
+            
         }
     }
 
