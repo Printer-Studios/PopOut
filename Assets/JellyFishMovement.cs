@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class JellyFishMovement : MonoBehaviour
 {
-    public float distance;
     public float speed;
+    public float distance;
     public Collider2D jumpingCollision;
     
     void Update()
@@ -13,7 +13,7 @@ public class JellyFishMovement : MonoBehaviour
 
     public void HoverMovement()
     {
-        transform.position = new Vector2(transform.position.x, Mathf.Sin(distance * Time.time)* speed);
+        transform.position = new Vector2(transform.position.x, Mathf.Sin(distance * Time.time) * speed);
     }
 
 
