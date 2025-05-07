@@ -101,14 +101,40 @@ public class MovementBehaviour : MonoBehaviour
         isLockedIn = false;
         timePressed = Time.time;
     }
+    //private void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    if (col.gameObject.GetComponent<HitHandler>() != null)
+    //    {
+    //        Debug.Log("no null");
+    //        if (col.gameObject.GetComponent<HitHandler>().canBeHit && GetComponent<PolygonCollider2D>().IsTouching(col.gameObject.GetComponent<HitHandler>().weakspot))
+    //        {
+    //            Debug.LogWarning("Jumped crap");
+    //            if (!jump.action.IsPressed())
+    //            {
+    //                sliderJump.value = sliderJump.minValue;
+    //            }
+    //            else
+    //            {
+    //                sliderJump.value = sliderJump.maxValue;
+    //            }
+    //            rb.linearVelocityY = 0f;
+    //            Jump();
+    //            col.gameObject.GetComponent<HitHandler>().Die();
+    //        }
+    //    }
+    //}
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.GetComponent<CrabHitHandler>() != null)
+        if (col.gameObject.GetComponent<EnemyHitHandler>() != null)
         {
             Debug.Log("no null");
-            if (col.gameObject.GetComponent<CrabHitHandler>().canBeHit && GetComponent<PolygonCollider2D>().IsTouching(col.gameObject.GetComponent<CrabHitHandler>().weakspot))
+            EnemyHitHandler hitHandler = col.gameObject.GetComponent<EnemyHitHandler>();
+            EnemyShotHandler shotHandler = col.gameObject.GetComponent<EnemyShotHandler>();
+            if (shotHandler.isWeak && hitHandler.hitType == EnemyHitHandler.Hit.Jump && GetComponent<PolygonCollider2D>().IsTouching(hitHandler.weakspot))
+            //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
             {
-                Debug.LogWarning("Jumped crap");
+                Debug.Log("Jump Kill");
                 if (!jump.action.IsPressed())
                 {
                     sliderJump.value = sliderJump.minValue;
@@ -119,7 +145,7 @@ public class MovementBehaviour : MonoBehaviour
                 }
                 rb.linearVelocityY = 0f;
                 Jump();
-                col.gameObject.GetComponent<CrabHitHandler>().Die();
+                hitHandler.Die();
             }
         }
     }

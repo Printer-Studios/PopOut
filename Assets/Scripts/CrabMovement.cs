@@ -6,7 +6,7 @@ public class CrabMovement : MonoBehaviour
     public float speed;
     public bool startRight; //Bool to decide starting direction
     private Collider2D collider;
-    public CrabHitHandler hitHandler;
+    public EnemyShotHandler shotHandler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,7 +17,7 @@ public class CrabMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hitHandler.canBeHit)
+        if (!shotHandler.isWeak)
         {
             if (startRight)
             {
