@@ -4,7 +4,6 @@ using UnityEngine;
 public class EnemyHitHandler : MonoBehaviour
 {
     public enum Hit { Nothing, Jump, Box}
-    public Hit hitType;
     public Hit[] hitTypes;
     public EnemyShotHandler shotHandler;
     public GameObject boxPF;

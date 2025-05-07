@@ -131,21 +131,24 @@ public class MovementBehaviour : MonoBehaviour
             Debug.Log("no null");
             EnemyHitHandler hitHandler = col.gameObject.GetComponent<EnemyHitHandler>();
             EnemyShotHandler shotHandler = col.gameObject.GetComponent<EnemyShotHandler>();
-            if (shotHandler.isWeak && hitHandler.hitType == EnemyHitHandler.Hit.Jump && GetComponent<PolygonCollider2D>().IsTouching(hitHandler.weakspot))
-            //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
+            for (int i = 0; i < hitHandler.hitTypes.Length; i++)
             {
-                Debug.Log("Jump Kill");
-                if (!jump.action.IsPressed())
+                if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<PolygonCollider2D>().IsTouching(hitHandler.weakspot))
+                //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
                 {
-                    sliderJump.value = sliderJump.minValue;
+                    Debug.Log("Jump Kill");
+                    if (!jump.action.IsPressed())
+                    {
+                        sliderJump.value = sliderJump.minValue;
+                    }
+                    else
+                    {
+                        sliderJump.value = sliderJump.maxValue;
+                    }
+                    rb.linearVelocityY = 0f;
+                    Jump();
+                    hitHandler.Die();
                 }
-                else
-                {
-                    sliderJump.value = sliderJump.maxValue;
-                }
-                rb.linearVelocityY = 0f;
-                Jump();
-                hitHandler.Die();
             }
         }
 
