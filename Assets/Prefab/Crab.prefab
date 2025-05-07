@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0012497902, y: -0.17871764}
+  m_Offset: {x: 0.008135915, y: -0.17871764}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.24763632, y: 0.1926462}
+  m_Size: {x: 0.5599277, y: 0.1926462}
   m_EdgeRadius: 0
 --- !u!1 &7884835278159264796
 GameObject:
@@ -92,6 +92,8 @@ GameObject:
   - component: {fileID: 4424226117680442278}
   - component: {fileID: 6754770604284061911}
   - component: {fileID: 747876403475374929}
+  - component: {fileID: 4026073927681755336}
+  - component: {fileID: 7379334575276576796}
   m_Layer: 0
   m_Name: Crab
   m_TagString: Enemy
@@ -183,9 +185,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  speed: 0
+  speed: 1
   startRight: 0
-  hitHandler: {fileID: 0}
+  shotHandler: {fileID: 4026073927681755336}
 --- !u!50 &4424226117680442278
 Rigidbody2D:
   serializedVersion: 5
@@ -212,7 +214,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6754770604284061911
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -305,3 +307,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.53125}
   m_EdgeRadius: 0
+--- !u!114 &4026073927681755336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec19ea4e2bbbb2438ec91ab95e75ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotType: 0
+  isWeak: 0
+--- !u!114 &7379334575276576796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1058aeee773437642abb3b200a3e0b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitType: 1
+  hitTypes: 0100000002000000
+  shotHandler: {fileID: 4026073927681755336}
+  boxPF: {fileID: 52205933659995571, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+  weakspot: {fileID: 5236529004801826003}

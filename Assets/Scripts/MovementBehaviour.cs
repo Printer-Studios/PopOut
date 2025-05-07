@@ -148,5 +148,28 @@ public class MovementBehaviour : MonoBehaviour
                 hitHandler.Die();
             }
         }
+
+        if (col.gameObject.GetComponent<JellyFishMovement>() != null)
+        {
+            JellyFishMovement jellyfishMov = col.gameObject.GetComponent<JellyFishMovement>();
+            if (GetComponent<PolygonCollider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
+            {
+                //if the jump button isn't pressed, it jumps the max jump height.
+                if (!jump.action.IsPressed())
+                {
+                    sliderJump.value = sliderJump.maxValue;
+                }
+                //if the jump button is pressed, it jumps the max jump height * 1.5.
+                else
+                {
+                    sliderJump.value = sliderJump.maxValue * 1.25f;
+                }
+                Debug.Log("Jump");
+                rb.linearVelocityY = 0f;
+                Jump();
+            }
+        }
     }
+
+
 }
