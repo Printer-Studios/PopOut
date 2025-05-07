@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6349079851849246419}
   - component: {fileID: 4003432989507720946}
   - component: {fileID: 9089451172582256711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Urchin
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCapacity: 25
-  currentAmmo: 10
+  currentAmmo: 0
   absorbArea: {fileID: 5118075134529275154}
   waterBar: {fileID: 8912892998379680795}
   UISlider: {fileID: 0}
