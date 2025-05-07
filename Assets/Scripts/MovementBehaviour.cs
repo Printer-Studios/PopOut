@@ -106,28 +106,6 @@ public class MovementBehaviour : MonoBehaviour
         isLockedIn = false;
         timePressed = Time.time;
     }
-    //private void OnTriggerEnter2D(Collider2D col)
-    //{
-    //    if (col.gameObject.GetComponent<HitHandler>() != null)
-    //    {
-    //        Debug.Log("no null");
-    //        if (col.gameObject.GetComponent<HitHandler>().canBeHit && GetComponent<PolygonCollider2D>().IsTouching(col.gameObject.GetComponent<HitHandler>().weakspot))
-    //        {
-    //            Debug.LogWarning("Jumped crap");
-    //            if (!jump.action.IsPressed())
-    //            {
-    //                sliderJump.value = sliderJump.minValue;
-    //            }
-    //            else
-    //            {
-    //                sliderJump.value = sliderJump.maxValue;
-    //            }
-    //            rb.linearVelocityY = 0f;
-    //            Jump();
-    //            col.gameObject.GetComponent<HitHandler>().Die();
-    //        }
-    //    }
-    //}
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -138,7 +116,7 @@ public class MovementBehaviour : MonoBehaviour
             EnemyShotHandler shotHandler = col.gameObject.GetComponent<EnemyShotHandler>();
             for (int i = 0; i < hitHandler.hitTypes.Length; i++)
             {
-                if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<PolygonCollider2D>().IsTouching(hitHandler.weakspot))
+                if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<BoxCollider2D>().IsTouching(hitHandler.weakspot))
                 //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
                 {
                     Debug.Log("Jump Kill");
@@ -160,12 +138,12 @@ public class MovementBehaviour : MonoBehaviour
         if (col.gameObject.GetComponent<JellyFishMovement>() != null)
         {
             JellyFishMovement jellyfishMov = col.gameObject.GetComponent<JellyFishMovement>();
-            if (GetComponent<PolygonCollider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
+            if (GetComponent<BoxCollider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
             {
                 //if the jump button isn't pressed, it jumps the max jump height.
                 if (!jump.action.IsPressed())
                 {
-                    sliderJump.value = sliderJump.maxValue;
+                    sliderJump.value = sliderJump.maxValue * 0.75f;
                 }
                 //if the jump button is pressed, it jumps the max jump height * 1.5.
                 else
