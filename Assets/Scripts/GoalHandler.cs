@@ -20,4 +20,9 @@ public class GoalHandler : MonoBehaviour
     {
         SceneManager.LoadScene(scenePath);
     }
+
+    public void probaDebug()
+    {
+        Debug.Log("botton clicked");
+    }
 }
