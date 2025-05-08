@@ -428,12 +428,12 @@ GameObject:
   - component: {fileID: 2418523593327850754}
   - component: {fileID: 5358897368387748271}
   - component: {fileID: 3174990254724817543}
-  - component: {fileID: 6201982321570976601}
   - component: {fileID: 1021281220813662177}
   - component: {fileID: 1360073541052965211}
   - component: {fileID: 2123769385768256749}
   - component: {fileID: 6077847377184466263}
   - component: {fileID: 1357144844745094939}
+  - component: {fileID: 236754202792128452}
   m_Layer: 0
   m_Name: Popeye 1
   m_TagString: Player
@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7d94f51a2832847875eb5bc2196acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color1: {r: 0.6320754, g: 0.3190192, b: 0.3190192, a: 1}
-  color2: {r: 0.2837457, g: 0.2765664, b: 0.5188679, a: 1}
+  color1: {r: 0.83137256, g: 0.23921569, b: 0.23921569, a: 1}
+  color2: {r: 0.244304, g: 0.345314, b: 0.8490566, a: 1}
   newColor: {r: 0, g: 0, b: 0, a: 0}
   tc: 0
   HealthBehaviour: {fileID: 2123769385768256749}
@@ -588,60 +588,6 @@ MonoBehaviour:
   movementRight: {fileID: -5519764149467524552, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   jump: {fileID: -7997543224792861045, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   direction: {x: 0, y: 0}
---- !u!60 &6201982321570976601
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2515316530674978318}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 16
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.06817297, y: -0.0070584007}
-      - {x: -0.16325906, y: -0.0022082347}
-      - {x: -0.37644687, y: -0.12341754}
-      - {x: -0.35415196, y: -0.49965066}
-      - {x: 0.37743646, y: -0.50585806}
-      - {x: 0.3741724, y: -0.21728702}
-      - {x: 0.11739938, y: -0.02494555}
-  m_UseDelaunayMesh: 0
 --- !u!114 &1021281220813662177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,10 +722,48 @@ PolygonCollider2D:
       - {x: -0.16325906, y: -0.0022082347}
       - {x: -0.37644687, y: -0.12341754}
       - {x: -0.35361242, y: -0.5000103}
-      - {x: 0.37743646, y: -0.50585806}
+      - {x: 0.34188986, y: -0.50557375}
+      - {x: 0.35362798, y: -0.5026836}
       - {x: 0.3741724, y: -0.21728702}
       - {x: 0.11739938, y: -0.02494555}
   m_UseDelaunayMesh: 0
+--- !u!70 &236754202792128452
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 16
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.007073224, y: -0.25372073}
+  m_Size: {x: 0.7917263, y: 0.51237553}
+  m_Direction: 1
 --- !u!1 &2585627836600339923
 GameObject:
   m_ObjectHideFlags: 0
