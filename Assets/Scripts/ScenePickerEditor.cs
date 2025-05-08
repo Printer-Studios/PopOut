@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(GoalHandler), true)]
+[CustomEditor(typeof(SceneHandler), true)]
 public class ScenePickerEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        var picker = target as GoalHandler;
+        var picker = target as SceneHandler;
         var oldScene = AssetDatabase.LoadAssetAtPath<SceneAsset>(picker.scenePath);
 
         serializedObject.Update();

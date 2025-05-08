@@ -13,6 +13,7 @@ public class HealthBehaviour : MonoBehaviour
     public TMP_Text healthText;
     public float alpha;
     const float maxAlpha = 1;
+    public GameObject gameOverPanel;
 
 
     public void Start()
@@ -48,17 +49,22 @@ public class HealthBehaviour : MonoBehaviour
     {
         if (!isInvincible)
         {
+            Debug.Log("as sido jiteao");
+            currentHealth--;
+            StartCoroutine(IFrames());
             if (currentHealth <= 0)
             {
                 //GameOver
                 Debug.Log("Game Over");
+                Time.timeScale = 0;
+                PanelOpener();
             }
-            else
-            {
-                Debug.Log("as sido jiteao");
-                currentHealth--;
-                StartCoroutine(IFrames());
-            }
+            //else  
+            //{
+            //    Debug.Log("as sido jiteao");
+            //    currentHealth--;
+            //    StartCoroutine(IFrames());
+            //}
         }
     }
 
@@ -80,5 +86,11 @@ public class HealthBehaviour : MonoBehaviour
     public void ResetColor()
     {
         gameObject.GetComponent<SpriteRenderer>().color = new Color(gameObject.GetComponent<SpriteRenderer>().color.r, gameObject.GetComponent<SpriteRenderer>().color.g, gameObject.GetComponent<SpriteRenderer>().color.b, maxAlpha);
+    }
+
+    private void PanelOpener()
+    {
+        Debug.Log("panel");
+        gameOverPanel.SetActive(true);
     }
 }
