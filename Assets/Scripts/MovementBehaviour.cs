@@ -116,7 +116,7 @@ public class MovementBehaviour : MonoBehaviour
             EnemyShotHandler shotHandler = col.gameObject.GetComponent<EnemyShotHandler>();
             for (int i = 0; i < hitHandler.hitTypes.Length; i++)
             {
-                if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<BoxCollider2D>().IsTouching(hitHandler.weakspot))
+                if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<Collider2D>().IsTouching(hitHandler.weakspot))
                 //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
                 {
                     Debug.Log("Jump Kill");
@@ -138,8 +138,9 @@ public class MovementBehaviour : MonoBehaviour
         if (col.gameObject.GetComponent<JellyFishMovement>() != null)
         {
             JellyFishMovement jellyfishMov = col.gameObject.GetComponent<JellyFishMovement>();
-            if (GetComponent<BoxCollider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
+            if (GetComponent<Collider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
             {
+                Debug.Log("contact with jelly");
                 //if the jump button isn't pressed, it jumps the max jump height.
                 if (!jump.action.IsPressed())
                 {
