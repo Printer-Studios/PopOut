@@ -56,15 +56,9 @@ public class HealthBehaviour : MonoBehaviour
             {
                 //GameOver
                 Debug.Log("Game Over");
-                Time.timeScale = 0;
+                Time.timeScale = 0;//pause game
                 PanelOpener();
             }
-            //else  
-            //{
-            //    Debug.Log("as sido jiteao");
-            //    currentHealth--;
-            //    StartCoroutine(IFrames());
-            //}
         }
     }
 
