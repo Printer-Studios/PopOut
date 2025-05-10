@@ -16,9 +16,8 @@ public class WaterInteraction : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D water)
     {
-        if (speed > maxSpeed/2f) 
-            speed = maxSpeed / 2f;
-            Debug.Log("contact with water"+speed);
+        speed = maxSpeed / 2f;
+        Debug.Log("contact with water"+speed);
     }
     public void OnTriggerExit2D(Collider2D water)
     {
