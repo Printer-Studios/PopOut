@@ -14,6 +14,7 @@ public class HealthBehaviour : MonoBehaviour
     public float alpha;
     const float maxAlpha = 1;
     public GameObject gameOverPanel;
+    const float flickerSpeed = 10;
 
 
     public void Start()
@@ -28,7 +29,7 @@ public class HealthBehaviour : MonoBehaviour
         if (isInvincible)
         {
             Flicker();
-            alpha = Mathf.Abs(Mathf.Sin(Time.time * 10f));
+            alpha = Mathf.Abs(Mathf.Sin(Time.time * flickerSpeed));
         }
         else
         {
