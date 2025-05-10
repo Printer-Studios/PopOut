@@ -223,5 +223,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7257055438899674028}
-  underWaterFloatability: 0.9
+  underWaterFloatability: 0.45
   parentObject: {fileID: 52205933659995571}

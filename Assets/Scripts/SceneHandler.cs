@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoalHandler : MonoBehaviour
+public class SceneHandler : MonoBehaviour
 {
     public string sceneToChange;
     [SerializeField]
@@ -18,11 +18,12 @@ public class GoalHandler : MonoBehaviour
 
     public void ChangeScene()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(scenePath);
     }
 
-    public void probaDebug()
+    public void EndGame()
     {
-        Debug.Log("botton clicked");
+        Application.Quit();
     }
 }
