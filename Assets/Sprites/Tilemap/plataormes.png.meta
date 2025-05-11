@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: c9a00b13c4f7577488095791b29c4d1e
+guid: a33eee484d00edf46a442ba9c2c21e30
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -408327487947842520
-    second: fondo_0
+      213: 811090838155877913
+    second: plataormes_0
+  - first:
+      213: -7609062244176698985
+    second: plataormes_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,15 +112,28 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fondo_0
+      name: plataormes_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -128,80 +144,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82c57d82054555af0800000000000000
-      internalID: -408327487947842520
+      spriteID: 91edad8e1d2914b00800000000000000
+      internalID: 811090838155877913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondo_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9d4510bd428e27498dfe4ddc988e17b
-      internalID: -470795237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondo_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f8939abccba30b40b751025b77a96b8
-      internalID: 1312467950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondo_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c022b71b6f9d1fa46922a9e7a15f42ed
-      internalID: -1040789378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: fondo_4
+      name: plataormes_1
       rect:
         serializedVersion: 2
         x: 32
@@ -214,16 +164,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6e310adbeb344ee4092326c9bdc3f702
-      internalID: 2089738651
+      spriteID: 791e206143e276690800000000000000
+      internalID: -7609062244176698985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondo_5
+      name: plataormes_2
       rect:
         serializedVersion: 2
         x: 64
@@ -238,17 +188,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 436aa788ad8255b4f917986ea2afb218
-      internalID: -368334833
+      spriteID: 38445842be93a5f4eb9630173a729ab9
+      internalID: 1878803161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: fondo_6
+      name: plataormes_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
         width: 32
         height: 32
@@ -260,8 +210,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4400d6651eb574647985bc1ad7666016
-      internalID: 2013594291
+      spriteID: 91806afacc334e945b78ab0601a21836
+      internalID: -682214832
       vertices: []
       indices: 
       edges: []
@@ -270,7 +220,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aa61fd49324ef474585881c53f924aca
+    spriteID: ee4ee9869ac526548b1cbc2cf6437838
     internalID: 0
     vertices: []
     indices: 
@@ -280,13 +230,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fondo_0: -408327487947842520
-      fondo_1: -470795237
-      fondo_2: 1312467950
-      fondo_3: -1040789378
-      fondo_4: 2089738651
-      fondo_5: -368334833
-      fondo_6: 2013594291
+      plataormes_0: 811090838155877913
+      plataormes_1: -7609062244176698985
+      plataormes_2: 1878803161
+      plataormes_3: -682214832
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
