@@ -9,6 +9,8 @@ TagManager:
   - Bounceable
   - Enemy
   - Water
+  - Ice
+  - Steam
   layers:
   - Default
   - TransparentFX
