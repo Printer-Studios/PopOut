@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3784399568294011991}
   - component: {fileID: 1975921104796669497}
   - component: {fileID: 198985498715710643}
-  m_Layer: 4
+  m_Layer: 7
   m_Name: SteamParticle
   m_TagString: Steam
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 8979996244315077702, guid: ab1db5572a3e1924ba5901748ca8c95b, type: 3}
+  m_Sprite: {fileID: 8428145624662878654, guid: d00d1fdd4c7959646adf8f4daae5437c, type: 3}
   m_Color: {r: 0.6650944, g: 0.6650944, b: 0.6650944, a: 1}
   m_FlipX: 0
   m_FlipY: 0
