@@ -11,6 +11,8 @@ public class OysterBehaviour : MonoBehaviour
     public Collider2D killTrigger;
     public GameObject topCollider;
 
+    public float closingCooldown, openingCooldown;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -51,7 +53,7 @@ public class OysterBehaviour : MonoBehaviour
             timeOfShake = Time.time;
         }
 
-        if (Time.time - timeOfClosing > 1.2)
+        if (Time.time - timeOfClosing > closingCooldown)
         {
             state = State.Closed;
             transform.position = originalPosition;
@@ -75,7 +77,7 @@ public class OysterBehaviour : MonoBehaviour
             timeOfOpening = Time.time;
         }
 
-        if (Time.time - timeOfOpening > 5)
+        if (Time.time - timeOfOpening > openingCooldown)
         {
             state = State.Open;
             timeOfOpening = 0;

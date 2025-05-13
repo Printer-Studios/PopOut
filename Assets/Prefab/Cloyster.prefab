@@ -112,6 +112,8 @@ MonoBehaviour:
   originalPosition: {x: 0, y: 0, z: 0}
   killTrigger: {fileID: 3572398910341078575}
   topCollider: {fileID: 8387223787430615040}
+  closingCooldown: 1
+  openingCooldown: 5
 --- !u!58 &3572398910341078575
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,8 +148,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.014362037, y: -0.041490555}
-  m_Radius: 0.20158792
+  m_Offset: {x: 0.004042715, y: -0.10190758}
+  m_Radius: 0.28156194
 --- !u!61 &5969371703335100179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0031915307, y: -0.33351934}
+  m_Offset: {x: 0.0066312253, y: -0.33351934}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -192,7 +194,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7702068, y: 0.21577382}
+  m_Size: {x: 0.8218029, y: 0.21577382}
   m_EdgeRadius: 0
 --- !u!50 &5268651904508101588
 Rigidbody2D:
@@ -208,7 +210,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1000
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
