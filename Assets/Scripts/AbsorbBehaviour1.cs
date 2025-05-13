@@ -41,7 +41,6 @@ public class AbsorbBehaviour1 : MonoBehaviour
             currentAmmo++;
             Destroy(col.gameObject);
             timeOfPressing = 0f;
-            Debug.Log("chupa chupa");
         }
     }
 }

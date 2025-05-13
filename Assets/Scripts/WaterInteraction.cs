@@ -17,12 +17,10 @@ public class WaterInteraction : MonoBehaviour
     public void OnTriggerStay2D(Collider2D water)
     {
         speed = maxSpeed / 2f;
-        Debug.Log("contact with water"+speed);
     }
     public void OnTriggerExit2D(Collider2D water)
     {
         speed = maxSpeed;
-        Debug.Log("stopped contact with water");
     }
  }
     
