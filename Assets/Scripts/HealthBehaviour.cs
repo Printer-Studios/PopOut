@@ -46,12 +46,12 @@ public class HealthBehaviour : MonoBehaviour
         }
     }
 
-    public void GetHit()
+    public void GetHit(int numberOfHits = 1)
     {
         if (!isInvincible)
         {
             Debug.Log("as sido jiteao");
-            currentHealth--;
+            currentHealth -= numberOfHits;
             StartCoroutine(IFrames());
             if (currentHealth <= 0)
             {
