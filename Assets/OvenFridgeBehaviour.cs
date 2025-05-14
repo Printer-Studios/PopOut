@@ -28,11 +28,11 @@ public class OvenFridgeBehaviour : MonoBehaviour
     {
         if (SpawnRight)
         {
-            Instantiate(waterPF, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            Instantiate(waterPF, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
         }
         else
         {
-            Instantiate(waterPF, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
+            Instantiate(waterPF, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
         }
     }
     void SpawnSteam()
