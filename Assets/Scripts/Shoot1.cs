@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -14,6 +15,9 @@ public class Shoot1 : MonoBehaviour
     [SerializeField] public InputActionReference shoot;
     public Slider sliderShot;
     public float sliderSpeed;
+    public float shotDelay;
+    float timePressed;
+    const float minShootForce = 100;
 
     // Update is called once per frame
     void Start()
@@ -23,21 +27,42 @@ public class Shoot1 : MonoBehaviour
     void Update()
     {
         ShootFunction();
-        Debug.Log(state.currentState);
     }
     void ShootFunction()
     {
-        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame())
+        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame() && state.currentState != StatePopeyeHandler.States.big)
         {
-            if (absorb.currentAmmo > 0 && state.currentState != StatePopeyeHandler.States.big)
+            if (absorb.currentAmmo > 0)
             {
                 GameObject newWater = Instantiate(waterParticle, new Vector2(waterPosition.position.x, waterPosition.position.y), Quaternion.identity);
                 newWater.GetComponent<Rigidbody2D>().AddForce(shootForce * movement.direction);
                 absorb.currentAmmo--;
             }
-            else
+        }
+        else if(state.currentState == StatePopeyeHandler.States.big)
+        {
+            if (shoot.action.WasPerformedThisFrame())
             {
-
+                timePressed = Time.time;
+            }
+            if (shoot.action.IsInProgress() && (Time.time - timePressed > shotDelay))
+            {
+                ChargeBar();
+            }
+            if (shoot.action.WasReleasedThisFrame())
+            {
+                GameObject newWater = Instantiate(waterParticle, new Vector2(waterPosition.position.x, waterPosition.position.y), Quaternion.identity);
+                if (sliderShot.value > 0)
+                {
+                    newWater.GetComponent<Rigidbody2D>().AddForce(minShootForce * sliderShot.value * movement.direction);
+                }
+                absorb.currentAmmo--;
+                sliderShot.value = 0f;
+            }
+            if (Time.time - timePressed > 3.5)
+            {
+                sliderShot.gameObject.SetActive(false);
+                sliderShot.value = 0f;
             }
         }
     }
