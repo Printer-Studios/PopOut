@@ -5,6 +5,8 @@ public class PipesHandler : MonoBehaviour
 {
     public PipesHandler otherEndPipe;
     public GameObject pos;
+    private int amountAway = 1;
+    public float divideAmountForce;
     public enum Directions { Nothing, North, South, West, East }
     public Directions directionToSpawn;
 
@@ -23,34 +25,33 @@ public class PipesHandler : MonoBehaviour
     void SpawnObject(GameObject toSpawn, Transform pos, Directions exitDirection)
     {
         GameObject obj = Instantiate(toSpawn, AdjustPosition(toSpawn, pos, exitDirection), Quaternion.identity);
-        obj.GetComponent<Rigidbody2D>().AddForce(SetVelocity(toSpawn, exitDirection));
+        obj.GetComponent<Rigidbody2D>().AddForce(SetVelocity(toSpawn, exitDirection), ForceMode2D.Impulse);
+        Debug.Log(SetVelocity(toSpawn, exitDirection));
         Destroy(toSpawn);
     }
 
-    Vector2 AdjustPosition(GameObject obj, Transform pos, Directions exitDirection)
+    Vector2 AdjustPosition(GameObject toSpawn, Transform pos, Directions exitDirection)
     {
-        Vector2 whereToSpawn;
-        whereToSpawn = obj.transform.position;
-        //pos = otherEndPipe.pos.transform;
+        pos = otherEndPipe.pos.transform;
         switch (exitDirection)
         {
             case Directions.North:
-                whereToSpawn = new Vector2(whereToSpawn.x, whereToSpawn.y + 1);
+                toSpawn.transform.position = new Vector2(pos.position.x, pos.position.y + amountAway);
                 break;
             case Directions.South:
-                whereToSpawn = new Vector2(whereToSpawn.x, whereToSpawn.y -1);
+                toSpawn.transform.position = new Vector2(pos.position.x, pos.position.y - amountAway);
                 break;
             case Directions.West:
-                whereToSpawn = new Vector2(whereToSpawn.x - 1, whereToSpawn.y);
+                toSpawn.transform.position = new Vector2(pos.position.x - amountAway, pos.position.y);
                 break;
             case Directions.East:
-                whereToSpawn = new Vector2(whereToSpawn.x + 1, whereToSpawn.y);
+                toSpawn.transform.position = new Vector2(pos.position.x + amountAway, pos.position.y);
                 break;
             default:
                 break;
         }
 
-        return whereToSpawn;
+        return toSpawn.transform.position;
     }
 
     Vector2 GetVelocity(GameObject obj)
@@ -61,25 +62,58 @@ public class PipesHandler : MonoBehaviour
     Vector2 SetVelocity(GameObject obj, Directions exitDirection)
     {
         Vector2 currentVelocity = GetVelocity(obj);
+        currentVelocity.x = Mathf.Abs(currentVelocity.x);
+        currentVelocity.y = Mathf.Abs(currentVelocity.y);
 
         switch (exitDirection)
         {
             case Directions.North:
-                if (currentVelocity.y < 0) { currentVelocity.y *= -1; }
+                currentVelocity.y += currentVelocity.x;
+                currentVelocity.x *= 0;
                 break;
             case Directions.South:
-                if (currentVelocity.y > 0) { currentVelocity.y *= -1; }
+                currentVelocity.y += currentVelocity.x;
+                currentVelocity.x *= 0;
+                currentVelocity.y *= -1;
                 break;
             case Directions.West:
-                if (currentVelocity.x > 0) { currentVelocity.x *= -1; }
+                currentVelocity.x += currentVelocity.y;
+                currentVelocity.y *= 0;
+                currentVelocity.x *= -1;
                 break;
             case Directions.East:
-                if (currentVelocity.x < 0) { currentVelocity.x *= -1; }
+                currentVelocity.x += currentVelocity.y;
+                currentVelocity.y *= 0;
                 break;
             default:
                 break;
         }
 
-        return currentVelocity.normalized;
+        return currentVelocity / divideAmountForce;
     }
 }
+
+
+//switch (exitDirection)
+//{
+//    case Directions.North:
+//        if (currentVelocity.y < 0) { currentVelocity.y *= -1; }
+//        currentVelocity.y += Mathf.Abs(currentVelocity.x);
+//        if (currentVelocity.y < 1) { currentVelocity.y = 1; }
+//        break;
+//    case Directions.South:
+//        if (currentVelocity.y > 0) { currentVelocity.y *= -1; }
+//        currentVelocity.x *= 0;
+//        if (currentVelocity.y > -1) { currentVelocity.y = -1; }
+//        break;
+//    case Directions.West:
+//        if (currentVelocity.x > 0) { currentVelocity.x *= -1; }
+//        currentVelocity.y *= 0;
+//        break;
+//    case Directions.East:
+//        if (currentVelocity.x < 0) { currentVelocity.x *= -1; }
+//        currentVelocity.y *= 0;
+//        break;
+//    default:
+//        break;
+//}
