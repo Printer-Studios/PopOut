@@ -58,7 +58,8 @@ public class HealthBehaviour : MonoBehaviour
                 //GameOver
                 Debug.Log("Game Over");
                 Time.timeScale = 0;//pause game
-                PanelOpener();
+                //PanelOpener();
+                gameObject.SetActive(false);
             }
         }
     }
@@ -86,6 +87,6 @@ public class HealthBehaviour : MonoBehaviour
     private void PanelOpener()
     {
         Debug.Log("panel");
-        gameOverPanel.SetActive(true);
+        gameOverPanel.SetActive(true);  
     }
 }

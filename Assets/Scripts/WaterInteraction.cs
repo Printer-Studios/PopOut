@@ -7,7 +7,7 @@ public class WaterInteraction : MonoBehaviour
     public float maxSpeed = 4f;
     public static float speed;
 
-    void Start()
+    private void Update()
     {
         speed = maxSpeed;
     }
@@ -18,10 +18,7 @@ public class WaterInteraction : MonoBehaviour
     {
         speed = maxSpeed / 2f;
     }
-    public void OnTriggerExit2D(Collider2D water)
-    {
-        speed = maxSpeed;
-    }
+
  }
     
 
