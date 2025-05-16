@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7253540931995727409}
   - component: {fileID: 2715695310243115907}
   - component: {fileID: 4852095108053620340}
+  - component: {fileID: 4594739767994797212}
   m_Layer: 0
   m_Name: goal
   m_TagString: Untagged
@@ -140,3 +141,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: 
+--- !u!114 &4594739767994797212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650307622620716514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcc296838a6d2a45934b9938de2e3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalCurrent: 2
+  openedSprite: {fileID: 5879908866151352552, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
+  closedSprite: {fileID: -205270267638800340, guid: 1bfd03f47b01e6b42976db53752893e7, type: 3}
+  sceneHandler: {fileID: 4852095108053620340}
