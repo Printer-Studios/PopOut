@@ -62,6 +62,17 @@ public class MovementBehaviour : MonoBehaviour
             timePressed = Time.time;
         }
 
+        if(!isGrounded && isLockedIn)
+        {
+            isLockedIn = false;
+        }
+
+        if(!isLockedIn && sliderJump.IsActive())
+        {
+            sliderJump.gameObject.SetActive(false);
+            sliderJump.value = 0;
+        }
+
         if (jump.action.IsInProgress() && isGrounded && (Time.time - timePressed > jumpDelay))
         {
             ChargeBar();
