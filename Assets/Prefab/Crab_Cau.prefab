@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3553511503300520473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3299183338205243809}
+  m_Layer: 0
+  m_Name: GroundDetection
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3299183338205243809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553511503300520473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.212, y: -0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4074096939626509021}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6207419061432711228
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,13 +120,13 @@ GameObject:
   - component: {fileID: 4074096939626509021}
   - component: {fileID: 5470596619486623129}
   - component: {fileID: 9033385269611801126}
+  - component: {fileID: 4026073927681755336}
+  - component: {fileID: 7379334575276576796}
   - component: {fileID: 4424226117680442278}
   - component: {fileID: 6754770604284061911}
   - component: {fileID: 747876403475374929}
-  - component: {fileID: 4026073927681755336}
-  - component: {fileID: 7379334575276576796}
   m_Layer: 0
-  m_Name: Crab
+  m_Name: Crab_Cau
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,6 +146,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 950004935964259307}
+  - {fileID: 3299183338205243809}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5470596619486623129
@@ -186,8 +218,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   speed: 1
-  startRight: 0
+  startRight: 1
+  groundDetection: {fileID: 3299183338205243809}
   shotHandler: {fileID: 4026073927681755336}
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  falls: 1
+--- !u!114 &4026073927681755336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec19ea4e2bbbb2438ec91ab95e75ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotType: 0
+  isWeak: 0
+--- !u!114 &7379334575276576796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1058aeee773437642abb3b200a3e0b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitTypes: 0100000002000000
+  shotHandler: {fileID: 4026073927681755336}
+  boxPF: {fileID: 52205933659995571, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+  weakspot: {fileID: 5236529004801826003}
 --- !u!50 &4424226117680442278
 Rigidbody2D:
   serializedVersion: 5
@@ -212,7 +279,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &6754770604284061911
@@ -307,33 +374,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.53125}
   m_EdgeRadius: 0
---- !u!114 &4026073927681755336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7884835278159264796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec19ea4e2bbbb2438ec91ab95e75ffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotType: 0
-  isWeak: 0
---- !u!114 &7379334575276576796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7884835278159264796}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1058aeee773437642abb3b200a3e0b14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitTypes: 0100000002000000
-  shotHandler: {fileID: 4026073927681755336}
-  boxPF: {fileID: 52205933659995571, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
-  weakspot: {fileID: 5236529004801826003}

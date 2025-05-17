@@ -623,6 +623,7 @@ MonoBehaviour:
   waterParticle: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
   shootForce: 500
   waterPosition: {fileID: 1842240880957442436}
+  state: {fileID: 0}
   shoot: {fileID: -1744577311352361193, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
 --- !u!114 &2123769385768256749
 MonoBehaviour:
@@ -689,7 +690,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 144
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
