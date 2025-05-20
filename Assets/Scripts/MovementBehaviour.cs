@@ -17,8 +17,10 @@ public class MovementBehaviour : MonoBehaviour
     public float jumpDelay;
     [SerializeField] public InputActionReference movementLeft;
     [SerializeField] public InputActionReference movementRight;
+    [SerializeField] public InputActionReference movementUp;
     [SerializeField] public InputActionReference jump;
     [SerializeField] public Vector2 direction;
+    public WaterInteraction waterInt;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -56,6 +58,11 @@ public class MovementBehaviour : MonoBehaviour
             sliderJump.direction = Slider.Direction.RightToLeft;
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
+        if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
+        {
+            rb.AddForce(Vector2.up * 2);
+        }
+
 
         if (jump.action.WasPerformedThisFrame())
         {
@@ -156,6 +163,4 @@ public class MovementBehaviour : MonoBehaviour
             }
         }
     }
-
-
 }

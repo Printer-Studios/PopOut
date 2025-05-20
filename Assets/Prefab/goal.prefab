@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4466981929657232735}
   - component: {fileID: 7253540931995727409}
-  - component: {fileID: 2715695310243115907}
-  - component: {fileID: 4852095108053620340}
   - component: {fileID: 4594739767994797212}
+  - component: {fileID: 4852095108053620340}
+  - component: {fileID: 2715695310243115907}
   m_Layer: 0
   m_Name: goal
   m_TagString: Untagged
@@ -90,6 +90,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4594739767994797212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650307622620716514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcc296838a6d2a45934b9938de2e3e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalCurrent: 1
+  openedSprite: {fileID: 5879908866151352552, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
+  closedSprite: {fileID: -205270267638800340, guid: 1bfd03f47b01e6b42976db53752893e7, type: 3}
+  sceneHandler: {fileID: 4852095108053620340}
+--- !u!114 &4852095108053620340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650307622620716514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24aaa203b0ccd71409e6e90b33b2a3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToChange: 
+  scenePath: 
 --- !u!70 &2715695310243115907
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,33 +157,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.22920042, y: -0.038555264}
   m_Size: {x: 0.54159915, y: 1.9256241}
   m_Direction: 0
---- !u!114 &4852095108053620340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650307622620716514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24aaa203b0ccd71409e6e90b33b2a3dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToChange: 
-  scenePath: 
---- !u!114 &4594739767994797212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650307622620716514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbcc296838a6d2a45934b9938de2e3e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goalCurrent: 2
-  openedSprite: {fileID: 5879908866151352552, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
-  closedSprite: {fileID: -205270267638800340, guid: 1bfd03f47b01e6b42976db53752893e7, type: 3}
-  sceneHandler: {fileID: 4852095108053620340}

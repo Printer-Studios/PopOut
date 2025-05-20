@@ -6,6 +6,7 @@ public class WaterInteraction : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public float maxSpeed = 4f;
     public static float speed;
+    public bool isTouchingWater;
 
     void Start()
     {
@@ -17,10 +18,12 @@ public class WaterInteraction : MonoBehaviour
     public void OnTriggerStay2D(Collider2D water)
     {
         speed = maxSpeed / 2f;
+        isTouchingWater = true;
     }
     public void OnTriggerExit2D(Collider2D water)
     {
         speed = maxSpeed;
+        isTouchingWater = false;
     }
  }
     
