@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
 
 public class pauseHandler : MonoBehaviour
 {

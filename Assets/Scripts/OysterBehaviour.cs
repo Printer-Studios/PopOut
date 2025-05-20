@@ -10,6 +10,7 @@ public class OysterBehaviour : MonoBehaviour
     public Vector3 originalPosition;
     public Collider2D killTrigger;
     public GameObject topCollider;
+    public Sprite openSprite, closedSprite;
 
     public float closingCooldown, openingCooldown;
 
@@ -25,7 +26,8 @@ public class OysterBehaviour : MonoBehaviour
         switch (state)
         {
             case State.Open:
-                GetComponent<SpriteRenderer>().color = Color.green;
+                GetComponent<SpriteRenderer>().sprite = openSprite;
+                GetComponent<SpriteRenderer>().sortingOrder = -1;
                 topCollider.SetActive(false);
                 break;
 
@@ -35,7 +37,8 @@ public class OysterBehaviour : MonoBehaviour
                 break;
 
             case State.Closed:
-                GetComponent<SpriteRenderer>().color = Color.red;
+                GetComponent<SpriteRenderer>().sprite = closedSprite;
+                GetComponent<SpriteRenderer>().sortingOrder = 10;
                 Open();
                 topCollider.SetActive(true);
                 break;
@@ -57,8 +60,7 @@ public class OysterBehaviour : MonoBehaviour
         {
             state = State.Closed;
             transform.position = originalPosition;
-            timeOfClosing = 0;
-            Debug.LogWarning("Cerrao");
+            timeOfClosing = 0;  
         }
 
         if (Time.time - timeOfShake > 0.02)
@@ -72,11 +74,22 @@ public class OysterBehaviour : MonoBehaviour
 
     void Open()
     {
+
         if (timeOfOpening == 0)
         {
             timeOfOpening = Time.time;
         }
+        if (timeOfShake == 0)
+        {
+            timeOfShake = Time.time;
+        }
 
+        if (Time.time - timeOfShake > 0.02 && Time.time - timeOfOpening > openingCooldown / 2)
+        {
+            transform.position = new Vector3(transform.position.x + shakeWidth, transform.position.y, transform.position.z);
+            shakeWidth *= -1;
+            timeOfShake = 0;
+        }
         if (Time.time - timeOfOpening > openingCooldown)
         {
             state = State.Open;
@@ -93,7 +106,7 @@ public class OysterBehaviour : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && state == State.Closed && collision.IsTouching(killTrigger))
         {
-            collision.gameObject.GetComponent<HealthBehaviour>().GetHit(3);
+            collision.gameObject.GetComponent<HealthBehaviour>().GetHit(collision.gameObject.GetComponent<HealthBehaviour>().currentHealth);
         }
     }
 }
