@@ -8,7 +8,7 @@ public class MovementBehaviour : MonoBehaviour
 {
     public static float speed;
     private float timePressed;
-    public float jumpForce;
+    public float jumpForce, swimmingSpeed;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
@@ -59,9 +59,11 @@ public class MovementBehaviour : MonoBehaviour
             sliderJump.direction = Slider.Direction.RightToLeft;
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
+
         if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
         {
-            rb.AddForce(Vector2.up * 2);
+            Debug.Log("Nadando ondandan");
+            rb.AddForce(Vector2.up * swimmingSpeed);
         }
 
 
