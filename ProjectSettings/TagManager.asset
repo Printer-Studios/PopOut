@@ -12,6 +12,7 @@ TagManager:
   - Ice
   - Steam
   - Bullet
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - UI
   - Floor
   - Steam
-  - 
+  - Platform
   - 
   - 
   - 

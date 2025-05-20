@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -13,10 +14,16 @@ public class MovementBehaviour : MonoBehaviour
     public Rigidbody2D rb;
     public Transform p1, p2;
     public LayerMask floorLayer;
+    public LayerMask platformLayer;
     public Slider sliderJump;
     public float jumpDelay;
+    public Collider2D playerCollider;
+    public Collider2D platformCollider;
+    public PlatformEffector2D platformEffector;
+    public float platformTimer;
     [SerializeField] public InputActionReference movementLeft;
     [SerializeField] public InputActionReference movementRight;
+    [SerializeField] public InputActionReference movementDown;
     [SerializeField] public InputActionReference jump;
     [SerializeField] public Vector2 direction;
     
@@ -38,7 +45,7 @@ public class MovementBehaviour : MonoBehaviour
 
     private void Movement()
     {
-        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
+        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer) || Physics2D.OverlapArea(p1.position, p2.position, platformLayer);
 
         if (movementRight.action.IsInProgress() && !isLockedIn)
         {
@@ -89,6 +96,16 @@ public class MovementBehaviour : MonoBehaviour
             sliderJump.value = 0f;
             Jump(true);
         }
+
+        if(jump.action.IsInProgress() && movementDown.action.IsInProgress())
+        {
+            platformEffector.useColliderMask = true;
+        }
+        else
+        {
+            platformEffector.useColliderMask = false;
+        }
+
     }
 
     private void ChargeBar()
@@ -167,6 +184,4 @@ public class MovementBehaviour : MonoBehaviour
             }
         }
     }
-
-
 }

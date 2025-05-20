@@ -353,6 +353,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Popeye 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: platformCollider
+      value: 
+      objectReference: {fileID: 637901098}
+    - target: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: platformEffector
+      value: 
+      objectReference: {fileID: 637901101}
     - target: {fileID: 5045310443380525563, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3363,9 +3371,9 @@ GameObject:
   - component: {fileID: 637901099}
   - component: {fileID: 637901098}
   - component: {fileID: 637901101}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: TilemapPlataform
-  m_TagString: Floor
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3672,7 +3680,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 502
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -8843,11 +8851,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.47
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.54
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9358,11 +9366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.48
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.36
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalPosition.z
