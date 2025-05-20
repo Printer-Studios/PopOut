@@ -102,7 +102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2515316530674978318, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-  spiderVision: 2.5
+  toPlayer: {x: 0, y: 0, z: 0}
+  spiderVision: 3
 --- !u!114 &3891400043840211769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567e6d69732e2ad429d490226f120a5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 3450491299046871871, guid: 475775484ca993e4786c2a6be01e49d3, type: 3}
+  SpiderBehaviour: {fileID: 644167155161403926}
+  cooldown: 2
