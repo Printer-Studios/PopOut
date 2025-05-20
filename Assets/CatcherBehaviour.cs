@@ -37,14 +37,14 @@ public class CatcherBehaviour : MonoBehaviour
             //if (!(hitWallLeft.collider.IsTouchingLayers(floorLayer) || hitWallRight.collider.IsTouchingLayers(floorLayer)))
             {
                 //transform.Translate(Vector2.right * speed * Time.deltaTime);
-                rb.AddForce(Vector2.right * Mathf.Sign(player.transform.position.x - gameObject.transform.position.x) * speed * Time.deltaTime, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.right * Mathf.Sign(player.transform.position.x - gameObject.transform.position.x) * speed, ForceMode2D.Impulse);
                 Debug.Log("Moving right");
             }
 
             if ((hitWallLeft.collider.IsTouchingLayers(floorLayer) || hitWallRight.collider.IsTouchingLayers(floorLayer)) && isGrounded)
             {
                 //rb.linearVelocityX = 0;
-                rb.AddForce(Vector2.up * jumpForce * Time.deltaTime, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 Debug.Log("Moving Jump");
             }
         }
