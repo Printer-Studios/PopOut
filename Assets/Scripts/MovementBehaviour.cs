@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
 
 public class MovementBehaviour : MonoBehaviour
 {
@@ -94,17 +95,14 @@ public class MovementBehaviour : MonoBehaviour
         
         //rb.AddRelativeForceY(jumpForce * jumpValue, ForceMode2D.Impulse);
 
-       Debug.Log("Jump value: " +  jumpValue);
-       Debug.Log("Jump force: " + jumpForce);
-       Debug.Log("Total force: " + jumpForce * jumpValue);
-
-
         rb.AddForce(jumpForce * jumpValue * Vector2.up, ForceMode2D.Impulse);
         sliderJump.gameObject.SetActive(false);
         sliderJump.value = 0f;
         isLockedIn = false;
         timePressed = Time.time;
     }
+
+    
 
     private void OnTriggerEnter2D(Collider2D col)
     {
@@ -129,7 +127,7 @@ public class MovementBehaviour : MonoBehaviour
                     }
                     rb.linearVelocityY = 0f;
                     Jump();
-                    hitHandler.Die();
+                    hitHandler.StartCoroutine("TimerDeath");
                 }
             }
         }

@@ -254,6 +254,8 @@ MonoBehaviour:
   hitTypes: 0100000002000000
   shotHandler: {fileID: 4026073927681755336}
   boxPF: {fileID: 52205933659995571, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+  deathTimer: 0.5
+  deathSprite: {fileID: -8957098679847988355, guid: 2ffc6027e2d13a84795e74b9e4c4ee87, type: 3}
   weakspot: {fileID: 5236529004801826003}
 --- !u!50 &4424226117680442278
 Rigidbody2D:
