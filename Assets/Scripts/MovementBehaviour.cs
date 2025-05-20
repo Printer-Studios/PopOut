@@ -60,7 +60,7 @@ public class MovementBehaviour : MonoBehaviour
         }
         if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
         {
-            rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * 2);
         }
 
 
