@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -12,17 +13,24 @@ public class Shoot1 : MonoBehaviour
     public Transform waterPosition;
     public StatePopeyeHandler state;
     [SerializeField] public InputActionReference shoot;
-    //public Slider sliderShot;
-    //public float sliderSpeed;
+    public Slider sliderShot;
+    public float sliderSpeed;
+    public float shotDelay;
+    float timePressed;
+    const float minShootForce = 100;
 
     // Update is called once per frame
     void Start()
     {
-        //sliderShot.gameObject.SetActive(false);
+        sliderShot.gameObject.SetActive(false);
     }
     void Update()
     {
-        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame())
+        ShootFunction();
+    }
+    void ShootFunction()
+    {
+        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame() && state.currentState != StatePopeyeHandler.States.big)
         {
             if (absorb.currentAmmo > 0)
             {
@@ -31,29 +39,36 @@ public class Shoot1 : MonoBehaviour
                 absorb.currentAmmo--;
             }
         }
-        //ShootFunction();
-        Debug.Log(state.currentState);
+        else if(state.currentState == StatePopeyeHandler.States.big)
+        {
+            if (shoot.action.WasPerformedThisFrame())
+            {
+                timePressed = Time.time;
+            }
+            if (shoot.action.IsInProgress() && (Time.time - timePressed > shotDelay))
+            {
+                ChargeBar();
+            }
+            if (shoot.action.WasReleasedThisFrame())
+            {
+                GameObject newWater = Instantiate(waterParticle, new Vector2(waterPosition.position.x, waterPosition.position.y), Quaternion.identity);
+                if (sliderShot.value > 0)
+                {
+                    newWater.GetComponent<Rigidbody2D>().AddForce(minShootForce * sliderShot.value * movement.direction);
+                }
+                absorb.currentAmmo--;
+                sliderShot.value = 0f;
+            }
+            if (Time.time - timePressed > 3.5)
+            {
+                sliderShot.gameObject.SetActive(false);
+                sliderShot.value = 0f;
+            }
+        }
     }
-    void ShootFunction()
+    private void ChargeBar()
     {
-        //if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame())
-        //{
-        //    if (absorb.currentAmmo > 0 && state.currentState != StatePopeyeHandler.States.big)
-        //    {
-        //        GameObject newWater = Instantiate(waterParticle, new Vector2(waterPosition.position.x, waterPosition.position.y), Quaternion.identity);
-        //        newWater.GetComponent<Rigidbody2D>().AddForce(shootForce * movement.direction);
-        //        absorb.currentAmmo--;
-        //    }
-        //    else
-        //    {
-
-        //    }
-        //}
-
+        sliderShot.gameObject.SetActive(true);
+        sliderShot.value += (sliderSpeed * Time.deltaTime);
     }
-    //private void ChargeBar()
-    //{
-    //    sliderShot.gameObject.SetActive(true);
-    //    sliderShot.value += (sliderSpeed * Time.deltaTime);
-    //}
 }
