@@ -659,8 +659,10 @@ MonoBehaviour:
   jumpDelay: 0.2
   movementLeft: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   movementRight: {fileID: -5519764149467524552, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+  movementUp: {fileID: 3710642738721547176, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   jump: {fileID: -7997543224792861045, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   direction: {x: 0, y: 0}
+  waterInt: {fileID: 3097861465446821128}
 --- !u!114 &1021281220813662177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,6 +1614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 4
+  isTouchingWater: 0
 --- !u!1 &7424890899423873215
 GameObject:
   m_ObjectHideFlags: 0

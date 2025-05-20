@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2085195566660820419}
   - component: {fileID: 3865466417959936741}
   - component: {fileID: 75032392058790903}
-  - component: {fileID: 3553445182593556564}
-  - component: {fileID: 6349079851849246419}
   - component: {fileID: 4003432989507720946}
   - component: {fileID: 9089451172582256711}
+  - component: {fileID: 1291560594134339190}
+  - component: {fileID: 7817576945354638958}
   m_Layer: 6
   m_Name: Urchin
   m_TagString: Enemy
@@ -119,8 +119,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!60 &3553445182593556564
-PolygonCollider2D:
+--- !u!114 &4003432989507720946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408644127235799298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1058aeee773437642abb3b200a3e0b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitTypes: 
+  shotHandler: {fileID: 0}
+  boxPF: {fileID: 0}
+  weakspot: {fileID: 0}
+--- !u!114 &9089451172582256711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408644127235799298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ec19ea4e2bbbb2438ec91ab95e75ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotType: 2
+  isWeak: 0
+--- !u!61 &1291560594134339190
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,7 +183,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.017565727, y: -0.20152034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,19 +193,10 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.20309496, y: 0.016652852}
-      - {x: -0.3605857, y: -0.07412906}
-      - {x: -0.3605857, y: -0.42896074}
-      - {x: -0.3008709, y: -0.5}
-      - {x: 0.32073498, y: -0.5}
-      - {x: 0.35198545, y: -0.41466773}
-      - {x: 0.35198545, y: -0.08823958}
-      - {x: 0.22438192, y: 0.018076062}
-  m_UseDelaunayMesh: 0
---- !u!60 &6349079851849246419
-PolygonCollider2D:
+  m_Size: {x: 0.72214127, y: 0.59695935}
+  m_EdgeRadius: 0
+--- !u!61 &7817576945354638958
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -208,7 +229,7 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.017565727, y: -0.20152034}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -218,44 +239,5 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.20309496, y: 0.016652852}
-      - {x: -0.3605857, y: -0.07412906}
-      - {x: -0.3605857, y: -0.42896074}
-      - {x: -0.3008709, y: -0.5}
-      - {x: 0.32073498, y: -0.5}
-      - {x: 0.35198545, y: -0.41466773}
-      - {x: 0.35198545, y: -0.08823958}
-      - {x: 0.22438192, y: 0.018076062}
-  m_UseDelaunayMesh: 0
---- !u!114 &4003432989507720946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408644127235799298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1058aeee773437642abb3b200a3e0b14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitTypes: 
-  shotHandler: {fileID: 0}
-  boxPF: {fileID: 0}
-  weakspot: {fileID: 0}
---- !u!114 &9089451172582256711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408644127235799298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec19ea4e2bbbb2438ec91ab95e75ffc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shotType: 2
-  isWeak: 0
+  m_Size: {x: 0.72214127, y: 0.59695935}
+  m_EdgeRadius: 0
