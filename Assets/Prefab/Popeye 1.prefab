@@ -701,8 +701,8 @@ MonoBehaviour:
   state: {fileID: 3007187783753939155}
   shoot: {fileID: -1744577311352361193, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
   sliderShot: {fileID: 1947450676517163940}
-  sliderSpeed: 0
-  shotDelay: 0
+  sliderSpeed: 20
+  shotDelay: 0.5
 --- !u!114 &2123769385768256749
 MonoBehaviour:
   m_ObjectHideFlags: 0
