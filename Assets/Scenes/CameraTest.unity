@@ -3127,7 +3127,12 @@ MonoBehaviour:
   health: 0
   speed: 1
   startRight: 0
+  groundDetection: {fileID: 0}
   shotHandler: {fileID: 0}
+  floorLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  falls: 0
 --- !u!61 &556186146
 BoxCollider2D:
   m_ObjectHideFlags: 0

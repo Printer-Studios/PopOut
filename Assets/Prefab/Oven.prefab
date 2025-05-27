@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2666660446173326509}
   - component: {fileID: 354748603626612163}
-  - component: {fileID: 2134001683324679075}
   - component: {fileID: 1883285675367119917}
   - component: {fileID: 919984442024095977}
   - component: {fileID: 4982960270321118378}
@@ -31,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.73, y: -2.17, z: 0}
-  m_LocalScale: {x: 1.0175, y: 0.7381, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.7688679, g: 0.5367568, b: 0.5367568, a: 1}
+  m_Sprite: {fileID: 7246343662711378448, guid: 6b7cf45edf297b7409118e59f692a23a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,22 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2134001683324679075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7944244173541929318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52332ed0990a964492308fc3fe8056b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  icePF: {fileID: 1407652714711063761, guid: 22741ae5c71a71d4db257a3778f0ef69, type: 3}
-  steamPF: {fileID: 7163974460346661082, guid: bf6159cc15ec1924abaab649d53ad635, type: 3}
-  waterPF: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
-  type: 1
 --- !u!50 &1883285675367119917
 Rigidbody2D:
   serializedVersion: 5
