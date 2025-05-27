@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9172979074513193634}
   - component: {fileID: 8166806707776671764}
   - component: {fileID: 6133180301824389184}
+  - component: {fileID: 7936193402736363680}
   m_Layer: 0
   m_Name: buttonCheck (1)
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8430227474356105421, guid: dd0904a1e4770224ebee4515d7fd8aec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -291,6 +292,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5306156, y: 0.021687448}
   m_EdgeRadius: 0
+--- !u!114 &7936193402736363680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991821671893119530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bc72b33566514ca2edb45f95ccf64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonIsPressed: 0
 --- !u!1 &3829296109546917516
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +469,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2306148863814198951, guid: dd0904a1e4770224ebee4515d7fd8aec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -482,7 +496,7 @@ Rigidbody2D:
   m_Mass: 1.5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: -1
+  m_GravityScale: -1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -540,7 +554,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.04733185, y: 0.32871962}
+    - - {x: -0.04733185, y: 0.31748915}
       - {x: -0.04651606, y: 0.20501173}
       - {x: -0.20385805, y: 0.20394337}
       - {x: -0.20282379, y: 0.1720432}
@@ -556,7 +570,7 @@ PolygonCollider2D:
       - {x: 0.2018091, y: 0.17357469}
       - {x: 0.20028761, y: 0.20243073}
       - {x: 0.04818267, y: 0.20189643}
-      - {x: 0.047848422, y: 0.32848072}
+      - {x: 0.047848422, y: 0.31644797}
   m_UseDelaunayMesh: 0
 --- !u!1 &8746125794998169504
 GameObject:
@@ -567,6 +581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8968410346113473989}
+  - component: {fileID: 3712190451251332704}
   m_Layer: 6
   m_Name: upideDownButton
   m_TagString: Untagged
@@ -592,3 +607,17 @@ Transform:
   - {fileID: 3058015563410602087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!114 &3712190451251332704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8746125794998169504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc35b8c164c7d724fbac972d20f46954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 7936193402736363680}
+  door: {fileID: 0}
