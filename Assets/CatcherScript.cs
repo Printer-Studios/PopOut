@@ -35,9 +35,11 @@ public class CatcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(MovementForce * direction);
-        rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);
-
+        if((target.GetComponent<Transform>().position - transform.position).magnitude < detectionRadius)
+        {
+            rb.AddForce(MovementForce * direction);
+            rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);
+        }
     }
 
     public void OnCollisionStay2D(Collision2D collision)
