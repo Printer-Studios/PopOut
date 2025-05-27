@@ -7,8 +7,8 @@ using System.Collections;
 public class MovementBehaviour : MonoBehaviour
 {
     public static float speed;
-    private float timePressed;
-    public float jumpForce;
+    private float timePressed, minSpeed;
+    public float jumpForce, movement, maxSpeed;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
@@ -29,42 +29,24 @@ public class MovementBehaviour : MonoBehaviour
     {
         sliderJump.gameObject.SetActive(false);
         isLockedIn = false;
+        minSpeed = -maxSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
         speed = WaterInteraction.speed;
-        Movement();
+        JumpControl();
         //isGrounded = true; //Debug ONLY
     }
 
-    private void Movement()
+    private void FixedUpdate()
     {
-        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
+        Movement();
+    }
 
-        if (movementRight.action.IsInProgress() && !isLockedIn)
-        {
-            direction = Vector2.right;
-            transform.Translate(direction * speed * Time.deltaTime);
-            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-            sliderJump.direction = Slider.Direction.LeftToRight;
-            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
-        }
-        if (movementLeft.action.IsInProgress() && !isLockedIn)
-        {
-            direction = Vector2.left;
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
-            sliderJump.direction = Slider.Direction.RightToLeft;
-            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        }
-        if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
-        {
-            rb.AddForce(Vector2.up * 2);
-        }
-
-
+    private void JumpControl()
+    {
         if (jump.action.WasPerformedThisFrame())
         {
             timePressed = Time.time;
@@ -86,6 +68,36 @@ public class MovementBehaviour : MonoBehaviour
             sliderJump.value = 0f;
             Jump(true);
         }
+    }
+
+    private void Movement()
+    {
+        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
+
+        if (movementRight.action.IsInProgress() && !isLockedIn)
+        {
+            direction = Vector2.right;
+            /*transform.Translate(direction * speed * Time.deltaTime);*/
+            rb.AddForce(direction * movement);
+            gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            sliderJump.direction = Slider.Direction.LeftToRight;
+            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        if (movementLeft.action.IsInProgress() && !isLockedIn)
+        {
+            direction = Vector2.left;
+            //transform.Translate(Vector2.right * speed * Time.deltaTime);
+            rb.AddForce(direction * movement);
+            gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            sliderJump.direction = Slider.Direction.RightToLeft;
+            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
+        {
+            rb.AddForce(Vector2.up * 2);
+        }
+
+        rb.linearVelocityX = Math.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);
     }
 
     private void ChargeBar()

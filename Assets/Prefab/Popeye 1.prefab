@@ -409,7 +409,7 @@ MonoBehaviour:
   m_MinValue: 1.7
   m_MaxValue: 3
   m_WholeNumbers: 0
-  m_Value: 1.85
+  m_Value: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -603,8 +603,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0
+  m_LinearDamping: 1
+  m_AngularDamping: 1
   m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -648,7 +648,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 3.3
-  sliderSpeed: 2.5
+  movement: 20
+  maxSpeed: 3.25
+  sliderSpeed: 5
   rb: {fileID: 2418523593327850754}
   p1: {fileID: 7476748492273524294}
   p2: {fileID: 2501407511516706398}

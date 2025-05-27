@@ -9,9 +9,7 @@ public class CameraBehaviour : MonoBehaviour
     public float lerpVariable;
     private float desiredZ = -10;
     private float desiredY = 1;
-    private float offset;
-    private float timeOfPressing;
-
+    public float offset;
     public Transform xLimit1, xLimit2;
     void Start()
     {
@@ -23,11 +21,11 @@ public class CameraBehaviour : MonoBehaviour
     {
         if(movementBehaviour.direction == Vector2.right && movementBehaviour.movementRight.action.IsInProgress())
         {
-            offset = 4f;       
+            offset = Mathf.Abs(offset);       
         }
         if (movementBehaviour.direction == Vector2.left && movementBehaviour.movementLeft.action.IsInProgress())
         {
-            offset = -4f;
+            offset = -Mathf.Abs(offset);
         }
 
         transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset, player.transform.position.y, player.transform.position.z), lerpVariable * Time.deltaTime);

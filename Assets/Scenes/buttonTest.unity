@@ -4701,7 +4701,7 @@ TilemapCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 696c5a9b79e038a4caa4ffa60a0167fd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -5639,14 +5639,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1360073541052965211, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: shotDelay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1360073541052965211, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: sliderSpeed
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: healthText
       value: 
@@ -5690,6 +5682,14 @@ PrefabInstance:
     - target: {fileID: 7167185145372136549, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442829543231529555, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: m_MaxValue
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442829543231529555, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+      propertyPath: m_MinValue
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_LocalPosition.x
