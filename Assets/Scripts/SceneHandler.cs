@@ -8,9 +8,16 @@ public class SceneHandler : MonoBehaviour
     [SerializeField]
     public string scenePath;
 
+    GoalHandler goalHandler;
+
+    public void Start()
+    {
+        goalHandler = GetComponent<GoalHandler>();
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player")
+        if (col.tag == "Player" && goalHandler.goalCurrent == GoalHandler.Goal.Opened)
         {
             ChangeScene();
         }

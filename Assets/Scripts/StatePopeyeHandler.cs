@@ -40,8 +40,8 @@ public class StatePopeyeHandler : MonoBehaviour
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = smallSprite;
             col.direction = CapsuleDirection2D.Horizontal;
-            col.size = new Vector2(0.7917263f, 0.5123755f);
-            col.offset = new Vector2(0.007073224f, -0.2537207f);
+            col.size = new Vector2(0.7917263f, 0.4667791f);
+            col.offset = new Vector2(0.007073224f, -0.276519f);
         }
         else if(absorb.currentAmmo < 20) {
             currentState = States.medium;
