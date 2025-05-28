@@ -10,7 +10,7 @@ public class MovementBehaviour : MonoBehaviour
     private float timePressed, minSpeed;
     public float jumpForce, acceleration, maxSpeed, swimmingSpeed;
     public float sliderSpeed;
-    bool isGrounded, isLockedIn;
+    internal bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
     public Transform p1, p2;
     public LayerMask floorLayer, platformLayer;
@@ -54,6 +54,7 @@ public class MovementBehaviour : MonoBehaviour
         {
             isLockedIn = false;
         }
+
         //isGrounded = true; //Debug ONLY
     }
 
@@ -92,7 +93,6 @@ public class MovementBehaviour : MonoBehaviour
             rb.AddForce(direction * acceleration);
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             sliderJump.direction = Slider.Direction.LeftToRight;
-            //gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
@@ -100,11 +100,15 @@ public class MovementBehaviour : MonoBehaviour
             rb.AddForce(direction * acceleration);
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             sliderJump.direction = Slider.Direction.RightToLeft;
-            //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
         {
             rb.AddForce(Vector2.up * swimmingSpeed);
+        }
+
+        if(movementDown.action.IsInProgress() && jump.action.IsInProgress())
+        {
+            isGrounded = false;
         }
 
         rb.linearVelocityX = Math.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);

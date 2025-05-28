@@ -60,7 +60,7 @@ public class OysterBehaviour : MonoBehaviour
         {
             state = State.Closed;
             transform.position = originalPosition;
-            timeOfClosing = 0;  
+            timeOfClosing = 0;
         }
 
         if (Time.time - timeOfShake > 0.02)
