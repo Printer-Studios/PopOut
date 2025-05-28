@@ -13,12 +13,13 @@ public class MovementBehaviour : MonoBehaviour
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
     public Transform p1, p2;
-    public LayerMask floorLayer;
+    public LayerMask floorLayer, platformLayer;
     public Slider sliderJump;
     public float jumpDelay;
     [SerializeField] public InputActionReference movementLeft;
     [SerializeField] public InputActionReference movementRight;
     [SerializeField] public InputActionReference movementUp;
+    [SerializeField] public InputActionReference movementDown;
     [SerializeField] public InputActionReference jump;
     [SerializeField] public Vector2 direction;
     public WaterInteraction waterInt;
@@ -72,7 +73,7 @@ public class MovementBehaviour : MonoBehaviour
 
     private void Movement()
     {
-        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer);
+        isGrounded = Physics2D.OverlapArea(p1.position, p2.position, floorLayer) || Physics2D.OverlapArea(p1.position, p2.position, platformLayer);
 
         if (movementRight.action.IsInProgress() && !isLockedIn)
         {
