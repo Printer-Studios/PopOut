@@ -1871,6 +1871,8 @@ GameObject:
   - component: {fileID: 637901100}
   - component: {fileID: 637901099}
   - component: {fileID: 637901098}
+  - component: {fileID: 637901101}
+  - component: {fileID: 637901102}
   m_Layer: 6
   m_Name: TilemapPlataform
   m_TagString: Floor
@@ -1924,7 +1926,7 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -2129,6 +2131,38 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!251 &637901101
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637901096}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!114 &637901102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637901096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da8f1b54d0705dc4cbf6727f1fb83eb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1208018703}
 --- !u!4 &639635999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914397429978858279, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
@@ -6373,6 +6407,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198519f8c4fec724bb4e4bc0069650c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1208018703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3174990254724817543, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+  m_PrefabInstance: {fileID: 75571865}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237542090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7baefcaea2b85d5418e5565bbbf02707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1213768402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6809,6 +6854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 237542090}
   lerpVariable: 1.5
+  offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
 --- !u!1001 &1319868439

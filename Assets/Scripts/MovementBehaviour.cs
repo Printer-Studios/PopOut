@@ -8,7 +8,7 @@ public class MovementBehaviour : MonoBehaviour
 {
     public static float speed;
     private float timePressed, minSpeed;
-    public float jumpForce, movement, maxSpeed;
+    public float jumpForce, acceleration, maxSpeed, swimmingSpeed;
     public float sliderSpeed;
     bool isGrounded, isLockedIn;
     public Rigidbody2D rb;
@@ -33,17 +33,28 @@ public class MovementBehaviour : MonoBehaviour
         minSpeed = -maxSpeed;
     }
 
+    private void FixedUpdate()
+    {
+        Movement();
+    }
+
     // Update is called once per frame
     void Update()
     {
         speed = WaterInteraction.speed;
         JumpControl();
-        //isGrounded = true; //Debug ONLY
-    }
 
-    private void FixedUpdate()
-    {
-        Movement();
+        if(!isGrounded && sliderJump.gameObject.activeSelf)
+        {
+            sliderJump.gameObject.SetActive(false);
+            sliderJump.value = 0;
+        }
+
+        if(isGrounded && !sliderJump.gameObject.activeSelf)
+        {
+            isLockedIn = false;
+        }
+        //isGrounded = true; //Debug ONLY
     }
 
     private void JumpControl()
@@ -78,8 +89,7 @@ public class MovementBehaviour : MonoBehaviour
         if (movementRight.action.IsInProgress() && !isLockedIn)
         {
             direction = Vector2.right;
-            /*transform.Translate(direction * speed * Time.deltaTime);*/
-            rb.AddForce(direction * movement);
+            rb.AddForce(direction * acceleration);
             gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             sliderJump.direction = Slider.Direction.LeftToRight;
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
@@ -87,15 +97,14 @@ public class MovementBehaviour : MonoBehaviour
         if (movementLeft.action.IsInProgress() && !isLockedIn)
         {
             direction = Vector2.left;
-            //transform.Translate(Vector2.right * speed * Time.deltaTime);
-            rb.AddForce(direction * movement);
+            rb.AddForce(direction * acceleration);
             gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
             sliderJump.direction = Slider.Direction.RightToLeft;
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (movementUp.action.IsInProgress() && waterInt.isTouchingWater)
         {
-            rb.AddForce(Vector2.up * 2);
+            rb.AddForce(Vector2.up * swimmingSpeed);
         }
 
         rb.linearVelocityX = Math.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);
@@ -128,7 +137,6 @@ public class MovementBehaviour : MonoBehaviour
     {
         if (col.gameObject.GetComponent<EnemyHitHandler>() != null)
         {
-            Debug.Log("no null");
             EnemyHitHandler hitHandler = col.gameObject.GetComponent<EnemyHitHandler>();
             EnemyShotHandler shotHandler = col.gameObject.GetComponent<EnemyShotHandler>();
             for (int i = 0; i < hitHandler.hitTypes.Length; i++)
@@ -157,18 +165,16 @@ public class MovementBehaviour : MonoBehaviour
             JellyFishMovement jellyfishMov = col.gameObject.GetComponent<JellyFishMovement>();
             if (GetComponent<Collider2D>().IsTouching(jellyfishMov.jumpingCollision)) //if player is touching the jellyfish too --> Can jump
             {
-                Debug.Log("contact with jelly");
                 //if the jump button isn't pressed, it jumps the max jump height.
                 if (!jump.action.IsPressed())
                 {
                     sliderJump.value = sliderJump.maxValue * 0.75f;
                 }
-                //if the jump button is pressed, it jumps the max jump height * 1.5.
+                //if the jump button is pressed, it jumps the max jump height * 1.25.
                 else
                 {
                     sliderJump.value = sliderJump.maxValue * 1.25f;
                 }
-                Debug.Log("Jump");
                 rb.linearVelocityY = 0f;
                 Jump();
             }

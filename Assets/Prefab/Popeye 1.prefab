@@ -648,8 +648,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 3.3
-  movement: 20
+  acceleration: 20
   maxSpeed: 3.25
+  swimmingSpeed: 20
   sliderSpeed: 5
   rb: {fileID: 2418523593327850754}
   p1: {fileID: 7476748492273524294}
