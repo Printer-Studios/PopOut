@@ -21,13 +21,21 @@ MonoBehaviour:
   <NorthData>k__BackingField:
     <SplineIndex>k__BackingField: -1
     <Reverse>k__BackingField: 0
+    nextPoiSO: {fileID: 0}
   <EastData>k__BackingField:
     <SplineIndex>k__BackingField: 6
     <Reverse>k__BackingField: 0
+    nextPoiSO: {fileID: 11400000, guid: 2fb370b77a1391842b987ecb838990c0, type: 2}
   <WestData>k__BackingField:
     <SplineIndex>k__BackingField: 4
     <Reverse>k__BackingField: 1
+    nextPoiSO: {fileID: 11400000, guid: 9b96d68bef1a68148ab626df56a17482, type: 2}
   <SouthData>k__BackingField:
     <SplineIndex>k__BackingField: -1
     <Reverse>k__BackingField: 0
-  scenePath: LevelPau1
+    nextPoiSO: {fileID: 0}
+  scenePath: Level2
+  isUnlocked: 0
+  poiToUnlock:
+  - {fileID: 11400000, guid: 2fb370b77a1391842b987ecb838990c0, type: 2}
+  - {fileID: 11400000, guid: 2fa969beb20c3a943953e38e42aef442, type: 2}

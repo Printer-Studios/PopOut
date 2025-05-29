@@ -23,4 +23,6 @@ public class PoiSO : ScriptableObject
     [SerializeField]
 
     public string scenePath;
+    public bool isUnlocked;
+    public List<PoiSO> poiToUnlock;
 }
