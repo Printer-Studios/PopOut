@@ -1549,11 +1549,11 @@ MonoBehaviour:
   animationspeed: 5
   poiController: {fileID: 11400000, guid: 8d474d0ca99cbca4abc52c880f4d3d44, type: 2}
   currentPOI: {fileID: 11400000, guid: 872258e73d6721b4c81ff4d4caa27098, type: 2}
-  movementLeft: {fileID: -691343136614075015, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
-  movementRight: {fileID: -5519764149467524552, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
-  movementUp: {fileID: 3710642738721547176, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
-  movementDown: {fileID: -9126710039131453322, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
-  jump: {fileID: -7997543224792861045, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+  movementLeft: {fileID: -691343136614075015, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
+  movementRight: {fileID: -5519764149467524552, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
+  movementUp: {fileID: 3710642738721547176, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
+  movementDown: {fileID: 4016917196483406400, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
+  jump: {fileID: -7997543224792861045, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
   playerIsMoving: 0
   inputEnabled: 1
 --- !u!61 &743360996

@@ -90,11 +90,11 @@ public class PlayerMapController : MonoBehaviour
 
         OnPlayerArrivedNewPOI?.Invoke(currentPOI.PoiName);
 
-        //movementUp.action.Enable();
-        //movementDown.action.Enable();
-        //movementLeft.action.Enable();
-        //movementRight.action.Enable();
-        //jump.action.Enable();
+        movementUp.action.Enable();
+        movementDown.action.Enable();
+        movementLeft.action.Enable();
+        movementRight.action.Enable();
+        jump.action.Enable();
 
 
         PlayerPrefs.Save();
@@ -103,30 +103,30 @@ public class PlayerMapController : MonoBehaviour
 
         private void Update()
     {
-        if (inputEnabled)
+        if (inputEnabled) //Comments are for not using Input Action
         {
-            //if (movementUp.action.IsInProgress() && currentPOI.NorthData.nextPoiSO.isUnlocked && currentPOI.NorthData.nextPoiSO != null)
-            if (Input.GetKey(KeyCode.W) && currentPOI.NorthData.nextPoiSO.isUnlocked && currentPOI.NorthData.nextPoiSO != null)
+            if (movementUp.action.IsInProgress() && currentPOI.NorthData.nextPoiSO.isUnlocked && currentPOI.NorthData.nextPoiSO != null)
+                //if (Input.GetKey(KeyCode.W) && currentPOI.NorthData.nextPoiSO.isUnlocked && currentPOI.NorthData.nextPoiSO != null)
             {
                 MovePlayerOnMap(currentPOI.NorthData.SplineIndex, currentPOI.NorthData.Reverse);
             }
-            //else if (movementDown.action.IsInProgress() && currentPOI.SouthData.nextPoiSO.isUnlocked && currentPOI.SouthData.nextPoiSO != null)
-            else if (Input.GetKey(KeyCode.S) && currentPOI.SouthData.nextPoiSO.isUnlocked && currentPOI.SouthData.nextPoiSO != null)
+            else if (movementDown.action.IsInProgress() && currentPOI.SouthData.nextPoiSO.isUnlocked && currentPOI.SouthData.nextPoiSO != null)
+            //else if (Input.GetKey(KeyCode.S) && currentPOI.SouthData.nextPoiSO.isUnlocked && currentPOI.SouthData.nextPoiSO != null)
             {
                 MovePlayerOnMap(currentPOI.SouthData.SplineIndex, currentPOI.SouthData.Reverse);
             }
-            //else if (movementLeft.action.IsInProgress() && currentPOI.WestData.nextPoiSO.isUnlocked && currentPOI.WestData.nextPoiSO != null)
-            else if (Input.GetKey(KeyCode.A) && currentPOI.WestData.nextPoiSO.isUnlocked && currentPOI.WestData.nextPoiSO != null)
+            else if (movementLeft.action.IsInProgress() && currentPOI.WestData.nextPoiSO.isUnlocked && currentPOI.WestData.nextPoiSO != null)
+            //else if (Input.GetKey(KeyCode.A) && currentPOI.WestData.nextPoiSO.isUnlocked && currentPOI.WestData.nextPoiSO != null)
             {
                 MovePlayerOnMap(currentPOI.WestData.SplineIndex, currentPOI.WestData.Reverse);
             }
-            //else if (movementRight.action.IsInProgress() && currentPOI.EastData.nextPoiSO.isUnlocked && currentPOI.EastData.nextPoiSO != null)
-            else if (Input.GetKey(KeyCode.D) && currentPOI.EastData.nextPoiSO.isUnlocked && currentPOI.EastData.nextPoiSO != null)
+            else if (movementRight.action.IsInProgress() && currentPOI.EastData.nextPoiSO.isUnlocked && currentPOI.EastData.nextPoiSO != null)
+            //else if (Input.GetKey(KeyCode.D) && currentPOI.EastData.nextPoiSO.isUnlocked && currentPOI.EastData.nextPoiSO != null)
             {
                 MovePlayerOnMap(currentPOI.EastData.SplineIndex, currentPOI.EastData.Reverse);
             }
-            //else if (jump.action.IsInProgress() && currentPOI.isUnlocked)
-            else if (Input.GetKey(KeyCode.Space) && currentPOI.isUnlocked)
+            else if (jump.action.IsInProgress() && currentPOI.isUnlocked)
+            //else if (Input.GetKey(KeyCode.Space) && currentPOI.isUnlocked)
             {
                 if (playerIsMoving == false && currentPOI.LevelToTransition >= 0)
                 {
