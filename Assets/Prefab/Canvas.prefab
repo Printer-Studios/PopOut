@@ -2582,7 +2582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 7398456641838652521}
-  pause: {fileID: -767514905134114653, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+  pause: {fileID: -767514905134114653, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
 --- !u!1 &8162532109599990308
 GameObject:
   m_ObjectHideFlags: 0

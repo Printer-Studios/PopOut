@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d6acc10adbc5da64d8f59fbde059d76a
+guid: d0d1c13c97b556e4e9fcb2e85351cb04
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 839107566168891634
-    second: toamata_0
+      213: -1602576368684418090
+    second: toamata2_0
+  - first:
+      213: 5082347505192747278
+    second: toamata2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,6 +100,19 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -113,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toamata_0
+      name: toamata2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +144,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f0e6d9b2eb15ab00800000000000000
-      internalID: 839107566168891634
+      spriteID: 6db3123984182c9e0800000000000000
+      internalID: -1602576368684418090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toamata2_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e014b18e020288640800000000000000
+      internalID: 5082347505192747278
       vertices: []
       indices: 
       edges: []
@@ -138,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: adfa2515ed9543d43aedbfe36738d222
+    spriteID: 021733136ba893e4d933930c3954b887
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toamata_0: 839107566168891634
+      toamata2_0: -1602576368684418090
+      toamata2_1: 5082347505192747278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 4424226117680442278}
   - component: {fileID: 6754770604284061911}
   - component: {fileID: 747876403475374929}
+  - component: {fileID: -2751844435739436051}
   m_Layer: 0
   m_Name: Crab_NoCau
   m_TagString: Enemy
@@ -322,7 +323,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.17}
+    oldSize: {x: 1, y: 0.53125}
     newSize: {x: 0.32, y: 0.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -368,7 +369,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.17}
+    oldSize: {x: 1, y: 0.53125}
     newSize: {x: 0.32, y: 0.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,3 +377,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.53125}
   m_EdgeRadius: 0
+--- !u!114 &-2751844435739436051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97bab6bad98dee47a800cf08181bdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

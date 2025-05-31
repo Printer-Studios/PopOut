@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 9033385269611801126}
   - component: {fileID: 4026073927681755336}
   - component: {fileID: 7379334575276576796}
+  - component: {fileID: 6772672050547857710}
   - component: {fileID: 4424226117680442278}
   - component: {fileID: 6754770604284061911}
   - component: {fileID: 747876403475374929}
@@ -257,6 +258,19 @@ MonoBehaviour:
   deathTimer: 0.5
   deathSprite: {fileID: -8957098679847988355, guid: 2ffc6027e2d13a84795e74b9e4c4ee87, type: 3}
   weakspot: {fileID: 5236529004801826003}
+--- !u!114 &6772672050547857710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884835278159264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97bab6bad98dee47a800cf08181bdce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!50 &4424226117680442278
 Rigidbody2D:
   serializedVersion: 5

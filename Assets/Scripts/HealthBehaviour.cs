@@ -19,7 +19,7 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Start()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     public void Update()
@@ -42,7 +42,14 @@ public class HealthBehaviour : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
         {
-            GetHit();
+            if (col.gameObject.GetComponent<EnemyHitPlayer>() != null)
+            {
+                GetHit(col.gameObject.GetComponent<EnemyHitPlayer>().damage);
+            }
+            else
+            {
+                GetHit();
+            }
         }
     }
 
