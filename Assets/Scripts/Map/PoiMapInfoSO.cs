@@ -10,6 +10,8 @@ public class PoiMapInfoSO : ScriptableObject
 {
     [SerializeField] private string mapName;
     [SerializeField] public List<PoiSO> poisList = new();
+    [SerializeField] public List<bool> unlockList = new();
+
 
     private ReadOnlyDictionary<float3, PoiSO> poiDicitionary;
 
