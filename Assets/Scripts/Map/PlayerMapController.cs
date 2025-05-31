@@ -34,6 +34,37 @@ public class PlayerMapController : MonoBehaviour
     private void Start()
     {
         currentPOI = poiController.poisList[PlayerPrefs.GetInt("CurrentPoi")];
+<<<<<<< Updated upstream
+=======
+        Debug.Log("current" + poiController.poisList[PlayerPrefs.GetInt("CurrentPoi")].name);
+
+        if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length < 2)
+        {
+            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[20]);
+        }
+
+        for (int i = 0; i < currentPOI.poiToUnlock.Count; i++)
+        {
+            currentPOI.poiToUnlock[i].isUnlocked = true;
+            Debug.Log("Unlocked" + currentPOI.poiToUnlock[i].name + "" + currentPOI.poiToUnlock[i].isUnlocked);
+        }        
+
+        for (int i = 0; i < poiController.unlockList.Count; i++)
+        {
+            if (poiController.poisList[i].isUnlocked)
+            {
+                Debug.Log("PlayerPref array length " + PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length);
+                bool[] unlockedPOIs = PlayerPrefsX.GetBoolArray("UnlockedPOIS");
+                unlockedPOIs[i] = true;
+                PlayerPrefsX.SetBoolArray("UnlockedPOIS", unlockedPOIs);
+            }
+
+            poiController.unlockList[i] = PlayerPrefsX.GetBoolArray("UnlockedPOIS")[i];
+            Debug.Log("PlayerPrefX Unlock POIs " + PlayerPrefsX.GetBoolArray("UnlockedPOIS")[i] + " this is level" + i);
+        }
+
+
+>>>>>>> Stashed changes
 
         transform.position = splineContainer.transform.TransformPoint(currentPOI.PoiKnotPosition);
 
