@@ -41,6 +41,7 @@ public class OysterBehaviour : MonoBehaviour
                 GetComponent<SpriteRenderer>().sortingOrder = 10;
                 Open();
                 topCollider.SetActive(true);
+
                 break;
         }
     }

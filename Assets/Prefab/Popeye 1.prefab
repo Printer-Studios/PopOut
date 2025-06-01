@@ -1622,6 +1622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   isTouchingWater: 0
+  playerMovement: {fileID: 3174990254724817543}
 --- !u!1 &7424890899423873215
 GameObject:
   m_ObjectHideFlags: 0

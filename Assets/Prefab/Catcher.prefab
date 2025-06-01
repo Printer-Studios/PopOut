@@ -174,7 +174,7 @@ MonoBehaviour:
   target: {fileID: 0}
   MovementForce: 5
   maxSpeed: 4
-  detectionRadius: 50
+  detectionRadius: 25
 --- !u!61 &6024905303630887321
 BoxCollider2D:
   m_ObjectHideFlags: 0

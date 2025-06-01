@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1883285675367119917}
   - component: {fileID: 919984442024095977}
   - component: {fileID: 4982960270321118378}
+  - component: {fileID: 6670881371387421798}
   m_Layer: 6
   m_Name: Oven
   m_TagString: Untagged
@@ -209,3 +210,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6670881371387421798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944244173541929318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ceb22313b3a8ad4fb47b085af6e4b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icePF: {fileID: 1407652714711063761, guid: 22741ae5c71a71d4db257a3778f0ef69, type: 3}
+  steamPF: {fileID: 7163974460346661082, guid: bf6159cc15ec1924abaab649d53ad635, type: 3}
+  waterPF: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
+  type: 1

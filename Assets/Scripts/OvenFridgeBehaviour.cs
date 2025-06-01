@@ -6,10 +6,24 @@ public class OvenFridgeBehaviour : MonoBehaviour
     public GameObject icePF;
     public GameObject steamPF;
     public GameObject waterPF;
-    private float timeOfPressing;
+    private float timeOfPressing, spawnModifier;
     public enum Type { Nothing, Oven, Fridge }
+    public enum SpawnPosition { Above, Below }
+    public SpawnPosition spawnPosition = SpawnPosition.Above;
     public Type type;
 
+    public void Start()
+    {
+        switch (spawnPosition)
+        {
+            case SpawnPosition.Above:
+                spawnModifier = 0;
+                break;
+            case SpawnPosition.Below:
+                spawnModifier = -1;
+                break;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D col)
     {
@@ -28,16 +42,16 @@ public class OvenFridgeBehaviour : MonoBehaviour
     {
         if (SpawnRight)
         {
-            Instantiate(waterPF, new Vector2(transform.position.x + 1, transform.position.y), Quaternion.identity);
+            Instantiate(waterPF, new Vector2(transform.position.x + 1, transform.position.y + spawnModifier), Quaternion.identity);
         }
         else
         {
-            Instantiate(waterPF, new Vector2(transform.position.x - 1, transform.position.y), Quaternion.identity);
+            Instantiate(waterPF, new Vector2(transform.position.x - 1, transform.position.y + spawnModifier), Quaternion.identity);
         }
     }
     void SpawnSteam()
     {
-        Instantiate(steamPF, transform.position, Quaternion.identity);
+        Instantiate(steamPF, new Vector2(transform.position.x, transform.position.y + spawnModifier), Quaternion.identity);
     }
 
     void SpawnIce()

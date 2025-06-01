@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb85988df6991bf47bf29132f007cea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2515316530674978318, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
   toPlayer: {x: 0, y: 0, z: 0}
   spiderVision: 3
 --- !u!114 &3891400043840211769

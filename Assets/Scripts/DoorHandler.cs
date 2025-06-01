@@ -1,17 +1,20 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class DoorHandler : MonoBehaviour
 {
     public ButtonHandler button;
     public GameObject door;
+    public bool reverse = false;
     // Update is called once per frame
     void Update()
     {
-        opnenClose();
+        openClose(reverse);
     }
 
-    void opnenClose()
+    void openClose(bool reverse)
     {
-        door.SetActive(!button.buttonIsPressed);
+        if(!reverse) door.SetActive(!button.buttonIsPressed);
+        else door.SetActive(button.buttonIsPressed);
     }
 }

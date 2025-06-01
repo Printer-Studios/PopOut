@@ -42,6 +42,14 @@ public class CatcherScript : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<HealthBehaviour>().GetHit(collision.gameObject.GetComponent<HealthBehaviour>().currentHealth);
+        }
+    }
+
     public void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Floor")) isInFloor = true;
@@ -65,8 +73,8 @@ public class CatcherScript : MonoBehaviour
     private void Jump(bool isPlayer = false)
     {
         float jumpForce;
-        if (isPlayer) jumpForce = 7f;
-        else jumpForce = 4;
+        if (isPlayer) jumpForce = 8f;
+        else jumpForce = 6;
 
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }

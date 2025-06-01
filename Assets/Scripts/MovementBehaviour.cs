@@ -148,7 +148,6 @@ public class MovementBehaviour : MonoBehaviour
                 if (shotHandler.isWeak && hitHandler.hitTypes[i] == EnemyHitHandler.Hit.Jump && GetComponent<Collider2D>().IsTouching(hitHandler.weakspot))
                 //The enemy is upside down, can be killed by jumping, and it's weakspot is touching the player
                 {
-                    Debug.Log("Jump Kill");
                     if (!jump.action.IsPressed())
                     {
                         sliderJump.value = sliderJump.minValue;

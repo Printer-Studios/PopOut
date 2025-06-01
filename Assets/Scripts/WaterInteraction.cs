@@ -7,7 +7,7 @@ public class WaterInteraction : MonoBehaviour
     public float maxSpeed = 4f;
     public static float speed;
     public bool isTouchingWater;
-    private MovementBehaviour playerMovement;
+    public MovementBehaviour playerMovement;
 
     void Start()
     {
