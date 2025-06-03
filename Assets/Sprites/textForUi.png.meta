@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 4eaf412028cb39e4180a47993ec5b878
+guid: 8fb9153e9a39cc24f9c4d767bc07b85a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1842672318938970577
-    second: kerboard_0
+      213: 3708300140011593991
+    second: textForUi_0
+  - first:
+      213: -147590869098493629
+    second: textForUi_1
+  - first:
+      213: 4721181370165265602
+    second: textForUi_2
+  - first:
+      213: -5285609497716203023
+    second: textForUi_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kerboard_0
+      name: textForUi_0
       rect:
         serializedVersion: 2
-        x: 229
-        y: 107
-        width: 240
-        height: 85
+        x: 9459
+        y: 5562
+        width: 1625
+        height: 578
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f268230f9438d66e0800000000000000
-      internalID: -1842672318938970577
+      spriteID: 7012ce57457867330800000000000000
+      internalID: 3708300140011593991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: textForUi_1
+      rect:
+        serializedVersion: 2
+        x: 13001
+        y: 5309
+        width: 1635
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3490b43f2e6a3fdf0800000000000000
+      internalID: -147590869098493629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: textForUi_2
+      rect:
+        serializedVersion: 2
+        x: 11331
+        y: 3271
+        width: 1641
+        height: 850
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c484e83171058140800000000000000
+      internalID: 4721181370165265602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: textForUi_3
+      rect:
+        serializedVersion: 2
+        x: 5933
+        y: 1005
+        width: 3679
+        height: 578
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1e13b8a2eb5a6b0800000000000000
+      internalID: -5285609497716203023
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 18700e7864299a9409c947700d31b380
+    spriteID: 4c736bb7c2af75f489b99cd157d74dc7
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      kerboard_0: -1842672318938970577
+      textForUi_0: 3708300140011593991
+      textForUi_1: -147590869098493629
+      textForUi_2: 4721181370165265602
+      textForUi_3: -5285609497716203023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
