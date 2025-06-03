@@ -24,7 +24,7 @@ public class SpiderBehaviour : MonoBehaviour
                     transform.rotation = Quaternion.Euler(0f, 0f, angle);
                     break;
                 case SpiderAngle.Half:
-                    if (player.transform.position.y <= transform.position.y + 1)
+                    if (player.transform.position.y <= transform.position.y + 0.5)
                     {
                         angle = Vector2.SignedAngle(Vector2.down, toPlayer.normalized);
                         transform.rotation = Quaternion.Euler(0f, 0f, angle);
