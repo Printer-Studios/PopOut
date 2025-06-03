@@ -11,6 +11,7 @@ public class GeneratorBehaviour : MonoBehaviour
     public int sliderMaxAmount;
     private float timeOfPressing;
     public float top;
+    public Sprite deactivatedSprite, activatedSprite;
 
 
     private void Start()
@@ -24,11 +25,15 @@ public class GeneratorBehaviour : MonoBehaviour
     {
         if (genSlider.value == sliderMaxAmount)
         {
+            gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
             if (whatToActivate == Activate.Goal && target.GetComponent<GoalHandler>() != null)
             {
-                ActivateGoal();
+                ActivateGoal();   
             }
-            
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = deactivatedSprite;
         }
     }
 

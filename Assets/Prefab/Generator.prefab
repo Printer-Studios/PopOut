@@ -598,6 +598,8 @@ MonoBehaviour:
   genSlider: {fileID: 1947150419453799968}
   sliderMaxAmount: 5
   top: 0.05
+  deactivatedSprite: {fileID: 1955246616, guid: 09301ec237cc6974a885ca26743b6abd, type: 3}
+  activatedSprite: {fileID: -307221532, guid: 09301ec237cc6974a885ca26743b6abd, type: 3}
 --- !u!61 &297878093843121424
 BoxCollider2D:
   m_ObjectHideFlags: 0
