@@ -105,7 +105,7 @@ public class OysterBehaviour : MonoBehaviour
             state = State.Preclosed;
         }
 
-        if (collision.gameObject.tag == "Player" && state == State.Closed && collision.IsTouching(killTrigger))
+        if (collision.gameObject.tag == "Player" && state == State.Closed && collision.IsTouching(killTrigger) && (Time.time - timeOfOpening <= openingCooldown / 2))
         {
             collision.gameObject.GetComponent<HealthBehaviour>().GetHit(collision.gameObject.GetComponent<HealthBehaviour>().currentHealth);
         }
