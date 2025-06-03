@@ -6833,6 +6833,7 @@ MonoBehaviour:
   offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
+  isCinematic: 0
 --- !u!1001 &1319868439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8196,6 +8197,10 @@ PrefabInstance:
     - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594739767994797212, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: goalCurrent
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: scenePath

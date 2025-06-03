@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcc296838a6d2a45934b9938de2e3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goalCurrent: 2
+  goalCurrent: 1
   openedSprite: {fileID: 5879908866151352552, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
   closedSprite: {fileID: -4596346894691133036, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
   sceneHandler: {fileID: 4852095108053620340}
