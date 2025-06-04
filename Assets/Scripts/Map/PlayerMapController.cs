@@ -61,7 +61,7 @@ public class PlayerMapController : MonoBehaviour
         }
         if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length < 2)
         {
-            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[20]);
+            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[21]);
         }
 
         for (int i = 0; i < currentPOI.poiToUnlock.Count; i++)
