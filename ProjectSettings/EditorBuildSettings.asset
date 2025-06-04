@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelPau3.unity
     guid: db028c32d4755f7489d2189231e4deb0
   - enabled: 1
+    path: Assets/Scenes/LevelPau4.unity
+    guid: c3da1ac720fbea9408e88df8d75b8d88
+  - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 924ca3243e26b364fadc505cd4ecda8e
   m_configObjects:

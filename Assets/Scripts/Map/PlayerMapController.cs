@@ -138,6 +138,10 @@ public class PlayerMapController : MonoBehaviour
                     SceneManager.LoadScene(currentPOI.scenePath);
                 }
             }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GoToMainMenu();
+            }
         }
     }
 
@@ -236,6 +240,12 @@ public class PlayerMapController : MonoBehaviour
         }
         
         return -1;
+    }
+
+    public void GoToMainMenu()
+    {
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("MainMenu");
     }
 }
 

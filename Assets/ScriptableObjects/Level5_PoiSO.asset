@@ -37,4 +37,5 @@ MonoBehaviour:
   scenePath: LevelPau1
   isUnlocked: 0
   poiToUnlock:
+  - {fileID: 11400000}
   - {fileID: 11400000, guid: df870ab703bc5df4dad321f9183859f3, type: 2}

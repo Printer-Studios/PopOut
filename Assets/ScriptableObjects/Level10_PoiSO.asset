@@ -36,4 +36,5 @@ MonoBehaviour:
     nextPoiSO: {fileID: 0}
   scenePath: LevelPau1
   isUnlocked: 0
-  poiToUnlock: []
+  poiToUnlock:
+  - {fileID: 11400000}
