@@ -18,22 +18,22 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: db1b24dd4a2b5314b959ab1189651602
   - enabled: 1
-    path: Assets/Scenes/Level3.unity
+    path: Assets/Scenes/Level4.unity
     guid: ad910c2b5da5f1248b2017885c0ad9d1
   - enabled: 1
-    path: Assets/Scenes/AleixLevel1.unity
+    path: Assets/Scenes/Level10.unity
     guid: 7cca5f2cddddde94fbf950ca5401024e
   - enabled: 1
     path: Assets/Scenes/AleixLevel2.unity
     guid: a5f530200d6cb6740918a0d239c98a1d
   - enabled: 1
-    path: Assets/Scenes/LevelPau1.unity
+    path: Assets/Scenes/Level3.unity
     guid: 5c233b57706fbe9478bcc41886691890
   - enabled: 1
-    path: Assets/Scenes/LevelPau2.unity
+    path: Assets/Scenes/UnusedScenes/LevelPau2.unity
     guid: ce63f8c9267341647be6161665eddeef
   - enabled: 1
-    path: Assets/Scenes/LevelPau3.unity
+    path: Assets/Scenes/LevelOrange1.unity
     guid: db028c32d4755f7489d2189231e4deb0
   - enabled: 1
     path: Assets/Scenes/LevelPau4.unity

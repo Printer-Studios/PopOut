@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab352bc11276554b9cb818a9572522f, type: 3}
   m_Name: Level6_PoiSO
   m_EditorClassIdentifier: 
-  <PoiName>k__BackingField: Level 1 1/2
+  <PoiName>k__BackingField: Level 6
   <PoiKnotPosition>k__BackingField:
     x: 8
     y: 0
