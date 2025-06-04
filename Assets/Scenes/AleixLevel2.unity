@@ -522,11 +522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.54
+      value: 13.47
       objectReference: {fileID: 0}
     - target: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.83
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11731,6 +11731,7 @@ MonoBehaviour:
   offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
+  isCinematic: 0
 --- !u!1001 &1322538643
 PrefabInstance:
   m_ObjectHideFlags: 0
