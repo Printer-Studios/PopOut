@@ -35,7 +35,7 @@ MonoBehaviour:
     <Reverse>k__BackingField: 1
     nextPoiSO: {fileID: 0}
   scenePath: Level1
-  isUnlocked: 1
+  isUnlocked: 0
   poiToUnlock:
   - {fileID: 11400000}
   - {fileID: 11400000, guid: 3afa493f33cac0443ac8c715314d52c0, type: 2}

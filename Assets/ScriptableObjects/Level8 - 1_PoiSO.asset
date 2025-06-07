@@ -35,5 +35,5 @@ MonoBehaviour:
     <Reverse>k__BackingField: 1
     nextPoiSO: {fileID: 0}
   scenePath: LevelOrange2
-  isUnlocked: 1
+  isUnlocked: 0
   poiToUnlock: []

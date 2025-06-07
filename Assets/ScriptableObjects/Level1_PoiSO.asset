@@ -35,7 +35,7 @@ MonoBehaviour:
     <Reverse>k__BackingField: 0
     nextPoiSO: {fileID: 0}
   scenePath: tutorail
-  isUnlocked: 1
+  isUnlocked: 0
   poiToUnlock:
   - {fileID: 11400000}
   - {fileID: 11400000, guid: 429202a1045dc37418e21ee7435646a7, type: 2}
