@@ -5,6 +5,7 @@ public class IceCollisionBehaviour : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private MovementBehaviour _movementBehaviour;
     public float desiredLinearDamping;
+    private 
 
     void Start()
     {
@@ -17,6 +18,10 @@ public class IceCollisionBehaviour : MonoBehaviour
         {
             _movementBehaviour.rb.linearDamping = 0;
             _movementBehaviour.maxSpeed += 2;
+        }
+        else
+        {
+
         }
     }
 
