@@ -808,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
+  poiSOs: []
 --- !u!114 &94543757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11908,6 +11909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
+  poiSOs: []
 --- !u!114 &1020449412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13490,6 +13492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 237542090}
   lerpVariable: 1.5
+  desiredY: 1
   offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
@@ -16527,7 +16530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: scenePath
-      value: Assets/Scenes/MainMenu.unity
+      value: Assets/Scenes/Map.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7253540931995727409, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_Sprite

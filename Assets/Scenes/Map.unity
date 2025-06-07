@@ -2124,6 +2124,10 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3252462922956076512, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -854.9
+      objectReference: {fileID: 0}
     - target: {fileID: 7219607293072019455, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2215,6 +2219,22 @@ PrefabInstance:
     - target: {fileID: 8033467113622153909, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141149896662427241, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: m_text
+      value: Back
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786889330723628912, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 743360995}
+    - target: {fileID: 8786889330723628912, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786889330723628912, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMapController, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 451667231936885736, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}

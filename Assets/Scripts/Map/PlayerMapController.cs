@@ -61,7 +61,7 @@ public class PlayerMapController : MonoBehaviour
         }
         if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length < 2)
         {
-            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[20]);
+            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[21]);
         }
 
         for (int i = 0; i < currentPOI.poiToUnlock.Count; i++)
@@ -137,6 +137,10 @@ public class PlayerMapController : MonoBehaviour
                     Debug.Log($"Transition to level {currentPOI.LevelToTransition}");
                     SceneManager.LoadScene(currentPOI.scenePath);
                 }
+            }
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GoToMainMenu();
             }
         }
     }
@@ -236,6 +240,12 @@ public class PlayerMapController : MonoBehaviour
         }
         
         return -1;
+    }
+
+    public void GoToMainMenu()
+    {
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("MainMenu");
     }
 }
 

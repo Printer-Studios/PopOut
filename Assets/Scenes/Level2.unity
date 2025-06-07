@@ -730,6 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
+  poiSOs: []
 --- !u!114 &94543757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4146,6 +4147,10 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1513515948}
+    - target: {fileID: 4419542587088516385, guid: 7f362872ce1bed14390e318a6935f1b4, type: 3}
+      propertyPath: m_GravityScale
+      value: -1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8746125794998169504, guid: 7f362872ce1bed14390e318a6935f1b4, type: 3}
       propertyPath: m_Name
       value: upideDownButton
@@ -8617,6 +8622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
+  poiSOs: []
 --- !u!114 &1020449412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9386,9 +9392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 237542090}
   lerpVariable: 1.5
+  desiredY: 1
   offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
+  isCinematic: 0
 --- !u!1001 &1319868439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10273,7 +10281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 148048110}
-  pause: {fileID: -767514905134114653, guid: 6372cd4c2f24b944cb8d4159613aff63, type: 3}
+  pause: {fileID: -767514905134114653, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
 --- !u!1001 &1824714772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11428,6 +11436,14 @@ PrefabInstance:
     - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594739767994797212, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: goalCurrent
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/Map.unity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
