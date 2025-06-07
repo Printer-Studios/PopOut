@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d6acc10adbc5da64d8f59fbde059d76a
+guid: e588dd6dbb79ca84eae4bdb513e1b40c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 839107566168891634
-    second: toamata_0
+      213: -3296362929794034626
+    second: shoot_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toamata_0
+      name: shoot_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 5048
+        y: 575
+        width: 9588
+        height: 7070
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2f0e6d9b2eb15ab00800000000000000
-      internalID: 839107566168891634
+      spriteID: e345cd65167f042d0800000000000000
+      internalID: -3296362929794034626
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: adfa2515ed9543d43aedbfe36738d222
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<< Updated upstream:Assets/Sprites/toamata.png.meta
-      toamata_0: 839107566168891634
-=======
-      logo_0: -4320295261928297051
->>>>>>> Stashed changes:Assets/Sprites/logo.png.meta
+      shoot_0: -3296362929794034626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
