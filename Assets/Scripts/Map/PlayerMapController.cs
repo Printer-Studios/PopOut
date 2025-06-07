@@ -25,8 +25,10 @@ public class PlayerMapController : MonoBehaviour
     [SerializeField] public InputActionReference movementUp;
     [SerializeField] public InputActionReference movementDown;
     [SerializeField] public InputActionReference jump;
+    [SerializeField] public InputActionReference pause;
 
-    /*private*/ public bool playerIsMoving = false;
+    /*private*/
+    public bool playerIsMoving = false;
     /*[HideInInspector]*/ public bool inputEnabled = true;
 
     public static event Action OnPlayerLeavingPOI;
@@ -138,7 +140,7 @@ public class PlayerMapController : MonoBehaviour
                     SceneManager.LoadScene(currentPOI.scenePath);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (pause.action.WasPerformedThisFrame())
             {
                 GoToMainMenu();
             }

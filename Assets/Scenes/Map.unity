@@ -1586,6 +1586,7 @@ MonoBehaviour:
   movementUp: {fileID: 3710642738721547176, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
   movementDown: {fileID: 4016917196483406400, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
   jump: {fileID: -7997543224792861045, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
+  pause: {fileID: -767514905134114653, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
   playerIsMoving: 0
   inputEnabled: 1
 --- !u!61 &743360996
