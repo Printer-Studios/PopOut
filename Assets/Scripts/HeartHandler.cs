@@ -5,17 +5,21 @@ public class HeartHandler : MonoBehaviour
     public GameObject heart;
     public HealthBehaviour health;
 
-    // Update is called once per frame
-    void Update()
+    public enum heartNum
     {
-        
+        first = 1, 
+        second = 2, 
+        third = 3
     }
 
-    void NumOfHeart()
+    public heartNum currentHeart;
+
+    // Update is called once per frame
+    private void Update()
     {
-        for (int i = 0; i < health.currentHealth; i++)
+        if(health.currentHealth < (int)currentHeart)
         {
-            
+            heart.SetActive(false);
         }
     }
 }

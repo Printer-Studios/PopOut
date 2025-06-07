@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToChange: 
-  scenePath: Assets/Scenes/MainMenu.unity
+  scenePath: Assets/Scenes/Map.unity
+  poiSOs: []
 --- !u!70 &2715695310243115907
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -1248,6 +1248,22 @@ PrefabInstance:
       propertyPath: HealthBehaviour
       value: 
       objectReference: {fileID: 473942914}
+    - target: {fileID: 3803416620896171196, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 473942914}
+    - target: {fileID: 4179690413517890902, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 473942914}
+    - target: {fileID: 4253515434737175908, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: Absorb
+      value: 
+      objectReference: {fileID: 473942916}
+    - target: {fileID: 4253515434737175908, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: HealthBehaviour
+      value: 
+      objectReference: {fileID: 473942914}
     - target: {fileID: 4775131567330358017, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1260,6 +1276,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4924987111620496675, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 473942914}
     - target: {fileID: 7219607293072019455, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1356,6 +1376,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8361364385964412113, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: Absorb
+      value: 
+      objectReference: {fileID: 473942916}
+    - target: {fileID: 8361364385964412113, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: HealthBehaviour
+      value: 
+      objectReference: {fileID: 473942914}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8319,7 +8347,7 @@ PrefabInstance:
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 1856137795}
+      objectReference: {fileID: 0}
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: currentHealth
       value: 3
@@ -48914,17 +48942,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
---- !u!114 &1856137795 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5154347715589293267, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
-  m_PrefabInstance: {fileID: 109157586}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1890432135
 PrefabInstance:
   m_ObjectHideFlags: 0
