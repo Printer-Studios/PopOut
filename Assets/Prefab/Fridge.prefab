@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.43955803, y: 0.028218538}
+  m_Offset: {x: -0.43346703, y: -0.15606412}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.7416916, y: 0.114372075}
+  m_Size: {x: 0.43713298, y: 0.09389621}
   m_EdgeRadius: 0
 --- !u!1 &5402269497295317045
 GameObject:
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6345483352181613775}
   - component: {fileID: 2056131214053119287}
   - component: {fileID: 2660402704472783012}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Fridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.18, y: -1.36, z: 0}
-  m_LocalScale: {x: 0.6731, y: 0.8485, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7949986245411313235}
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -8172694162921111636, guid: 6b7cf45edf297b7409118e59f692a23a, type: 3}
   m_Color: {r: 0.8726415, g: 0.8726415, b: 0.8726415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,12 +179,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5402269497295317045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52332ed0990a964492308fc3fe8056b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ceb22313b3a8ad4fb47b085af6e4b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   icePF: {fileID: 1407652714711063761, guid: 22741ae5c71a71d4db257a3778f0ef69, type: 3}
   steamPF: {fileID: 7163974460346661082, guid: bf6159cc15ec1924abaab649d53ad635, type: 3}
   waterPF: {fileID: 7163974460346661082, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
+  spawnPosition: 0
   type: 2
 --- !u!50 &6345483352181613775
 Rigidbody2D:
@@ -212,7 +213,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &2056131214053119287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,7 +248,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006632209, y: -0.092850745}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -257,7 +258,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6860759, y: 0.8142985}
   m_EdgeRadius: 0
 --- !u!61 &2660402704472783012
 BoxCollider2D:
@@ -293,7 +294,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.006632209, y: -0.09064001}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -303,5 +304,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.677233, y: 0.81872}
   m_EdgeRadius: 0

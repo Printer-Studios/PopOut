@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab352bc11276554b9cb818a9572522f, type: 3}
+  m_Name: Level3 + 1_PoiSO
+  m_EditorClassIdentifier: 
+  <PoiName>k__BackingField: Level 3+1
+  <PoiKnotPosition>k__BackingField:
+    x: 4.5
+    y: 1.5
+    z: 0
+  <LevelToTransition>k__BackingField: 2
+  <NorthData>k__BackingField:
+    <SplineIndex>k__BackingField: -1
+    <Reverse>k__BackingField: 0
+    nextPoiSO: {fileID: 0}
+  <EastData>k__BackingField:
+    <SplineIndex>k__BackingField: 6
+    <Reverse>k__BackingField: 0
+    nextPoiSO: {fileID: 11400000, guid: 2fb370b77a1391842b987ecb838990c0, type: 2}
+  <WestData>k__BackingField:
+    <SplineIndex>k__BackingField: 4
+    <Reverse>k__BackingField: 1
+    nextPoiSO: {fileID: 11400000, guid: 9b96d68bef1a68148ab626df56a17482, type: 2}
+  <SouthData>k__BackingField:
+    <SplineIndex>k__BackingField: -1
+    <Reverse>k__BackingField: 0
+    nextPoiSO: {fileID: 0}
+  scenePath: Level2
+  isUnlocked: 1
+  poiToUnlock:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 2fb370b77a1391842b987ecb838990c0, type: 2}
+  - {fileID: 11400000, guid: 2fa969beb20c3a943953e38e42aef442, type: 2}

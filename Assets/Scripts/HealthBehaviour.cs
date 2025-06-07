@@ -19,7 +19,7 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Start()
     {
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
     }
 
     public void Update()
@@ -40,9 +40,16 @@ public class HealthBehaviour : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Bullet")
         {
-            GetHit();
+            if (col.gameObject.GetComponent<EnemyHitPlayer>() != null)
+            {
+                GetHit(col.gameObject.GetComponent<EnemyHitPlayer>().damage);
+            }
+            else
+            {
+                GetHit();
+            }
         }
     }
 
@@ -50,27 +57,23 @@ public class HealthBehaviour : MonoBehaviour
     {
         if (!isInvincible)
         {
-            Debug.Log("as sido jiteao");
             currentHealth -= numberOfHits;
             StartCoroutine(IFrames());
             if (currentHealth <= 0)
             {
                 //GameOver
-                Debug.Log("Game Over");
                 Time.timeScale = 0;//pause game
                 PanelOpener();
+                gameObject.SetActive(false);
             }
         }
     }
 
     public IEnumerator IFrames()
     {
-        Debug.Log("comienza la corrutina");
         isInvincible = true;
-        //Thread.Sleep(secondsIFrames * 1000);
         yield return new WaitForSeconds(secondsIFrames);
         isInvincible = false;
-        Debug.Log("acabe la corrutina");
     }
 
     public void Flicker()
@@ -85,7 +88,6 @@ public class HealthBehaviour : MonoBehaviour
 
     private void PanelOpener()
     {
-        Debug.Log("panel");
-        gameOverPanel.SetActive(true);
+        gameOverPanel.SetActive(true);  
     }
 }
