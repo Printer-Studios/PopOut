@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuBehaviour : MonoBehaviour
 {
+    public GameObject sistemEvent;
     [SerializeField] private PoiSO[] poiSOs;
 
     public void EndGame()
@@ -14,6 +15,7 @@ public class MainMenuBehaviour : MonoBehaviour
     public void OpenPanel(GameObject panel)
     {
         panel.SetActive(!panel.activeSelf);
+        sistemEvent.SetActive(!sistemEvent.activeSelf);
     }
 
     public void ResetPlayerPrefs()
