@@ -34,7 +34,8 @@ MonoBehaviour:
     <SplineIndex>k__BackingField: 18
     <Reverse>k__BackingField: 1
     nextPoiSO: {fileID: 11400000, guid: d4f31bb9e817d134c91d76aab8fe1d08, type: 2}
-  scenePath: LevelPau1
-  isUnlocked: 0
+  scenePath: tutorail
+  isUnlocked: 1
   poiToUnlock:
+  - {fileID: 11400000}
   - {fileID: 11400000, guid: 6d00ec2ee4284f4458287e19d753a43c, type: 2}

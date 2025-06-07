@@ -8,7 +8,7 @@ public class CameraBehaviour : MonoBehaviour
     private MovementBehaviour movementBehaviour;
     public float lerpVariable;
     private float desiredZ = -10;
-    private float desiredY = 1;
+    public float desiredY = 1;
     public float offset;
     public Transform xLimit1, xLimit2;
     public bool isCinematic;

@@ -10,6 +10,8 @@ public class SceneHandler : MonoBehaviour
 
     GoalHandler goalHandler;
 
+    [SerializeField] private PoiSO[] poiSOs;
+
     public void Start()
     {
         goalHandler = GetComponent<GoalHandler>();
@@ -27,10 +29,5 @@ public class SceneHandler : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(scenePath);
-    }
-
-    public void EndGame()
-    {
-        Application.Quit();
-    }
+    }  
 }
