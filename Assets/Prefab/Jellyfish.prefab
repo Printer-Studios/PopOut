@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 6677277069061185438}
   - component: {fileID: 8991030487112123504}
   - component: {fileID: 7098551871440261296}
-  - component: {fileID: 5853483198886072497}
   m_Layer: 0
   m_Name: Jellyfish
   m_TagString: Untagged
@@ -182,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acab5ef63c2c5145a57efd619714a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1
   distance: 1
   jumpingCollision: {fileID: 5412158301398575161}
 --- !u!60 &8991030487112123504
@@ -293,16 +292,3 @@ PolygonCollider2D:
       - {x: 0.398192, y: -0.30267298}
       - {x: 0.2949093, y: -0.20174783}
   m_UseDelaunayMesh: 0
---- !u!114 &5853483198886072497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215023257717023954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a97bab6bad98dee47a800cf08181bdce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1

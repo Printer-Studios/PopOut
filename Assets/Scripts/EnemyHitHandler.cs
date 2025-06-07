@@ -1,8 +1,5 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using System;
-using System.Collections;
 
 public class EnemyHitHandler : MonoBehaviour
 {
@@ -10,8 +7,6 @@ public class EnemyHitHandler : MonoBehaviour
     public Hit[] hitTypes;
     public EnemyShotHandler shotHandler;
     public GameObject boxPF;
-    public float deathTimer;
-    public Sprite deathSprite;
 
 
     public Collider2D weakspot;
@@ -20,9 +15,19 @@ public class EnemyHitHandler : MonoBehaviour
     {
         for (int i = 0; i < hitTypes.Length; i++)
         {
-            if (hitTypes[i] == Hit.Box && col.gameObject.name == "Box" && col.gameObject.GetComponent<Rigidbody2D>().linearVelocityY < 0)
+            if (hitTypes[i] == Hit.Box /*&& col.gameObject.GetPrefabDefinition() == boxPF && col.gameObject.GetComponent<Rigidbody2D>().linearVelocityY > 0 */)
             {
-                Die();
+                //Debug.Log("Box Hit");
+                if (col.gameObject.name == "Box")
+                {
+                    Debug.Log("Box Prefab");
+                    Debug.Log("Velocity " + col.gameObject.GetComponent<Rigidbody2D>().linearVelocityY);
+                    if (col.gameObject.GetComponent<Rigidbody2D>().linearVelocityY < 0)
+                    {
+                        Debug.Log("Falling");
+                        Die();
+                    }
+                }
             }
         }
     }
@@ -31,13 +36,4 @@ public class EnemyHitHandler : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-    public IEnumerator TimerDeath()
-    {
-        Debug.Log("muele");
-        GetComponent<SpriteRenderer>().sprite = deathSprite;
-        yield return new WaitForSeconds(deathTimer);
-        Die();
-    }
-
 }

@@ -8,18 +8,9 @@ public class SceneHandler : MonoBehaviour
     [SerializeField]
     public string scenePath;
 
-    GoalHandler goalHandler;
-
-    [SerializeField] private PoiSO[] poiSOs;
-
-    public void Start()
-    {
-        goalHandler = GetComponent<GoalHandler>();
-    }
-
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.tag == "Player" && goalHandler.goalCurrent == GoalHandler.Goal.Opened)
+        if (col.tag == "Player")
         {
             ChangeScene();
         }
@@ -29,5 +20,10 @@ public class SceneHandler : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(scenePath);
-    }  
+    }
+
+    public void EndGame()
+    {
+        Application.Quit();
+    }
 }

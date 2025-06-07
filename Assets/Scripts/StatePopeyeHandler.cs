@@ -40,9 +40,8 @@ public class StatePopeyeHandler : MonoBehaviour
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = smallSprite;
             col.direction = CapsuleDirection2D.Horizontal;
-            col.size = new Vector2(0.7917263f, 0.4667791f);
-            col.offset = new Vector2(0.007073224f, -0.276519f);
-            trigger.direction = CapsuleDirection2D.Horizontal;
+            col.size = new Vector2(0.7917263f, 0.5123755f);
+            col.offset = new Vector2(0.007073224f, -0.2537207f);
         }
         else if(absorb.currentAmmo < 20) {
             currentState = States.medium;
@@ -52,7 +51,6 @@ public class StatePopeyeHandler : MonoBehaviour
             col.direction = CapsuleDirection2D.Vertical;
             col.size = new Vector2(0.6215117f, 0.8491912f);
             col.offset = new Vector2(-0.02283061f, -0.08331972f);
-            trigger.direction = CapsuleDirection2D.Vertical;
         }
         else {
             currentState = States.big;
@@ -62,10 +60,7 @@ public class StatePopeyeHandler : MonoBehaviour
             col.direction = CapsuleDirection2D.Vertical;
             col.size = new Vector2(0.9235349f, 1.118689f);
             col.offset = new Vector2(-0.02283061f, 0.06263198f);
-            trigger.direction = CapsuleDirection2D.Vertical;
         }
-        trigger.size = col.size;
-        trigger.offset = col.offset;
     }
 
 
