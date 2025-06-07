@@ -755,7 +755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
-  poiSOs: []
 --- !u!114 &94543757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10367,7 +10366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToChange: 
   scenePath: Assets/Scenes/MainMenu.unity
-  poiSOs: []
 --- !u!114 &1020449412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11730,11 +11728,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 237542090}
   lerpVariable: 1.5
-  desiredY: 1
   offset: 0
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
-  isCinematic: 0
 --- !u!1001 &1322538643
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13715,6 +13711,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: goal
       objectReference: {fileID: 0}
+    - target: {fileID: 2825739071015226783, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: scene
+      value: MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.5
@@ -13755,10 +13759,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4594739767994797212, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
-      propertyPath: goalCurrent
-      value: 2
+    - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: scenePath
+      value: Assets/Scenes/MainMenu.unity
       objectReference: {fileID: 0}
+    - target: {fileID: 7253540931995727409, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5879908866151352552, guid: 0a36dd98402e996469bd24fc94ac831d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
