@@ -10,7 +10,6 @@ public class HealthBehaviour : MonoBehaviour
 {
     public int maxHealth, currentHealth, secondsIFrames;
     public bool isInvincible;
-    public TMP_Text healthText;
     public float alpha;
     const float maxAlpha = 1;
     public GameObject gameOverPanel;
@@ -24,7 +23,6 @@ public class HealthBehaviour : MonoBehaviour
 
     public void Update()
     {
-        healthText.text = ("Hearts: " + currentHealth.ToString());
 
         if (isInvincible)
         {

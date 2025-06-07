@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &6651344 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5154347715589293267, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
-  m_PrefabInstance: {fileID: 171957021}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8658723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -397,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 1194708252}
     - target: {fileID: 1021281220813662177, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: currentAmmo
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1211907233775110219, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.x
@@ -414,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: healthText
       value: 
-      objectReference: {fileID: 6651344}
+      objectReference: {fileID: 0}
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: gameOverPanel
       value: 
@@ -591,6 +580,26 @@ PrefabInstance:
       propertyPath: HealthBehaviour
       value: 
       objectReference: {fileID: 1208018695}
+    - target: {fileID: 3803416620896171196, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1208018695}
+    - target: {fileID: 4179690413517890902, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1208018695}
+    - target: {fileID: 4253515434737175908, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: Absorb
+      value: 
+      objectReference: {fileID: 1208018697}
+    - target: {fileID: 4253515434737175908, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: HealthBehaviour
+      value: 
+      objectReference: {fileID: 1208018695}
+    - target: {fileID: 4924987111620496675, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1208018695}
     - target: {fileID: 7219607293072019455, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -683,6 +692,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8361364385964412113, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: Absorb
+      value: 
+      objectReference: {fileID: 1208018697}
+    - target: {fileID: 8361364385964412113, guid: 10454c2ddaee6054fbad7c22ed10c344, type: 3}
+      propertyPath: HealthBehaviour
+      value: 
+      objectReference: {fileID: 1208018695}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4104,6 +4121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEndPipe: {fileID: 1213841567}
   pos: {fileID: 765561454}
+  amountAway: 1
   divideAmountForce: 1
   directionToSpawn: 4
 --- !u!61 &765561456
@@ -7995,6 +8013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEndPipe: {fileID: 765561455}
   pos: {fileID: 1213841565}
+  amountAway: 1
   divideAmountForce: 1
   directionToSpawn: 3
 --- !u!61 &1213841568
