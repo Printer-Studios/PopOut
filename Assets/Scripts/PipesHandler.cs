@@ -5,7 +5,7 @@ public class PipesHandler : MonoBehaviour
 {
     public PipesHandler otherEndPipe;
     public GameObject pos;
-    private int amountAway = 1;
+    public int amountAway = 1;
     public float divideAmountForce;
     public enum Directions { Nothing, North, South, West, East }
     public Directions directionToSpawn;
@@ -17,35 +17,37 @@ public class PipesHandler : MonoBehaviour
         {
             if (col.IsTouching(pos.GetComponent<Collider2D>()))
             {
-                SpawnObject(col.gameObject, otherEndPipe.pos.transform, otherEndPipe.directionToSpawn);
+                SpawnObject(col.gameObject, otherEndPipe.pos.transform.position, otherEndPipe.directionToSpawn);
             }
         }
     }
 
-    void SpawnObject(GameObject toSpawn, Transform pos, Directions exitDirection)
+    void SpawnObject(GameObject toSpawn, Vector3 pos, Directions exitDirection)
     {
         GameObject obj = Instantiate(toSpawn, AdjustPosition(toSpawn, pos, exitDirection), Quaternion.identity);
+        obj.transform.localScale = toSpawn.transform.localScale;
         obj.GetComponent<Rigidbody2D>().AddForce(SetVelocity(toSpawn, exitDirection), ForceMode2D.Impulse);
         Debug.Log(SetVelocity(toSpawn, exitDirection));
+        Debug.Log("Position Spawned: " + AdjustPosition(toSpawn, pos, exitDirection));
         Destroy(toSpawn);
     }
 
-    Vector2 AdjustPosition(GameObject toSpawn, Transform pos, Directions exitDirection)
+    Vector2 AdjustPosition(GameObject toSpawn, Vector3 pos, Directions exitDirection)
     {
-        pos = otherEndPipe.pos.transform;
+        pos = otherEndPipe.pos.transform.position;
         switch (exitDirection)
         {
             case Directions.North:
-                toSpawn.transform.position = new Vector2(pos.position.x, pos.position.y + amountAway);
+                toSpawn.transform.position = new Vector2(pos.x, pos.y + amountAway);
                 break;
             case Directions.South:
-                toSpawn.transform.position = new Vector2(pos.position.x, pos.position.y - amountAway);
+                toSpawn.transform.position = new Vector2(pos.x, pos.y - amountAway);
                 break;
             case Directions.West:
-                toSpawn.transform.position = new Vector2(pos.position.x - amountAway, pos.position.y);
+                toSpawn.transform.position = new Vector2(pos.x - amountAway, pos.y);
                 break;
             case Directions.East:
-                toSpawn.transform.position = new Vector2(pos.position.x + amountAway, pos.position.y);
+                toSpawn.transform.position = new Vector2(pos.x + amountAway, pos.y);
                 break;
             default:
                 break;

@@ -6,19 +6,19 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.gameObject.tag == "floor")
-        //{
+        if(collision.gameObject.layer == 6)
+        {
             buttonIsPressed = true;
             Debug.Log(buttonIsPressed);
-        //}
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //if (collision.gameObject.tag == "floor")
-        //{
+        if (collision.gameObject.layer == 6)
+        {
             buttonIsPressed = false;
-        //}
+        }
     }
 
 
