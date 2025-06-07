@@ -2740,7 +2740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &552878654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9140,10 +9140,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: goal
       objectReference: {fileID: 0}
-    - target: {fileID: 2825739071015226783, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
-      propertyPath: scene
-      value: MainMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.48
@@ -9183,14 +9179,6 @@ PrefabInstance:
     - target: {fileID: 4466981929657232735, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4594739767994797212, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
-      propertyPath: goalCurrent
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
-      propertyPath: scenePath
-      value: Assets/Scenes/Map.unity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

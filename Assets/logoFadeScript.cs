@@ -2,11 +2,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class logoFadeScript : MonoBehaviour
 {
     float a,s;
     public Image logo;
+    [SerializeField] public InputActionReference jump;
     // Update is called once per frame
     private void Start()
     {
@@ -24,9 +26,8 @@ public class logoFadeScript : MonoBehaviour
         }
         logo.transform.localScale = new Vector3(s,s,s);
         logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, a);
-        if(a > 1.5)
+        if(a > 1.5 || jump.action.WasPerformedThisFrame())
         {
-            Debug.Log("menu");
             SceneManager.LoadScene("MainMenu");
         }
     }
