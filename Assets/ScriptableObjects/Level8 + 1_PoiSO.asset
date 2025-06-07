@@ -36,4 +36,24 @@ MonoBehaviour:
     nextPoiSO: {fileID: 0}
   scenePath: LevelOrange1
   isUnlocked: 0
-  poiToUnlock: []
+  poiToUnlock:
+  - {fileID: 11400000, guid: 69a5ae2c694f8de44a2fd539d5601f27, type: 2}
+  - {fileID: 11400000, guid: 48f504f12372f1b4c89b4cd024e863be, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: a7d4bf5cd825d1446afe0dbf71a51795, type: 2}
+  - {fileID: 11400000, guid: 5e4c1841a4a88294aa6812fc6506e8ae, type: 2}
+  - {fileID: 11400000, guid: d4f31bb9e817d134c91d76aab8fe1d08, type: 2}
+  - {fileID: 11400000, guid: b8348f5d406e04647bfb09bead24ed73, type: 2}
+  - {fileID: 11400000, guid: 3afa493f33cac0443ac8c715314d52c0, type: 2}
+  - {fileID: 11400000, guid: 872258e73d6721b4c81ff4d4caa27098, type: 2}
+  - {fileID: 11400000, guid: 9b96d68bef1a68148ab626df56a17482, type: 2}
+  - {fileID: 11400000, guid: 3afa493f33cac0443ac8c715314d52c0, type: 2}
+  - {fileID: 11400000, guid: bfac0c01313c82146a73c90364d01e3a, type: 2}
+  - {fileID: 11400000, guid: 429202a1045dc37418e21ee7435646a7, type: 2}
+  - {fileID: 11400000, guid: c8f9d533cfd7a6a42a26a89d43a2476f, type: 2}
+  - {fileID: 11400000, guid: 9d08596a1b1829045821cecc5532d88c, type: 2}
+  - {fileID: 11400000, guid: 2fb370b77a1391842b987ecb838990c0, type: 2}
+  - {fileID: 11400000, guid: ee3af0301fb2b6b4bbc42fe7439b4076, type: 2}
+  - {fileID: 11400000, guid: 2fa969beb20c3a943953e38e42aef442, type: 2}
+  - {fileID: 11400000, guid: 8317d29538665fd498dca5a06da282c5, type: 2}
+  - {fileID: 11400000, guid: df870ab703bc5df4dad321f9183859f3, type: 2}

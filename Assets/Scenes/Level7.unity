@@ -1083,7 +1083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4594739767994797212, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: goalCurrent
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: scenePath
