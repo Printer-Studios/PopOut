@@ -24,10 +24,12 @@ public class CatcherScript : MonoBehaviour
         if (target.GetComponent<Transform>().position.x > transform.position.x)
         {
             direction = Vector2.right;
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else
         {
             direction = Vector2.left;
+            GetComponent<SpriteRenderer>().flipX = true;
         }
 
         timer += Time.deltaTime;
