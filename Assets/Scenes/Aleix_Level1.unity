@@ -473,7 +473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEndPipe: {fileID: 1566693616}
   pos: {fileID: 80621745}
-  divideAmountForce: 0.25
+  divideAmountForce: 0.6
   directionToSpawn: 3
 --- !u!61 &80621747
 BoxCollider2D:
@@ -13970,7 +13970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEndPipe: {fileID: 80621746}
   pos: {fileID: 1566693614}
-  divideAmountForce: 0.25
+  divideAmountForce: 0.6
   directionToSpawn: 4
 --- !u!61 &1566693617
 BoxCollider2D:
