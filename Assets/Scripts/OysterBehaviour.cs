@@ -29,7 +29,6 @@ public class OysterBehaviour : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = openSprite;
                 GetComponent<SpriteRenderer>().sortingOrder = -1;
                 topCollider.SetActive(false);
-                //outline.GetComponent<SpriteRenderer>().sprite = outlineOpen;
                 break;
 
             case State.Preclosed:
@@ -42,9 +41,6 @@ public class OysterBehaviour : MonoBehaviour
                 GetComponent<SpriteRenderer>().sortingOrder = 10;
                 Open();
                 topCollider.SetActive(true);
-                //outline.GetComponent<SpriteRenderer>().sprite = outlineClosed;
-
-
                 break;
         }
     }
