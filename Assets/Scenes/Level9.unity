@@ -4727,11 +4727,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2914397429978858279, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.508455
+      value: 18.49
       objectReference: {fileID: 0}
     - target: {fileID: 2914397429978858279, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1903725
+      value: -3.91
       objectReference: {fileID: 0}
     - target: {fileID: 2914397429978858279, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13856,7 +13856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4852095108053620340, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: scenePath
-      value: Assets/Scenes/Map.unity
+      value: Assets/Scenes/Credits.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7253540931995727409, guid: b3d0be6ca31173646a3693ae4569fb4b, type: 3}
       propertyPath: m_Sprite
