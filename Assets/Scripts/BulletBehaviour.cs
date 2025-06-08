@@ -24,6 +24,5 @@ public class BulletBehaviour : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        Debug.Log("morision de bala");
     }
 }
