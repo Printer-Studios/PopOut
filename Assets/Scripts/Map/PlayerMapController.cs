@@ -37,73 +37,29 @@ public class PlayerMapController : MonoBehaviour
 
     private void Start()
     {
-        currentPOI = poiController.poisList[PlayerPrefs.GetInt("CurrentPoi")];
-        Debug.Log("current" + poiController.poisList[PlayerPrefs.GetInt("CurrentPoi")].name);
+        // Initialize from saved state
+        PoiSaveManager.InitializePoiUnlockList(poiController);
 
-        //for (int i = 0; i < poiController.poisList.Count; i++)
-        //{
-        //    Debug.Log("1");
-        //    if (poiController.unlockList.Count < poiController.poisList.Count)
-        //    {
-        //        Debug.Log("2");
+        currentPOI = poiController.poisList[PoiSaveManager.LoadCurrentPoiIndex()];
+        Debug.Log("Current POI: " + currentPOI.name);
 
-        //        poiController.unlockList.Add(false);
-        //        Debug.Log(poiController.unlockList[i]);
-        //    }
-        //}
+        // Unlock neighbors
+        PoiSaveManager.UnlockPOIs(currentPOI.poiToUnlock, poiController);
 
-        //if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").ToList() != null)
-        //{
-        //    poiController.unlockList = PlayerPrefsX.GetBoolArray("UnlockedPOIS").ToList();
-        //}
-
-        if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").ToList().Count > poiController.unlockList.Count)
-        {
-            //PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[20]);
-        }
-        if (PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length < 2)
-        {
-            PlayerPrefsX.SetBoolArray("UnlockedPOIS", new bool[21]);
-        }
-
-        for (int i = 0; i < currentPOI.poiToUnlock.Count; i++)
-        {
-            currentPOI.poiToUnlock[i].isUnlocked = true;
-            Debug.Log("Unlocked" + currentPOI.poiToUnlock[i].name + "" + currentPOI.poiToUnlock[i].isUnlocked);
-        }        
-
-        for (int i = 0; i < poiController.unlockList.Count; i++)
-        {
-            if (poiController.poisList[i].isUnlocked)
-            {
-                Debug.Log("PlayerPref array length " + PlayerPrefsX.GetBoolArray("UnlockedPOIS").Length);
-                bool[] unlockedPOIs = PlayerPrefsX.GetBoolArray("UnlockedPOIS");
-                unlockedPOIs[i] = true;
-                PlayerPrefsX.SetBoolArray("UnlockedPOIS", unlockedPOIs);
-            }
-
-            poiController.unlockList[i] = PlayerPrefsX.GetBoolArray("UnlockedPOIS")[i];
-            Debug.Log("PlayerPrefX Unlock POIs " + PlayerPrefsX.GetBoolArray("UnlockedPOIS")[i] + " this is level" + i);
-        }
-
-
-
+        // Move player to starting POI
         transform.position = splineContainer.transform.TransformPoint(currentPOI.PoiKnotPosition);
-
         OnPlayerArrivedNewPOI?.Invoke(currentPOI.PoiName);
 
+        // Enable controls
         movementUp.action.Enable();
         movementDown.action.Enable();
         movementLeft.action.Enable();
         movementRight.action.Enable();
         jump.action.Enable();
-
-
-        PlayerPrefs.Save();
     }
-        
 
-        private void Update()
+
+    private void Update()
     {
         if (inputEnabled) //Comments are for not using Input Action
         {
@@ -128,13 +84,13 @@ public class PlayerMapController : MonoBehaviour
                 MovePlayerOnMap(currentPOI.EastData.SplineIndex, currentPOI.EastData.Reverse);
             }
             else if (jump.action.IsInProgress() && currentPOI.isUnlocked)
-            //else if (Input.GetKey(KeyCode.Space) && currentPOI.isUnlocked)
             {
-                if (playerIsMoving == false && currentPOI.LevelToTransition >= 0)
+                if (!playerIsMoving && currentPOI.LevelToTransition >= 0)
                 {
-                    PlayerPrefs.SetInt("CurrentPoi", GetCurrentPoiFromList());
-                    PlayerPrefsX.SetBoolArray("UnlockedPOIS", poiController.unlockList.ToArray());
-                    PlayerPrefs.Save();
+                    int currentPoiIndex = GetCurrentPoiFromList();
+                    PoiSaveManager.SaveCurrentPoi(currentPoiIndex);
+                    PoiSaveManager.UnlockPOIs(currentPOI.poiToUnlock, poiController);
+
                     OnLevelSelected?.Invoke(currentPOI.LevelToTransition);
                     Debug.Log($"Transition to level {currentPOI.LevelToTransition}");
                     SceneManager.LoadScene(currentPOI.scenePath);
