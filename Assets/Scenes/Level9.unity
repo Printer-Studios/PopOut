@@ -4419,6 +4419,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7379334575276576796, guid: 1e7509876326b9d458b4da34cf33f289, type: 3}
+      propertyPath: boxPF
+      value: 
+      objectReference: {fileID: 943285216}
     - target: {fileID: 7884835278159264796, guid: 1e7509876326b9d458b4da34cf33f289, type: 3}
       propertyPath: m_Name
       value: Crab_NoCau
@@ -5018,6 +5022,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+--- !u!1 &943285216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 52205933659995571, guid: 6e3724150b21c7e48be6fa2e40789435, type: 3}
+  m_PrefabInstance: {fileID: 943285215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &948813758
 PrefabInstance:
   m_ObjectHideFlags: 0

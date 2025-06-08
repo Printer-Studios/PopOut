@@ -33,11 +33,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Level7.unity
     guid: 2ee5479494219ed439e564593f438c85
   - enabled: 1
+    path: Assets/Scenes/Level8.unity
+    guid: c13eb1634273b774499f4297ebe7cb0d
+  - enabled: 1
     path: Assets/Scenes/Level9.unity
     guid: 7cca5f2cddddde94fbf950ca5401024e
-  - enabled: 1
-    path: Assets/Scenes/AleixLevel2.unity
-    guid: a5f530200d6cb6740918a0d239c98a1d
   - enabled: 1
     path: Assets/Scenes/LevelOrange1.unity
     guid: db028c32d4755f7489d2189231e4deb0
@@ -47,9 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: deef240e5c1938b469a878bf39a981b8
-  - enabled: 1
-    path: Assets/Scenes/Level8.unity
-    guid: c13eb1634273b774499f4297ebe7cb0d
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 924ca3243e26b364fadc505cd4ecda8e

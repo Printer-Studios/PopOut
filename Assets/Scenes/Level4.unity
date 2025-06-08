@@ -8539,6 +8539,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 237542090}
+    - target: {fileID: 644167155161403926, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
+      propertyPath: spiderVision
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2104144845762941800, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_Name
       value: Spider
@@ -8582,6 +8586,10 @@ PrefabInstance:
     - target: {fileID: 2461092684162754698, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891400043840211769, guid: b0117bc52ad20094aaf87d284971584f, type: 3}
+      propertyPath: cooldown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
