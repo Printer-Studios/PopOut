@@ -9,10 +9,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PoiSO : ScriptableObject
 {
-    //public int index; // index of the spline
     [field: Header("POI Info")]
     [field: SerializeField] public string PoiName { get; private set; }
-    [field: SerializeField] public float3 PoiKnotPosition { get; set; } // float3 (local position, later transform
+    [field: SerializeField] public float3 PoiKnotPosition { get; set; }
     [field: SerializeField] public int LevelToTransition { get; private set; } = -1;
 
     [field: Header("Directional Data")]
