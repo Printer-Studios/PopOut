@@ -282,6 +282,17 @@
                     "action": "MovementDown",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "2285d3c6-2511-4aa9-8be5-f0999be3cbd2",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovementDown",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },
