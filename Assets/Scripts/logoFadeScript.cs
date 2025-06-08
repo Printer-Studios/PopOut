@@ -6,16 +6,13 @@ using UnityEngine.InputSystem;
 
 public class logoFadeScript : MonoBehaviour
 {
-    float a,s;
+    public float a,s;
     public Image logo;
     [SerializeField] public InputActionReference jump;
     // Update is called once per frame
     private void Start()
     {
-        a = 0;
-        s = 7;
         logo.color = new Color(logo.color.r, logo.color.g, logo.color.b, a);
-        
     }
     void Update()
     {
