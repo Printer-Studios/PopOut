@@ -6362,6 +6362,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6677277069061185438, guid: fa051a5d447ed2d42b6aff6b080d6964, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677277069061185438, guid: fa051a5d447ed2d42b6aff6b080d6964, type: 3}
+      propertyPath: distance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9215023257717023954, guid: fa051a5d447ed2d42b6aff6b080d6964, type: 3}
       propertyPath: m_Name
       value: Jellyfish

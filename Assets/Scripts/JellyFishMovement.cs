@@ -13,7 +13,7 @@ public class JellyFishMovement : MonoBehaviour
 
     public void HoverMovement()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y + (Mathf.Sin(distance * Time.realtimeSinceStartup) * speed * Time.deltaTime));
+        transform.position = new Vector2(transform.position.x, transform.position.y + (Mathf.Sin(speed * Time.realtimeSinceStartup) * distance * Time.deltaTime));
     }
 
 
