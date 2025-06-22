@@ -1,7 +1,5 @@
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 
 public class AbsorbBehaviour : MonoBehaviour
 {

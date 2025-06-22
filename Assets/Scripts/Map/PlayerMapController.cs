@@ -4,7 +4,6 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Splines;
-//using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
 public class PlayerMapController : MonoBehaviour
