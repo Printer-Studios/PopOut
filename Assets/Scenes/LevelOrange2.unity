@@ -44034,6 +44034,7 @@ MonoBehaviour:
   xLimit1: {fileID: 1377015688}
   xLimit2: {fileID: 1980722326}
   isCinematic: 1
+  jump: {fileID: -7997543224792861045, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
 --- !u!1 &1980722325
 GameObject:
   m_ObjectHideFlags: 0

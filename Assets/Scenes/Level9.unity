@@ -3463,7 +3463,7 @@ PrefabInstance:
     - target: {fileID: 2306647560469424553, guid: bae3ed7523226f847a82576b96e60c52, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 237542090}
+      objectReference: {fileID: 1208018704}
     - target: {fileID: 4060889909253188727, guid: bae3ed7523226f847a82576b96e60c52, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -11019,6 +11019,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baefcaea2b85d5418e5565bbbf02707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1208018704 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+  m_PrefabInstance: {fileID: 75571865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1233688761
 PrefabInstance:
   m_ObjectHideFlags: 0

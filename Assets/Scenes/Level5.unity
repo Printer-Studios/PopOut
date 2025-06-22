@@ -1932,6 +1932,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7baefcaea2b85d5418e5565bbbf02707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &473942933 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8971885777594259281, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
+  m_PrefabInstance: {fileID: 996473675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &480736785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2453,10 +2458,6 @@ PrefabInstance:
       propertyPath: UISlider
       value: 
       objectReference: {fileID: 602997614}
-    - target: {fileID: 1021281220813662177, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: currentAmmo
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1211907233775110219, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2464,26 +2465,6 @@ PrefabInstance:
     - target: {fileID: 1211907233775110219, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
-      propertyPath: currentHealth
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: gameOverPanel
@@ -38663,7 +38644,7 @@ PrefabInstance:
     - target: {fileID: 2306647560469424553, guid: bae3ed7523226f847a82576b96e60c52, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 473942909}
+      objectReference: {fileID: 473942933}
     - target: {fileID: 4060889909253188727, guid: bae3ed7523226f847a82576b96e60c52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 21.52

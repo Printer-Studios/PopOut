@@ -1571,10 +1571,10 @@ MonoBehaviour:
   absorb: {fileID: 1021281220813662177}
   waterInteraction: {fileID: 3097861465446821128}
   rb: {fileID: 2418523593327850754}
-  colSmall: {fileID: 0}
+  colSmall: {fileID: 2005373307631635033}
   trigger: {fileID: 2005373307631635033}
-  colMedium: {fileID: 0}
-  colBig: {fileID: 0}
+  colMedium: {fileID: 2985908687967678805}
+  colBig: {fileID: 3518884516170579917}
   smallSprite: {fileID: -6679261623858818641, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   mediumSprite: {fileID: -494791369, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   bigSprite: {fileID: -1459897963, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}

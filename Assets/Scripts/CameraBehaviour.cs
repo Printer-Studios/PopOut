@@ -31,7 +31,6 @@ public class CameraBehaviour : MonoBehaviour
             {
                 offset = -Mathf.Abs(offset);
             }
-
             transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset, player.transform.position.y, player.transform.position.z), lerpVariable * Time.deltaTime);
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, xLimit1.position.x, xLimit2.position.x), desiredY, desiredZ);
         }
