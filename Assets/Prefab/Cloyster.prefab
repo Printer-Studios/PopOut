@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5345225857917147153}
   - component: {fileID: 1064963588244283467}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StandCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
