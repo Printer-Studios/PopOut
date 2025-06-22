@@ -12,6 +12,8 @@ public class EnemyHitHandler : MonoBehaviour
     public GameObject boxPF;
     public float deathTimer;
     public Sprite deathSprite;
+    public bool respawns;
+    public EnemyRespawn enemyRespawn;
 
 
     public Collider2D weakspot;
@@ -29,7 +31,14 @@ public class EnemyHitHandler : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        if (!respawns)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            enemyRespawn.Deactivate();
+        }
     }
 
     public IEnumerator TimerDeath()

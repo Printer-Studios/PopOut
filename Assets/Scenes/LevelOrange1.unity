@@ -30235,7 +30235,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 473942922}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6081452798442246664, guid: 3b16e8737f27d3d4892695802dff9f67, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6793957980050594797, guid: 3b16e8737f27d3d4892695802dff9f67, type: 3}
@@ -30469,6 +30470,7 @@ MonoBehaviour:
   xLimit1: {fileID: 1377015688}
   xLimit2: {fileID: 1980722326}
   isCinematic: 0
+  jump: {fileID: 0}
 --- !u!1 &1980722325
 GameObject:
   m_ObjectHideFlags: 0

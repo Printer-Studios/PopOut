@@ -13,7 +13,7 @@ public class AbsorbBehaviour : MonoBehaviour
     {
         if (absorb.action.IsPressed())
         {
-            if (col.gameObject.layer == 4 && currentAmmo < maxCapacity) //Layer 4 is Water
+            if (col.gameObject.layer == LayerMask.NameToLayer("Water") && currentAmmo < maxCapacity) //Layer 4 is Water
             {
                 col.gameObject.transform.localScale /= 2;
                 currentAmmo++;

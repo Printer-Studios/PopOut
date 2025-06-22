@@ -6,7 +6,7 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 6)
+        if(collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
             buttonIsPressed = true;
             Debug.Log(buttonIsPressed);
@@ -15,7 +15,7 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
             buttonIsPressed = false;
         }

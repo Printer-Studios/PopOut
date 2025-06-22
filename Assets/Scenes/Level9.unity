@@ -451,15 +451,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1601989906775369914, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2123769385768256749, guid: c933d90d9147321438cb142c7c0e25b1, type: 3}
       propertyPath: maxHealth
@@ -11571,6 +11571,7 @@ MonoBehaviour:
   xLimit1: {fileID: 1333191967}
   xLimit2: {fileID: 1831114603}
   isCinematic: 1
+  jump: {fileID: -7997543224792861045, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
 --- !u!1001 &1322538643
 PrefabInstance:
   m_ObjectHideFlags: 0

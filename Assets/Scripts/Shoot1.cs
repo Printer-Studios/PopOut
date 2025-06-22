@@ -30,7 +30,7 @@ public class Shoot1 : MonoBehaviour
     }
     void ShootFunction()
     {
-        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame() && state.currentState != StatePopeyeHandler.States.big)
+        if (shoot.action.WasPressedThisFrame() && !shoot.action.WasReleasedThisFrame() && state.currentState != StatePopeyeHandler.State.big)
         {
             if (absorb.currentAmmo > 0)
             {
@@ -39,7 +39,7 @@ public class Shoot1 : MonoBehaviour
                 absorb.currentAmmo--;
             }
         }
-        else if(state.currentState == StatePopeyeHandler.States.big)
+        else if(state.currentState == StatePopeyeHandler.State.big)
         {
             if (shoot.action.WasPerformedThisFrame())
             {

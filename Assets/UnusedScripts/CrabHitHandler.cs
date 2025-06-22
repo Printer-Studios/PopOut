@@ -8,7 +8,7 @@ public class CrabHitHandler : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == 4 && col.attachedRigidbody.linearVelocity.magnitude > 5)
+        if (col.gameObject.layer == LayerMask.NameToLayer("Water") && col.attachedRigidbody.linearVelocity.magnitude > 5)
         {
             Destroy(col.gameObject);
             CrabHit();

@@ -24,12 +24,13 @@ public class PipesHandler : MonoBehaviour
 
     void SpawnObject(GameObject toSpawn, Vector3 pos, Directions exitDirection)
     {
-        GameObject obj = Instantiate(toSpawn, AdjustPosition(toSpawn, pos, exitDirection), Quaternion.identity);
-        obj.transform.localScale = toSpawn.transform.localScale;
-        obj.GetComponent<Rigidbody2D>().AddForce(SetVelocity(toSpawn, exitDirection), ForceMode2D.Impulse);
+        toSpawn.transform.position = pos;
+        //GameObject obj = Instantiate(toSpawn, AdjustPosition(toSpawn, pos, exitDirection), Quaternion.identity);
+        //obj.transform.localScale = toSpawn.transform.localScale;
+        toSpawn.GetComponent<Rigidbody2D>().AddForce(SetVelocity(toSpawn, exitDirection) - GetVelocity(toSpawn), ForceMode2D.Impulse); // Subtract the current force because if not it would double it
         Debug.Log(SetVelocity(toSpawn, exitDirection));
         Debug.Log("Position Spawned: " + AdjustPosition(toSpawn, pos, exitDirection));
-        Destroy(toSpawn);
+        //Destroy(toSpawn);
     }
 
     Vector2 AdjustPosition(GameObject toSpawn, Vector3 pos, Directions exitDirection)

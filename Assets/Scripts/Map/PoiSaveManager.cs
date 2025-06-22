@@ -20,7 +20,7 @@ public static class PoiSaveManager
             PlayerPrefs.Save();
         }
 
-        // Sync POI states
+        // Sync POI State
         poiController.unlockList = new List<bool>(saved);
 
         for (int i = 0; i < poiCount; i++)

@@ -3,14 +3,14 @@ using UnityEngine;
 public class StatePopeyeHandler : MonoBehaviour
 {
 
-    public enum States
+    public enum State
     {
         small = 0,
         medium = 1,
         big = 2
     }
 
-    public States currentState;
+    public State currentState;
     public AbsorbBehaviour1 absorb;
     public WaterInteraction waterInteraction;
     public Rigidbody2D rb;
@@ -23,7 +23,7 @@ public class StatePopeyeHandler : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentState = States.small;
+        currentState = State.small;
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class StatePopeyeHandler : MonoBehaviour
     public void ChangeState()
     {
         if(absorb.currentAmmo < 7){
-            currentState = States.small;
+            currentState = State.small;
             rb.mass = normalMass;
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = smallSprite;
@@ -45,7 +45,7 @@ public class StatePopeyeHandler : MonoBehaviour
             trigger.direction = CapsuleDirection2D.Horizontal;
         }
         else if(absorb.currentAmmo < 20) {
-            currentState = States.medium;
+            currentState = State.medium;
             rb.mass = normalMass;
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = mediumSprite;
@@ -55,7 +55,7 @@ public class StatePopeyeHandler : MonoBehaviour
             trigger.direction = CapsuleDirection2D.Vertical;
         }
         else {
-            currentState = States.big;
+            currentState = State.big;
             rb.mass = bigMass;
             waterInteraction.maxSpeed = bigSpeed;
             GetComponent<SpriteRenderer>().sprite = bigSprite;
