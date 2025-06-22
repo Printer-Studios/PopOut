@@ -1,8 +1,5 @@
-using System.Net.NetworkInformation;
 using Unity.Mathematics;
-//using UnityEditor.Timeline.Actions;
 using UnityEngine;  
-using System.Collections;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "PoiSO", menuName = "ScriptableObjects/ POI")]

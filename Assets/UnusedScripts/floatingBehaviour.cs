@@ -15,7 +15,7 @@ public class floatingBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.layer == 4)
+        if(collider.gameObject.layer == LayerMask.NameToLayer("Water"))
         {
             Debug.Log("floating");
             rb.AddForce(floatingForce * Vector2.up);

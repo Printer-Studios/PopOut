@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(SceneHandler), true)]

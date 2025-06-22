@@ -1,9 +1,6 @@
-using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Unity.VisualScripting;
 using UnityEngine.UI;
-using UnityEngine.Rendering;
 
 public class AbsorbBehaviour1 : MonoBehaviour
 {
@@ -35,7 +32,7 @@ public class AbsorbBehaviour1 : MonoBehaviour
     public void OnTriggerStay2D(Collider2D col)
     {
 
-        if (col.gameObject.layer == 4 && currentAmmo < maxCapacity && absorb.action.IsInProgress() && timeOfPressing > 0.075f) //Layer 4 is Water
+        if (col.gameObject.layer == LayerMask.NameToLayer("Water") && currentAmmo < maxCapacity && absorb.action.IsInProgress() && timeOfPressing > 0.075f) //Layer 4 is Water
         {
             col.gameObject.transform.localScale /= 2;
             currentAmmo++;

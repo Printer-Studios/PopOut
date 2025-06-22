@@ -1,4 +1,3 @@
-using NUnit.Framework.Internal.Commands;
 using System;
 using System.Collections;
 using Unity.Mathematics;
@@ -7,11 +6,6 @@ using UnityEngine.InputSystem;
 using UnityEngine.Splines;
 //using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
-using System.Xml;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
-using System.Linq;
-using System.Collections.Generic;
 
 public class PlayerMapController : MonoBehaviour
 {
