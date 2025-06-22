@@ -14,7 +14,7 @@ public class StatePopeyeHandler : MonoBehaviour
     public AbsorbBehaviour1 absorb;
     public WaterInteraction waterInteraction;
     public Rigidbody2D rb;
-    public CapsuleCollider2D col, trigger;
+    public CapsuleCollider2D colSmall, trigger, colMedium, colBig;
     public Sprite smallSprite, mediumSprite, bigSprite;
     public float normalMass, bigMass;
     public float normalSpeed, bigSpeed;
@@ -39,9 +39,9 @@ public class StatePopeyeHandler : MonoBehaviour
             rb.mass = normalMass;
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = smallSprite;
-            col.direction = CapsuleDirection2D.Horizontal;
-            col.size = new Vector2(0.7917263f, 0.4667791f);
-            col.offset = new Vector2(0.007073224f, -0.276519f);
+            colSmall.enabled = true;
+            colMedium.enabled = false;
+            colBig.enabled = false;
             trigger.direction = CapsuleDirection2D.Horizontal;
         }
         else if(absorb.currentAmmo < 20) {
@@ -49,9 +49,12 @@ public class StatePopeyeHandler : MonoBehaviour
             rb.mass = normalMass;
             waterInteraction.maxSpeed = normalSpeed;
             GetComponent<SpriteRenderer>().sprite = mediumSprite;
-            col.direction = CapsuleDirection2D.Vertical;
-            col.size = new Vector2(0.6215117f, 0.8491912f);
-            col.offset = new Vector2(-0.02283061f, -0.08331972f);
+            //col.direction = CapsuleDirection2D.Vertical;
+            //col.size = new Vector2(0.6215117f, 0.8491912f);
+            //col.offset = new Vector2(-0.02283061f, -0.08331972f);
+            colSmall.enabled = false;
+            colMedium.enabled = true;
+            colBig.enabled = false;
             trigger.direction = CapsuleDirection2D.Vertical;
         }
         else {
@@ -59,13 +62,15 @@ public class StatePopeyeHandler : MonoBehaviour
             rb.mass = bigMass;
             waterInteraction.maxSpeed = bigSpeed;
             GetComponent<SpriteRenderer>().sprite = bigSprite;
-            col.direction = CapsuleDirection2D.Vertical;
-            col.size = new Vector2(0.9235349f, 1.118689f);
-            col.offset = new Vector2(-0.02283061f, 0.06263198f);
+            //col.direction = CapsuleDirection2D.Vertical;
+            //col.size = new Vector2(0.9235349f, 1.118689f);
+            //col.offset = new Vector2(-0.02283061f, 0.06263198f);
+            colSmall.enabled = false;
+            colMedium.enabled = false;
+            colBig.enabled = true;
             trigger.direction = CapsuleDirection2D.Vertical;
         }
-        trigger.size = col.size;
-        trigger.offset = col.offset;
+        trigger = (colSmall.enabled && !colMedium.enabled && !colBig.enabled) ? colSmall : (colMedium.enabled && !colBig.enabled) ? colMedium : colBig;
     }
 
 

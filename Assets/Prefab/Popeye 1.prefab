@@ -508,6 +508,8 @@ GameObject:
   - component: {fileID: 236754202792128452}
   - component: {fileID: 2005373307631635033}
   - component: {fileID: 3007187783753939155}
+  - component: {fileID: 2985908687967678805}
+  - component: {fileID: 3518884516170579917}
   m_Layer: 0
   m_Name: Popeye 1
   m_TagString: Player
@@ -726,7 +728,6 @@ MonoBehaviour:
   currentHealth: 3
   secondsIFrames: 3
   isInvincible: 0
-  healthText: {fileID: 0}
   alpha: 0
   gameOverPanel: {fileID: 0}
 --- !u!114 &6077847377184466263
@@ -849,8 +850,10 @@ MonoBehaviour:
   absorb: {fileID: 1021281220813662177}
   waterInteraction: {fileID: 3097861465446821128}
   rb: {fileID: 2418523593327850754}
-  col: {fileID: 236754202792128452}
+  colSmall: {fileID: 2005373307631635033}
   trigger: {fileID: 2005373307631635033}
+  colMedium: {fileID: 2985908687967678805}
+  colBig: {fileID: 3518884516170579917}
   smallSprite: {fileID: 6502181984145516480, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   mediumSprite: {fileID: -4432196275841358782, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   bigSprite: {fileID: -2113010373, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
@@ -858,6 +861,80 @@ MonoBehaviour:
   bigMass: 1.6
   normalSpeed: 4
   bigSpeed: 2
+--- !u!70 &2985908687967678805
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 144
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.02283061, y: -0.08331972}
+  m_Size: {x: 0.6215117, y: 0.8491912}
+  m_Direction: 0
+--- !u!70 &3518884516170579917
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515316530674978318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.02283061, y: 0.06263198}
+  m_Size: {x: 0.9235349, y: 1.118689}
+  m_Direction: 0
 --- !u!1 &2979635353679693491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,8 +1571,10 @@ MonoBehaviour:
   absorb: {fileID: 1021281220813662177}
   waterInteraction: {fileID: 3097861465446821128}
   rb: {fileID: 2418523593327850754}
-  col: {fileID: 236754202792128452}
+  colSmall: {fileID: 0}
   trigger: {fileID: 2005373307631635033}
+  colMedium: {fileID: 0}
+  colBig: {fileID: 0}
   smallSprite: {fileID: -6679261623858818641, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   mediumSprite: {fileID: -494791369, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
   bigSprite: {fileID: -1459897963, guid: 6d67a86a63a852e4586b737423ec9eb8, type: 3}
