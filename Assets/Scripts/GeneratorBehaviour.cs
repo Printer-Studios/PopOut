@@ -4,8 +4,7 @@ using static GoalHandler;
 
 public class GeneratorBehaviour : MonoBehaviour
 { 
-    public enum Activate { Nothing, Goal, Fan }
-    public Activate whatToActivate;
+
     public GameObject target;
     public Slider genSlider;
     public int sliderMaxAmount;
@@ -26,7 +25,7 @@ public class GeneratorBehaviour : MonoBehaviour
         if (genSlider.value == sliderMaxAmount)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = activatedSprite;
-            if (whatToActivate == Activate.Goal && target.GetComponent<GoalHandler>() != null)
+            if (target.GetComponent<GoalHandler>() != null)
             {
                 ActivateGoal();   
             }

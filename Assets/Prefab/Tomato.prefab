@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7518335346196709156}
   - component: {fileID: 4811902285240225541}
   - component: {fileID: 6865120855355909231}
+  - component: {fileID: 2056716363049137974}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Enemy
@@ -110,6 +111,8 @@ MonoBehaviour:
   boxPF: {fileID: 0}
   deathTimer: 0.2
   deathSprite: {fileID: 5082347505192747278, guid: d0d1c13c97b556e4e9fcb2e85351cb04, type: 3}
+  respawns: 1
+  enemyRespawn: {fileID: 2056716363049137974}
   weakspot: {fileID: 7518335346196709156}
 --- !u!114 &3288586073561612515
 MonoBehaviour:
@@ -125,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotType: 1
   isWeak: 1
+  respawns: 1
+  enemyRespawn: {fileID: 2056716363049137974}
 --- !u!50 &5588332571755220031
 Rigidbody2D:
   serializedVersion: 5
@@ -257,3 +262,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!114 &2056716363049137974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838266602951660761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae877d4eb4c59904d80087a7a187eb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnTime: 5
+  aliveTomato: {fileID: -1602576368684418090, guid: d0d1c13c97b556e4e9fcb2e85351cb04, type: 3}

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CatcherScript : MonoBehaviour
 {
-    public GameObject target;
+    public Transform target;
     private Rigidbody2D rb;
     public float MovementForce, maxSpeed, detectionRadius;
     private float minSpeed, timer;
@@ -21,7 +21,7 @@ public class CatcherScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target.GetComponent<Transform>().position.x > transform.position.x)
+        if (target.position.x > transform.position.x)
         {
             direction = Vector2.right;
             GetComponent<SpriteRenderer>().flipX = false;
@@ -37,7 +37,7 @@ public class CatcherScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if((target.GetComponent<Transform>().position - transform.position).magnitude < detectionRadius)
+        if((target.position - transform.position).magnitude < detectionRadius)
         {
             rb.AddForce(MovementForce * direction);
             rb.linearVelocityX = Mathf.Clamp(rb.linearVelocityX, minSpeed, maxSpeed);
@@ -66,8 +66,8 @@ public class CatcherScript : MonoBehaviour
     {
         if (timer > 3 && isInFloor)
         {
-            if (collision.gameObject.layer == 6) Jump();
-            else if (collision.gameObject.layer == 0) Jump(true);
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Floor")) Jump();
+            else if (collision.gameObject.layer == LayerMask.NameToLayer("Default")) Jump(true);
             timer = 0;
         }
     }

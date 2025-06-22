@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CameraBehaviour : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class CameraBehaviour : MonoBehaviour
     public float offset;
     public Transform xLimit1, xLimit2;
     public bool isCinematic;
+    [SerializeField] public InputActionReference jump;
     void Start()
     {
         movementBehaviour = player.GetComponent<MovementBehaviour>();
@@ -37,10 +39,18 @@ public class CameraBehaviour : MonoBehaviour
 
         else
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset, player.transform.position.y, player.transform.position.z), 0.2f * Time.deltaTime);
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, xLimit1.position.x, xLimit2.position.x), desiredY, desiredZ);
+            if (jump.action.IsInProgress())
+            {
+                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset, player.transform.position.y, player.transform.position.z), 15f * Time.deltaTime);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, xLimit1.position.x, xLimit2.position.x), desiredY, desiredZ);
+            }
+            else
+            {
 
-            if (Mathf.Abs(player.transform.position.x - gameObject.transform.position.x ) <= 4)
+                transform.position = Vector3.Lerp(transform.position, new Vector3(player.transform.position.x + offset, player.transform.position.y, player.transform.position.z), 0.2f * Time.deltaTime);
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, xLimit1.position.x, xLimit2.position.x), desiredY, desiredZ);   
+            }
+            if (Mathf.Abs(player.transform.position.x - gameObject.transform.position.x) <= 4)
             {
                 isCinematic = false;
             }

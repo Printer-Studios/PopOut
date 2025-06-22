@@ -6,12 +6,13 @@ public class EnemyShotHandler : MonoBehaviour
 {
     public enum Shot { Upside, Die, Nothing}
     public Shot shotType;
-    public bool isWeak;
+    public bool isWeak, respawns;
+    public EnemyRespawn enemyRespawn;
 
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == 4 && col.attachedRigidbody.linearVelocity.magnitude > 5) //If enemy is hit with water
+        if (col.gameObject.layer == LayerMask.NameToLayer("Water") && col.attachedRigidbody.linearVelocity.magnitude > 5) //If enemy is hit with water
         {
             if (shotType == Shot.Upside)
             {
@@ -43,6 +44,13 @@ public class EnemyShotHandler : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        if (!respawns)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            enemyRespawn.Deactivate();
+        }
     }
 }

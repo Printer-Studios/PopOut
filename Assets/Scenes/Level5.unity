@@ -37879,6 +37879,7 @@ MonoBehaviour:
   xLimit1: {fileID: 1377015688}
   xLimit2: {fileID: 1980722326}
   isCinematic: 0
+  jump: {fileID: -7997543224792861045, guid: 8289c587e17ff3c46b7c76f55085e66c, type: 3}
 --- !u!4 &1947333165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2914397429978858279, guid: a18a1ddb75064b9499d3a5db0aae862f, type: 3}
